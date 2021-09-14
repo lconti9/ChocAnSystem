@@ -31,6 +31,12 @@
             <td>srlee2@crimson.ua.edu</td>
             <td>#</td>
         </tr>
+        <tr>
+            <td>Caroline Johnson</td>
+            <td>12100578</td>
+            <td>chjohnson9@crimson.ua.edu</td>
+            <td>2</td>
+        </tr>
     </table>
 
     <table>
@@ -54,15 +60,67 @@
             <td>Task Performed</td>
             <td>Percent Contributed</td>
         </tr>
+        <tr>
+            <td>Caroline Johnson</td>
+            <td>Created Glossary</td>
+            <td></td>
+        </tr>
     </table>
 
     <h1>Paragraph</h1>
     <p></p>
 
     <h1>Glossary</h1>
-    <ul>
-        <li></li>
-    </ul>
+    <dl>
+        <dt><strong>ACME Accounting Services</strong></dt>
+            <dd>A third party organization that deals with processing payments of membership fees.</dd>
+        <dt><strong>Card</strong></dt>
+            <dd>Each member has a card that contains their name, nine-digit member number, and encoded information.</dd>
+        <dt><strong>Card Verification</strong></dt>
+            <dd>The member card is verified through the card reader with one of three results: Validated, Invalid number, or Member suspended.</dd>
+        <dt><strong>ChocAn/Chocoholics Anonymous</strong></dt>
+            <dd>An organization that provides services to people addicted to chocolate.</dd>
+        <dt><strong>ChocAn Computer Terminal</strong></dt>
+            <dd>A device that works similarly to a credit card device in a shop.</dd>
+        <dt><strong>ChocAn Data Center</strong></dt>
+            <dd>The data center's computer checks the member's card to see if the member number is valid, invalid, or if the member is suspended.</dd>
+        <dt><strong>Date of Service</strong></dt>
+            <dd>The date a service was provided. It is needed due to potential difficulties that may prevent the provider from billing ChocAn immediately.</dd>
+        <dt><strong>EFT</strong></dt>
+            <dd>Electronic Funds Transfer.</dd>
+        <dt><strong>Interactive Mode</strong></dt>
+            <dd>Mode of operation allowing for the addition, removal, and update of members/providers and their records.</dd>
+        <dt><strong>Main Accounting Procedure</strong></dt>
+            <dd>Procedure run at midnight on Fridays at the ChocAn Data Center. It reads the week's file of provided services and prints reports.</dd>
+        <dt><strong>Manager</strong></dt>
+            <dd>The manager is given the summary report. A manager can request to run any report at any time during the week.</dd>
+        <dt><strong>Member Data</strong></dt>
+            <dd>The data for a member includes their city, name, member number, state, street address, and zip code.</dd>	
+        <dt><strong>Member Reinstatement</strong></dt>
+            <dd>Suspended members who pay overdue fees are reinstated.</dd>	
+        <dt><strong>Member Report</strong></dt>
+            <dd>Report that contains member data as well as the date of service, provider name, and service name for each service provided in a certain week.</dd>
+        <dt><strong>Membership Fees</strong></dt>
+            <dd>Monthly fee that members pay to ChocAn.</dd>
+        <dt><strong>Overdue Fees</strong></dt>
+            <dd>Members with overdue fees are suspended.</dd>
+        <dt><strong>Provider</strong></dt>
+            <dd>Providers or Healthcare Professionals supply consultations, treatments, and other tasks to members.</dd>
+        <dt><strong>Provider Data</strong></dt>
+            <dd>The data for a provider includes their city, name, provider number, state, street address, and zip code.</dd>
+        <dt><strong>Provider Directory</strong></dt>
+            <dd>Alphabetically ordered list of service names, service codes, and fees.</dd>
+        <dt><strong>Provider Report</strong></dt>
+            <dd>Report sent to providers who have billed ChocAn during a certain week. It contains provider data as well as the date of each service, date and time data were received by the computer, member name and number, service code, number of consultations, fee to be paid, and total fee for the week.</dd>
+        <dt><strong>Service</strong></dt>
+            <dd>Includes consultations, treatments, and other tasks that providers supply to members.</dd>
+        <dt><strong>Service Data</strong></dt>
+            <dd>The data for a service includes its date, name, fees, and code. The code is six digits.</dd>
+        <dt><strong>Software Product</strong></dt>
+            <dd>The software product displays the service name when a code is provided and asks the provider to confirm that the displayed service is correct. If the code does not exist it prints an error message. The product writes a record to disk including the current date and time, date the service was provided, provider number, member number, service code, and any comments. It then looks up the service fee and displays it. The software product also includes a provider directory that may be requested.</dd>
+        <dt><strong>Summary Report</strong></dt>
+            <dd>The report that lists all providers to be paid for the week, as well as each provider's the number of consultations and total fee for the week.</dd>
+    </dl>
 
     <h1>Case Diagram</h1>
     <img src="./src/case_diagram.png" />
