@@ -20,10 +20,10 @@
             <td>2</td>
         </tr>
         <tr>
-            <th>Jacob Aid</th>
-            <th>11950741</th>
-            <th>jiaid@crimson.ua.edu</th>
-            <th>2</th>
+            <td>Jacob Aid</td>
+            <td>11950741</td>
+            <td>jiaid@crimson.ua.edu</td>
+            <td>2</td>
         </tr>
         <tr>
             <td>Shanissee Lee</td>
@@ -50,9 +50,9 @@
             <td></td>
         </tr>
          <tr>
-            <th>Shanissee Lee</th>
-            <th>Task Performed</th>
-            <th>Percent Contributed</th>
+            <td>Shanissee Lee</td>
+            <td>Task Performed</td>
+            <td>Percent Contributed</td>
         </tr>
     </table>
 
@@ -69,17 +69,105 @@
 
     <h1>Use Cases</h1>
     <ul>
-        <li>Use Case #1
+        <li>Verify Card
             <ul>
-                <li>Context:</li>
-                <li>Actors:</li>
+                <li>Context: Member wants a service and needs provider to verify their membership card</li>
+                <li>Actors: Provider, Member</li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>Step 1</li>
-                        <li>Step 2</li>
+                        <li>Member hands provider membership card</li>
+                        <li>The provider swipes the card through the card reader on the terminal</li>
+                        <li>Terminal verifies the member number in the member list</li>
+                        <li>Terminal return that member card is valid</li>
+                        <li>Terminal proceeds to servce billing page</li>
+                        <li>Provider returns card to member</li>
                     </ol>
                 </li>
-                <li>Extensions</li>
+                <li>Extensions:
+                    <ul>
+                        <li>4a. Invalid membership card was given
+                            <ul>
+                                <li>4a.1 System informs provider</li>
+                                <li>4a.2 Provider returns card</li>
+                                <li>4a.3 Provider offers person to sign up to become a member</li>
+                                <li>4a.4 If person agrees, continue to step 5</li>
+                            </ul>
+                        </li>
+                        <li>4b. Suspended membership card was given
+                            <ul>
+                                <li>4a.1 System informs provider</li>
+                                <li>4a.2 Provider returns card</li>
+                                <li>4a.3 Provider encourages member to make payments so ACME can reinstate their membership</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Verify Service Code
+            <ul>
+                <li>Context: Terminal verifies service code enetered by provider</li>
+                <li>Actors: Provider</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Software prompts provider to enter service code</li>
+                        <li>Provider types in 6-digit service code</li>
+                        <li>Software finds corresponding valid service for code</li>
+                    </ol>
+                </li>
+                <li>Extensions:
+                    <ul>
+                        <li>2a. Provider enters invalid service code
+                            <ul>
+                                <li>2a.1 Provider enters invalid code</li>
+                                <li>2a.2 System prints an error message</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Access Provider Directory
+            <ul>
+                <li>Context: Software allows lookup of a service's corresponding 6-digit service code</li>
+                <li>Actors: Provider</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Software prompts provider to search for a specific service</li>
+                        <li>Provider enters service name</li>
+                        <li>The software find the corresponding service code</li>
+                        <li>Software outputs 6-digit service code to the screen</li>
+                    </ol>
+                </li>
+                <li>Extensions:
+                    <ul>
+                        <li>2a. Provider enters invalid service name
+                            <ul>
+                                <li>2a.1 Provider enters invalid name</li>
+                                <li>2a.2 System prints an error message, return to step 1</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Bill Member
+            <ul>
+                <li>Context: Member wants a service and provider needs to charge them for the service</li>
+                <li>Actors: Member, Provider</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Provider verifies members card</li>
+                        <li>Provider enters the date the service was performed</li>
+                        <li>Provider accesses the provider directory to find the six-digit service code that corresponds with the service</li>
+                        <li>Provider enters service code</li>
+                        <li>Software displays service name for provider to verify</li>
+                        <li>Provider verifies service</li>
+                        <li>Software writes a record of the service</li>
+                        <li>Software looks up and displays fee for service</li>
+                        <li>Provider fills out form with service and member information</li>
+                    </ol>
+                </li>
             </ul>
         </li>
     </ul>
