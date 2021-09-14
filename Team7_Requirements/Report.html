@@ -305,5 +305,69 @@
                 </li>
             </ul>
         </li>
+        <li>Suspend Member /Provider
+            <ul>
+                <li>Context: A member needs to be suspended on the system's list</li>
+                <li>Actors: ACME</li>
+                <li>Best Case Scenario
+                    <ol>
+                        <li>A member is behind on ChocAn Payments</li>
+                        <li>ACME personnel accesses the ChocAn system</li>
+                        <li>They navigate to the edit list menu</li>
+                        <li>They select to suspend a member on the list</li>
+                        <li>They enter the name of the member to be suspended</li>
+                        <li>The system updates the information in the systems database</li>
+                    </ol>
+                </li>
+                <li>Extensions: 
+                    <ul>
+                        <li>4a. The ACME personnel enters a name that does not exist
+                            <ul>
+                                <li>4a.1 The ACME personnel enters the name of a person who does not have an account</li>
+                                <li>4a.2 The system informs the provider/manager that the person does not have an account</li>
+                            </ul>
+                        </li>
+                        <li>4b. The ACME personnel enters a person who is already suspended
+                            <ul>
+                                <li>4b.1 The ACME personnel enters the name of a person who is already suspended</li>
+                                <li>4b.2 The system informs the provider/manager that the person is already suspended</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Reinstate Member /Provider
+            <ul>
+                <li>Context: A member needs to be reinstated on the system's list</li>
+                <li>Actors: ACME</li>
+                <li>Best Case Scenario
+                    <ol>
+                        <li>A member has made delinquent ChocAn Payments</li>
+                        <li>ACME personnel accesses the ChocAn system</li>
+                        <li>They navigate to the edit list menu</li>
+                        <li>They select to reinstate a member on the list</li>
+                        <li>They enter the name of the member to be reinstated</li>
+                        <li>The system updates the information in the systems database</li>
+                    </ol>
+                </li>
+                <li>Extensions: 
+                    <ul>
+                        <li>4a. The ACME personnel enters a name that does not exist
+                            <ul>
+                                <li>4a.1 The ACME personnel enters the name of a person who does not have an account</li>
+                                <li>4a.2 The system informs the provider/manager that the person does not have an account</li>
+                            </ul>
+                        </li>
+                        <li>4b. The ACME personnel enters a person who is not suspended
+                            <ul>
+                                <li>4b.1 The ACME personnel enters the name of a person who is not suspended</li>
+                                <li>4b.2 The system informs the provider/manager that the person is already reinstated</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
     </ul>
 </html>
