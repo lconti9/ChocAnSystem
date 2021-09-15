@@ -420,6 +420,38 @@
                 </li>
             </ul>
         </li>
+        <li>Edit Member List
+            <ul>
+                <li>Context: A provider/manager/ACME personnel needs to edit the member/provider list</li>
+                <li>Actors: Provider, Manager, ACME</li>
+                <li>Best Case Scenario
+                    <ol>
+                        <li>The person has some change they need to make to the member/provider list</li>
+                        <li>They select if they want to edit a member or provider</li>
+                        <li>The terminal shows options to add, remove, update, suspend and reinstate depending on their permissions</li>
+                        <li>They select which action they wish to complete</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Find/Print Report
+            <ul>
+                <li>Context: Main Accounting Procedure finds the week's file of services provided 
+                            and print a report, can be requested manually by manager.
+                            Provider can also print one at the request of a ChocAn member</li>
+                <li>Actors: Main Accounting Procedure, Manager, Provider</li>
+                <li>Best Case Scenario:
+                    <ol>
+                        <li>File is read and reports are printed, automatically or by request</li>
+                        <li>File is successfully read and printed</li>
+                        <li>Should a member request their weekly services file, it is sent to them</li>
+                    </ol>
+                </li>
+                <li>Extensions:
+                    None
+                </li>
+            </ul>
+        </li>
         <li>Send Report
             <ul>
                 <li>Context: Main Accounting Procedure sends out report via e-mail attachment</li>
