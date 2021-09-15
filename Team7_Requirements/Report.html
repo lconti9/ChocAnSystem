@@ -77,9 +77,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>Jacob Aid</th>
-            <th>Wrote Paragraph</th>
-            <th>Percent Contributed</th>
+            <td>Jacob Aid</td>
+            <td>Wrote Paragraph</td>
+            <td>Percent Contributed</td>
         </tr>
     </table>
 
@@ -125,6 +125,8 @@
             <dd>Procedure run at midnight on Fridays at the ChocAn Data Center. It reads the week's file of provided services and prints reports.</dd>
         <dt><strong>Manager</strong></dt>
             <dd>The manager is given the summary report. A manager can request to run any report at any time during the week.</dd>
+        <dt><strong>Member</strong></dt>
+            <dd>Members pay member fees to ChocAn each month. Each member has a card containing member data. Members can recieve consultations, treatments, and other services from providers. </dd>
         <dt><strong>Member Data</strong></dt>
             <dd>The data for a member includes their city, name, member number, state, street address, and zip code.</dd>	
         <dt><strong>Member Reinstatement</strong></dt>
@@ -397,6 +399,43 @@
                             </ul>
                         </li>
                     </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Find/Print Report
+            <ul>
+                <li>Context: Main Accounting Procedure finds the week's file of services provided 
+                            and print a report, can be requested manually by manager.
+                            Provider can also print one at the request of a ChocAn member</li>
+                <li>Actors: Main Accounting Procedure, Manager, Provider</li>
+                <li>Best Case Scenario:
+                    <ol>
+                        <li>File is read and reports are printed, automatically or by request</li>
+                        <li>File is successfully read and printed</li>
+                        <li>Should a member request their weekly services file, it is sent to them</li>
+                    </ol>
+                </li>
+                <li>Extensions:
+                    None
+                </li>
+            </ul>
+        </li>
+        <li>Send Report
+            <ul>
+                <li>Context: Main Accounting Procedure sends out report via e-mail attachment</li>
+                <li>Actors: Main Accounting Procedure</li>
+                <li>Best Case Scenario:
+                    <ol>
+                        
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Create EFT Record
+            <ul>
+                <li>Context: Main Accounting Procedure will write EFT data to a disk</li>
+                <li>Actors: Main Accounting Procedure</li>
+                <li>Best Case Scenario:
                 </li>
             </ul>
         </li>
