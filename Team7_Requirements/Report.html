@@ -162,11 +162,11 @@
     <ul>
         <li>Verify Card
             <ul>
-                <li>Context: Member wants a service and needs provider to verify their membership card</li>
-                <li>Actors: Provider, Member</li>
+                <li>Context: Provider needs to verify their membership card</li>
+                <li>Actors: Provider</li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>Member hands provider membership card</li>
+                        <li>Provider recieves membership card</li>
                         <li>The provider swipes the card through the card reader on the terminal</li>
                         <li>Terminal verifies the member number in the member list</li>
                         <li>Terminal return that member card is valid</li>
@@ -244,8 +244,8 @@
         </li>
         <li>Bill Member
             <ul>
-                <li>Context: Member wants a service and provider needs to charge them for the service</li>
-                <li>Actors: Member, Provider</li>
+                <li>Context: Provider needs to charge a member for the service</li>
+                <li>Actors: Provider</li>
                 <li>Main Success Scenario:
                     <ol>
                         <li>Provider verifies members card</li>
@@ -261,7 +261,6 @@
                 </li>
             </ul>
         </li>
-
         <li>Add Member/Provider
             <ul>
                 <li>Context: A provider or member needs to be added to the system's list</li>
