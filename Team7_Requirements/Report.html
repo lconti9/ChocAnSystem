@@ -403,24 +403,6 @@
                 </li>
             </ul>
         </li>
-        <li>Find/Print Report
-            <ul>
-                <li>Context: Main Accounting Procedure finds the week's file of services provided 
-                            and print a report, can be requested manually by manager.
-                            Provider can also print one at the request of a ChocAn member</li>
-                <li>Actors: Main Accounting Procedure, Manager, Provider</li>
-                <li>Main Success Scenario:
-                    <ol>
-                        <li>File is read and reports are printed, automatically or by request</li>
-                        <li>File is successfully read and printed</li>
-                        <li>Should a member request their weekly services file, it is sent to them</li>
-                    </ol>
-                </li>
-                <li>Extensions:
-                    None
-                </li>
-            </ul>
-        </li>
         <li>Edit Member List
             <ul>
                 <li>Context: A provider/manager/ACME personnel needs to edit the member/provider list</li>
@@ -480,7 +462,12 @@
                 <li>Actors: Main Accounting Procedure</li>
                 <li>Main Success Scenario:
                     <ol>
-                        
+                        <Li>Actor sends out reports via e-mail</li>
+                        <Li>ChocAn members receive a list of services provided to them</li>
+                        <Li>Services on report are ordered by date</li>
+                        <Li>Providers that have billed ChocAn also receive a report</li>
+                        <Li>Information is sorted by how the computer received it</li>
+                        <Li>Summary at the end of the report is provided</li>
                     </ol>
                 </li>
             </ul>
