@@ -404,24 +404,6 @@
             </ul>
         </li>
 <<<<<<< HEAD
-        <li>Find/Print Report
-            <ul>
-                <li>Context: Main Accounting Procedure finds the week's file of services provided 
-                            and print a report, can be requested manually by manager.
-                            Provider can also print one at the request of a ChocAn member</li>
-                <li>Actors: Main Accounting Procedure, Manager, Provider</li>
-                <li>Main Success Scenario:
-                    <ol>
-                        <li>File is read and reports are printed, automatically or by request</li>
-                        <li>File is successfully read and printed</li>
-                        <li>Should a member request their weekly services file, it is sent to them</li>
-                    </ol>
-                </li>
-                <li>Extensions:
-                    None
-                </li>
-            </ul>
-        </li>
 =======
 >>>>>>> 083739b023ae2edd291109df2ea8114613d9fd84
         <li>Edit Member List
@@ -483,7 +465,13 @@
                 <li>Actors: Main Accounting Procedure</li>
                 <li>Main Success Scenario:
                     <ol>
-                        
+                        <li>Actor automatically sends out service reports via e-mail</li>
+                        <li>Every member with a consulted provider receives their services provided</li>
+                        <li>Services on the report are sorted by date</li>
+                        <li>Each provider also receives a report of all services they provided</li>
+                        <li>Report is sorted in the same sequence the computer received the information on the 
+                        provider's form</li>
+                        <li>End of the report gives the appropriate summary</li>
                     </ol>
                 </li>
             </ul>
