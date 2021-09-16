@@ -401,24 +401,6 @@
                 </li>
             </ul>
         </li>
-        <li>Find/Print Report
-            <ul>
-                <li>Context: Main Accounting Procedure finds the week's file of services provided 
-                            and print a report, can be requested manually by manager.
-                            Provider can also print one at the request of a ChocAn member</li>
-                <li>Actors: Main Accounting Procedure, Manager, Provider</li>
-                <li>Best Case Scenario:
-                    <ol>
-                        <li>File is read and reports are printed, automatically or by request</li>
-                        <li>File is successfully read and printed</li>
-                        <li>Should a member request their weekly services file, it is sent to them</li>
-                    </ol>
-                </li>
-                <li>Extensions:
-                    None
-                </li>
-            </ul>
-        </li>
         <li>Edit Member List
             <ul>
                 <li>Context: A provider/manager/ACME personnel needs to edit the member/provider list</li>
@@ -433,6 +415,19 @@
                 </li>
             </ul>
         </li>
+        <li>Record Payment
+            <ul>
+                <li>Context: ACME personnel records a payment made by a member of ChocAn</li>
+                <li>Actors: ACME</li>
+                <li>Best Case Scenario:
+                    <ol>
+                        <li>ACME personnel recieves a payment from a ChocAn member</li>
+                        <li>ACME personnel access the member report in the system</li>
+                        <li>They update the report to add the payment made by member</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
         <li>Find/Print Report
             <ul>
                 <li>Context: Main Accounting Procedure finds the week's file of services provided 
@@ -441,13 +436,21 @@
                 <li>Actors: Main Accounting Procedure, Manager, Provider</li>
                 <li>Best Case Scenario:
                     <ol>
+                        <li>Actor searches for report to be printed</li>
                         <li>File is read and reports are printed, automatically or by request</li>
                         <li>File is successfully read and printed</li>
                         <li>Should a member request their weekly services file, it is sent to them</li>
                     </ol>
                 </li>
                 <li>Extensions:
-                    None
+                    <ul>
+                        <li>1a. The actor searches for a non-existent report
+                            <ul>
+                                <li>1a.1 The actor searches for an invalid report</li>
+                                <li>1a.2 The system returns an error for an unknown file</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>
