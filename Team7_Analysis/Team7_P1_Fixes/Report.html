@@ -121,6 +121,8 @@
             <dd>The date a service was provided. It is needed due to potential difficulties that may prevent the provider from billing ChocAn immediately.</dd>
         <dt><strong>EFT</strong></dt>
             <dd>Electronic Funds Transfer.</dd>
+        <dt><strong>EFT Report</strong></dt>
+            <dd>A report containing electronic funds transfer data. This includes the provider name, provider number, and the amount to be transferred.</dd>
         <dt><strong>Interactive Mode</strong></dt>
             <dd>Mode of operation allowing for the addition, removal, and update of members/providers and their records.</dd>
         <dt><strong>Main Accounting Procedure</strong></dt>
@@ -137,6 +139,8 @@
             <dd>Report that contains member data as well as the date of service, provider name, and service name for each service provided in a certain week.</dd>
         <dt><strong>Membership Fees</strong></dt>
             <dd>Monthly fee that members pay to ChocAn.</dd>
+        <dt><strong>Operator</strong></dt>
+            <dd>Operators have the job of adding, removing, and updating members/member data.</dd>
         <dt><strong>Overdue Fees</strong></dt>
             <dd>Members with overdue fees are suspended.</dd>
         <dt><strong>Provider</strong></dt>
@@ -155,6 +159,8 @@
             <dd>The software product displays the service name when a code is provided and asks the provider to confirm that the displayed service is correct. If the code does not exist it prints an error message. The product writes a record to disk including the current date and time, date the service was provided, provider number, member number, service code, and any comments. It then looks up the service fee and displays it. The software product also includes a provider directory that may be requested.</dd>
         <dt><strong>Summary Report</strong></dt>
             <dd>The report that lists all providers to be paid for the week, as well as each provider's the number of consultations and total fee for the week.</dd>
+        <dt><strong>Timer</strong></dt>
+            <dd>The timer is responsible for running the main accounting procedure, which includes member, provider, summary, and EFT reports.</dd>
     </dl>
 
     <h1>Case Diagram</h1>
