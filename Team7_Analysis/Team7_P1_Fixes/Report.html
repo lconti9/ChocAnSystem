@@ -168,64 +168,6 @@
 
     <h1>Use Cases</h1>
     <ul>
-        <li>Verify Card
-            <ul>
-                <li>Context: Provider needs to verify their membership card</li>
-                <li>Actors: Provider</li>
-                <li>Main Success Scenario:
-                    <ol>
-                        <li>Provider recieves membership card</li>
-                        <li>The provider swipes the card through the card reader on the terminal</li>
-                        <li>Terminal verifies the member number in the member list</li>
-                        <li>Terminal return that member card is valid</li>
-                        <li>Terminal proceeds to servce billing page</li>
-                        <li>Provider returns card to member</li>
-                    </ol>
-                </li>
-                <li>Extensions:
-                    <ul>
-                        <li>4a. Invalid membership card was given
-                            <ul>
-                                <li>4a.1 System informs provider</li>
-                                <li>4a.2 Provider returns card</li>
-                                <li>4a.3 Provider offers person to sign up to become a member</li>
-                                <li>4a.4 If person agrees, continue to step 5</li>
-                            </ul>
-                        </li>
-                        <li>4b. Suspended membership card was given
-                            <ul>
-                                <li>4a.1 System informs provider</li>
-                                <li>4a.2 Provider returns card</li>
-                                <li>4a.3 Provider encourages member to make payments so ACME can reinstate their membership</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Verify Service Code
-            <ul>
-                <li>Context: Terminal verifies service code enetered by provider</li>
-                <li>Actors: Provider</li>
-                <li>Main Success Scenario:
-                    <ol>
-                        <li>Software prompts provider to enter service code</li>
-                        <li>Provider types in 6-digit service code</li>
-                        <li>Software finds corresponding valid service for code</li>
-                    </ol>
-                </li>
-                <li>Extensions:
-                    <ul>
-                        <li>2a. Provider enters invalid service code
-                            <ul>
-                                <li>2a.1 Provider enters invalid code</li>
-                                <li>2a.2 System prints an error message</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
         <li>Access Provider Directory
             <ul>
                 <li>Context: Software allows lookup of a service's corresponding 6-digit service code</li>
@@ -250,7 +192,17 @@
                 </li>
             </ul>
         </li>
-        <li>Bill Member
+        <li>Validate Member
+            <ul>
+                <li>Context:</li>
+                <li>Actors:</li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Bill ChocAn Member
             <ul>
                 <li>Context: Provider needs to charge a member for the service</li>
                 <li>Actors: Provider</li>
@@ -269,7 +221,7 @@
                 </li>
             </ul>
         </li>
-        <li>Add Member/Provider
+        <li>Add Person
             <ul>
                 <li>Context: A provider or member needs to be added to the system's list</li>
                 <li>Actors: Provider, Manager</li>
@@ -294,7 +246,7 @@
                 </li>
             </ul>
         </li>
-        <li>Remove Member/Provider
+        <li>Remove Person
             <ul>
                 <li>Context: A provider or member needs to be removed from the system's list</li>
                 <li>Actors: Provider, Manager</li>
@@ -319,7 +271,7 @@
                 </li>
             </ul>
         </li>
-        <li>Update Member/Provider
+        <li>Update Person
             <ul>
                 <li>Context: A provider or member needs to be updated on the system's list</li>
                 <li>Actors: Provider, Manager</li>
@@ -345,149 +297,86 @@
                 </li>
             </ul>
         </li>
-        <li>Suspend Member/Provider
+        <li>Manage Member
             <ul>
-                <li>Context: A member needs to be suspended on the system's list</li>
-                <li>Actors: ACME</li>
+                <li>Context:</li>
+                <li>Actors:</li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>A member is behind on ChocAn Payments</li>
-                        <li>ACME personnel accesses the ChocAn system</li>
-                        <li>They navigate to the edit list menu</li>
-                        <li>They select to suspend a member on the list</li>
-                        <li>They enter the name of the member to be suspended</li>
-                        <li>The system updates the information in the systems database</li>
-                    </ol>
-                </li>
-                <li>Extensions: 
-                    <ul>
-                        <li>4a. The ACME personnel enters a name that does not exist
-                            <ul>
-                                <li>4a.1 The ACME personnel enters the name of a person who does not have an account</li>
-                                <li>4a.2 The system informs the provider/manager that the person does not have an account</li>
-                            </ul>
-                        </li>
-                        <li>4b. The ACME personnel enters a person who is already suspended
-                            <ul>
-                                <li>4b.1 The ACME personnel enters the name of a person who is already suspended</li>
-                                <li>4b.2 The system informs the provider/manager that the person is already suspended</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Reinstate Member/Provider
-            <ul>
-                <li>Context: A member needs to be reinstated on the system's list</li>
-                <li>Actors: ACME</li>
-                <li>Main Success Scenario:
-                    <ol>
-                        <li>A member has made delinquent ChocAn Payments</li>
-                        <li>ACME personnel accesses the ChocAn system</li>
-                        <li>They navigate to the edit list menu</li>
-                        <li>They select to reinstate a member on the list</li>
-                        <li>They enter the name of the member to be reinstated</li>
-                        <li>The system updates the information in the systems database</li>
-                    </ol>
-                </li>
-                <li>Extensions: 
-                    <ul>
-                        <li>4a. The ACME personnel enters a name that does not exist
-                            <ul>
-                                <li>4a.1 The ACME personnel enters the name of a person who does not have an account</li>
-                                <li>4a.2 The system informs the provider/manager that the person does not have an account</li>
-                            </ul>
-                        </li>
-                        <li>4b. The ACME personnel enters a person who is not suspended
-                            <ul>
-                                <li>4b.1 The ACME personnel enters the name of a person who is not suspended</li>
-                                <li>4b.2 The system informs the provider/manager that the person is already reinstated</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Edit Member List
-            <ul>
-                <li>Context: A provider/manager/ACME personnel needs to edit the member/provider list</li>
-                <li>Actors: Provider, Manager, ACME</li>
-                <li>Main Success Scenario:
-                    <ol>
-                        <li>The person has some change they need to make to the member/provider list</li>
-                        <li>They select if they want to edit a member or provider</li>
-                        <li>The terminal shows options to add, remove, update, suspend and reinstate depending on their permissions</li>
-                        <li>They select which action they wish to complete</li>
                     </ol>
                 </li>
             </ul>
         </li>
-        <li>Record Payment
+        <li>Manage Provider
             <ul>
-                <li>Context: ACME personnel records a payment made by a member of ChocAn</li>
-                <li>Actors: ACME</li>
+                <li>Context:</li>
+                <li>Actors:</li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>ACME personnel recieves a payment from a ChocAn member</li>
-                        <li>ACME personnel access the member report in the system</li>
-                        <li>They update the report to add the payment made by member</li>
                     </ol>
                 </li>
             </ul>
         </li>
-        <li>Find/Print Report
+        <li>Run Main Accounting Procedure
             <ul>
-                <li>Context: Main Accounting Procedure finds the week's file of services provided 
-                            and print a report, can be requested manually by manager.
-                            Provider can also print one at the request of a ChocAn member</li>
-                <li>Actors: Main Accounting Procedure, Manager, Provider</li>
+                <li>Context:</li>
+                <li>Actors: </li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>Actor searches for report to be printed</li>
-                        <li>File is read and reports are printed, automatically or by request</li>
-                        <li>File is successfully read and printed</li>
-                        <li>Should a member request their weekly services file, it is sent to them</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Request Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
                     </ol>
                 </li>
                 <li>Extensions:
                     <ul>
-                        <li>1a. The actor searches for a non-existent report
-                            <ul>
-                                <li>1a.1 The actor searches for an invalid report</li>
-                                <li>1a.2 The system returns an error for an unknown file</li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li>Send Report
+        <li>Get EFT Report
             <ul>
-                <li>Context: Main Accounting Procedure sends out report via e-mail attachment</li>
-                <li>Actors: Main Accounting Procedure</li>
+                <li>Context:</li>
+                <li>Actors: </li>
                 <li>Main Success Scenario:
                     <ol>
-                        <Li>Actor sends out reports via e-mail</li>
-                        <Li>ChocAn members receive a list of services provided to them</li>
-                        <Li>Services on report are ordered by date</li>
-                        <Li>Providers that have billed ChocAn also receive a report</li>
-                        <Li>Information is sorted by how the computer received it</li>
-                        <Li>Summary at the end of the report is provided</li>
                     </ol>
                 </li>
             </ul>
         </li>
-        <li>Create EFT Record
+        <li>Get summary Report
             <ul>
-                <li>Context: Main Accounting Procedure will write EFT data to a disk</li>
-                <li>Actors: Main Accounting Procedure</li>
+                <li>Context:</li>
+                <li>Actors: </li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>EFT Data is written to a disk</li>
-                        <Li>Banking computer ensures the correct amount is credited to the account</li>
-                        <Li>Manager receives summary report about accounts payable</li>
-                        <Li>The summary report lists all the correct information</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Get Provider Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Get Member Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
                     </ol>
                 </li>
             </ul>
