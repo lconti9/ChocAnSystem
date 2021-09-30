@@ -168,31 +168,71 @@
 
     <h1>Use Cases</h1>
     <ul>
-        <li>Access Provider Directory
+        <li>Request Report
             <ul>
-                <li>Context: Software allows lookup of a service's corresponding 6-digit service code</li>
-                <li>Actors: Provider</li>
+                <li>Context:</li>
+                <li>Actors: </li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>Software prompts provider to search for a specific service</li>
-                        <li>Provider enters service name</li>
-                        <li>The software find the corresponding service code</li>
-                        <li>Software outputs 6-digit service code to the screen</li>
                     </ol>
                 </li>
                 <li>Extensions:
                     <ul>
-                        <li>2a. Provider enters invalid service name
-                            <ul>
-                                <li>2a.1 Provider enters invalid name</li>
-                                <li>2a.2 System prints an error message, return to step 1</li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li>Validate Member
+        <li>Get Member Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Get Provider Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Get Summary Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Get EFT Report
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Run Main Accounting Procedure
+            <ul>
+                <li>Context:</li>
+                <li>Actors: </li>
+                <li>Main Success Scenario:
+                    <ol>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Manage Member
             <ul>
                 <li>Context:</li>
                 <li>Actors:</li>
@@ -202,21 +242,12 @@
                 </li>
             </ul>
         </li>
-        <li>Bill ChocAn Member
+        <li>Manage Provider
             <ul>
-                <li>Context: Provider needs to charge a member for the service</li>
-                <li>Actors: Provider</li>
+                <li>Context:</li>
+                <li>Actors:</li>
                 <li>Main Success Scenario:
                     <ol>
-                        <li>Provider verifies members card</li>
-                        <li>Provider enters the date the service was performed</li>
-                        <li>Provider accesses the provider directory to find the six-digit service code that corresponds with the service</li>
-                        <li>Provider enters service code</li>
-                        <li>Software displays service name for provider to verify</li>
-                        <li>Provider verifies service</li>
-                        <li>Software writes a record of the service</li>
-                        <li>Software looks up and displays fee for service</li>
-                        <li>Provider fills out form with service and member information</li>
                     </ol>
                 </li>
             </ul>
@@ -297,7 +328,7 @@
                 </li>
             </ul>
         </li>
-        <li>Manage Member
+        <li>Validate Member
             <ul>
                 <li>Context:</li>
                 <li>Actors:</li>
@@ -307,77 +338,46 @@
                 </li>
             </ul>
         </li>
-        <li>Manage Provider
+        <li>Bill ChocAn Member
             <ul>
-                <li>Context:</li>
-                <li>Actors:</li>
+                <li>Context: Provider needs to charge a member for the service</li>
+                <li>Actors: Provider</li>
                 <li>Main Success Scenario:
                     <ol>
+                        <li>Provider verifies members card</li>
+                        <li>Provider enters the date the service was performed</li>
+                        <li>Provider accesses the provider directory to find the six-digit service code that corresponds with the service</li>
+                        <li>Provider enters service code</li>
+                        <li>Software displays service name for provider to verify</li>
+                        <li>Provider verifies service</li>
+                        <li>Software writes a record of the service</li>
+                        <li>Software looks up and displays fee for service</li>
+                        <li>Provider fills out form with service and member information</li>
                     </ol>
                 </li>
             </ul>
         </li>
-        <li>Run Main Accounting Procedure
+        <li>Access Provider Directory
             <ul>
-                <li>Context:</li>
-                <li>Actors: </li>
+                <li>Context: Software allows lookup of a service's corresponding 6-digit service code</li>
+                <li>Actors: Provider</li>
                 <li>Main Success Scenario:
                     <ol>
-                    </ol>
-                </li>
-            </ul>
-        </li>
-        <li>Request Report
-            <ul>
-                <li>Context:</li>
-                <li>Actors: </li>
-                <li>Main Success Scenario:
-                    <ol>
+                        <li>Software prompts provider to search for a specific service</li>
+                        <li>Provider enters service name</li>
+                        <li>The software find the corresponding service code</li>
+                        <li>Software outputs 6-digit service code to the screen</li>
                     </ol>
                 </li>
                 <li>Extensions:
                     <ul>
+                        <li>2a. Provider enters invalid service name
+                            <ul>
+                                <li>2a.1 Provider enters invalid name</li>
+                                <li>2a.2 System prints an error message, return to step 1</li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Get EFT Report
-            <ul>
-                <li>Context:</li>
-                <li>Actors: </li>
-                <li>Main Success Scenario:
-                    <ol>
-                    </ol>
-                </li>
-            </ul>
-        </li>
-        <li>Get summary Report
-            <ul>
-                <li>Context:</li>
-                <li>Actors: </li>
-                <li>Main Success Scenario:
-                    <ol>
-                    </ol>
-                </li>
-            </ul>
-        </li>
-        <li>Get Provider Report
-            <ul>
-                <li>Context:</li>
-                <li>Actors: </li>
-                <li>Main Success Scenario:
-                    <ol>
-                    </ol>
-                </li>
-            </ul>
-        </li>
-        <li>Get Member Report
-            <ul>
-                <li>Context:</li>
-                <li>Actors: </li>
-                <li>Main Success Scenario:
-                    <ol>
-                    </ol>
                 </li>
             </ul>
         </li>
