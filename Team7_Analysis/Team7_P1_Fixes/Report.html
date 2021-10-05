@@ -202,9 +202,9 @@
                         <li>They navigate to the edit menu</li>
                         <li>Operator enters the name of the member to be managed</li>
                         <li>Operator either deletes the member, updates their information, or creates a new member</li>
+                    </ol>
                         <li>Exit Condition: </li>
                         <li>Member has been managed</li>
-                    </ol>
                 </li>
             </ul>
         </li>
@@ -218,19 +218,27 @@
                         <li>They navigate to the edit menu</li>
                         <li>Operator enters the name of the provider to be managed</li>
                         <li>Operator either deletes the provider, updates their information, or creates a new provider</li>
+                    </ol>
                         <li>Exit Condition: </li>
                         <li>Provider has been managed</li>
-                    </ol>
                 </li>
             </ul>
         </li>
         <li>Validate Member
             <ul>
-                <li>Context:</li>
+                <li>Context: Provider swipes the member's card to determine validity</li>
                 <li>Actors: Provider</li>
                 <li>Main Success Scenario:
                     <ol>
+                        <li>Provider recieves card from the member</li>
+                        <li>Provider swipes the card through the card reader on the terminal</li>
+                        <li>Terminal verifies the member number by searching for it in the member list</li>
+                        <li>Provider returns card to member</li>
                     </ol>
+                        <li>Exit Condition: </li>
+                        <li>Terminal returns member is valid</li>
+                <!-- Need to add extensions -->
+                    <li>Extensions:</li>
                 </li>
             </ul>
         </li>
