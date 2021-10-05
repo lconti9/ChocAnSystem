@@ -170,24 +170,62 @@
     <ul>
         <li>Request Report
             <ul>
-                <li>Context:</li>
+                <li>Context: Manager wishes to request a report from the ChocAn System</li>
                 <li>Actors: Manager</li>
                 <li>Main Success Scenario:
                     <ol>
+                        <li>Manager accesses Manager Terminal</li>
+                        <li>Manager selects to request a report</li>
+                        <li>Manager selects to request a summary report</li>
+                        <li>A report containing information for accounts payable is generate</li>
+                        <li>The system prints the report</li>
+                        <li>The system exits the request report menu</li>
                     </ol>
                 </li>
                 <li>Extensions:
                     <ul>
+                        <li>3a. Manager requests an EFT report
+                            <ul>
+                                <li>3a.1 Manager selects to request an EFT report</li>
+                                <li>3a.2 A report containing the electronic funds transfer is created</li>
+                                <li>3a.3 Continue to step 5</li>
+                            </ul>
+                        </li>
+                        <li>3b. Manager requests an Provider report
+                            <ul>
+                                <li>3b.1 Manager selects to request an Provider report</li>
+                                <li>3b.2 Manager selects which provider they wish to generate a report for</li>
+                                <li>3b.3 A report containing the list of services provided by provider is generated</li>
+                                <li>3b.4 Continue to step 5</li>
+                            </ul>
+                        </li>
+                        <li>3c. Manager requests an Member report
+                            <ul>
+                                <li>3c.1 Manager selects to request an Member report</li>
+                                <li>3c.2 Manager selects member to generate a report for</li>
+                                <li>3c.3 A report containing the list of services provided in order of date is generated</li>
+                                <li>3c.4 Continue to step 5</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </li>
         <li>Run Main Accounting Procedure
             <ul>
-                <li>Context:</li>
+                <li>Context: System generates weekly list of reports</li>
                 <li>Actors: Timer</li>
                 <li>Main Success Scenario:
                     <ol>
+                        <li>Timer goes off on Friday at midnight to begin procedure</li>
+                        <li>ChocAn system reads files of services provided in the last week</li>
+                        <li>System generates all Member, Provider, Summary, and EFT reports from the last week</li>
+                        <li>System sends all members their respective reports</li>
+                        <li>System sends all providers their respective reports</li>
+                        <li>System sends Summary report to manager</li>
+                        <li>System prints total number of providers who provided services, the total
+                            number of consultations, and the overall fee total are printed</li>
+                        <li>System exits main accounting procedure</li>
                     </ol>
                 </li>
             </ul>
