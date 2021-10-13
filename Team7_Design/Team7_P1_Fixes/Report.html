@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>CWID Number</th>
+            <th>Crimson Email</th>
+            <th>Hours Committed</th>
+        </tr>
+        <tr>
+            <td>Luca Conti</td>
+            <td>11856871</td>
+            <td>lconti1@crimson.ua.edu</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>William Jefferson</td>
+            <td>11930076</td>
+            <td>wtjefferson@crimson.ua.edu</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Jacob Aid</td>
+            <td>11950741</td>
+            <td>jiaid@crimson.ua.edu</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>Shanissee Lee</td>
+            <td>12100396</td>
+            <td>srlee2@crimson.ua.edu</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Caroline Johnson</td>
+            <td>12100578</td>
+            <td>chjohnson9@crimson.ua.edu</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>TJ Trueblood</td>
+            <td>12075419</td>
+            <td>tbtrueblood@crimson.ua.edu</td>
+            <td>2</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Task Performed</th>
+            <th>Percent Contributed</th>
+        </tr>
+        <tr>
+            <td>Luca Conti</td>
+            <td>Layed out HTML format, gave some Use Case descriptions</td>
+            <td>18%</td>
+        </tr>
+        <tr>
+            <td>William Jefferson</td>
+            <td>Created use case diagram</td>
+            <td>18%</td>
+        </tr>
+        <tr>
+            <td>Jacob Aid</td>
+            <td>Wrote Paragraph</td>
+            <td>18%</td>
+        </tr>
+         <tr>
+            <td>Shanissee Lee</td>
+            <td>Reviewing HTML format, error checking document</td>
+            <td>10%</td>
+        </tr>
+        <tr>
+            <td>Caroline Johnson</td>
+            <td>Created Glossary and fixed format/consistency issues</td>
+            <td>18%</td>
+        </tr>
+        <tr>
+            <td>TJ Trueblood</td>
+            <td>Described each use case in this HTML file</td>
+            <td>18%</td>
+        </tr>
+    </table>
+
+    <img src='./src/Bitbucket.png'>
+
+    <h1>Paragraph</h1>
+    <p>Our organization has been given the task of creating the ChocAn data processing software. 
+        This software will be used by ChocAn's provider terminals in order to deliver the ability for members to receive health care services from ChocAn, pay for services and comment on the service provided to them. 
+        This software will also allow ChocAn providers to look up records of members' past bills. 
+        This software will keep weekly records of how much the ChocAn provider using the terminal is to bill ChocAn for their services. 
+        It will also email reports to the providers containing the services they provided to ChocAn members. 
+        Members will also receive emails containing a report of the services they have received. 
+        Members will interact with the provider terminals using a card and a keyboard. 
+        Members will scan their card and our software must verify that their membership is valid. 
+        An error message will be given if either the card was invalid or if the membership has been suspended. 
+        Our software will then allow the member to look up services using a service code. 
+        If the servie code is invalid an error message will display. 
+        Our software will also allow the member to fill out a form that will be used for billing said member for the service they selected. 
+        The software will also allow providers to add or remove members as well as update existing member's data. 
+        The actual billing of the members will be handled by ACME Accounting Services. See the glossary for more details. 
+        Other objectives outside of our scope include the designing of the actual ChocAn terminal that will be running our software, the communication software used between ChocAn and providers, and the implementation of the EFT component.
+</p>
+
+    <h1>Glossary</h1>
+    <dl>
+        <dt><strong>ACME Accounting Services</strong></dt>
+            <dd>A third party organization that deals with processing payments of membership fees.</dd>
+        <dt><strong>Card</strong></dt>
+            <dd>Each member has a card that contains their name, nine-digit member number, and encoded information.</dd>
+        <dt><strong>Card Verification</strong></dt>
+            <dd>The member card is verified through the card reader with one of three results: Validated, Invalid number, or Member suspended.</dd>
+        <dt><strong>ChocAn/Chocoholics Anonymous</strong></dt>
+            <dd>An organization that provides services to people addicted to chocolate.</dd>
+        <dt><strong>ChocAn Computer Terminal</strong></dt>
+            <dd>A device that works similarly to a credit card device in a shop.</dd>
+        <dt><strong>ChocAn Data Center</strong></dt>
+            <dd>The data center's computer checks the member's card to see if the member number is valid, invalid, or if the member is suspended.</dd>
+        <dt><strong>Date of Service</strong></dt>
+            <dd>The date a service was provided. It is needed due to potential difficulties that may prevent the provider from billing ChocAn immediately.</dd>
+        <dt><strong>EFT</strong></dt>
+            <dd>Electronic Funds Transfer.</dd>
+        <dt><strong>EFT Report</strong></dt>
+            <dd>A report containing electronic funds transfer data. This includes the provider name, provider number, and the amount to be transferred.</dd>
+        <dt><strong>Interactive Mode</strong></dt>
+            <dd>Mode of operation allowing for the addition, removal, and update of members/providers and their records.</dd>
+        <dt><strong>Main Accounting Procedure</strong></dt>
+            <dd>Procedure run at midnight on Fridays at the ChocAn Data Center. It reads the week's file of provided services and prints reports.</dd>
+        <dt><strong>Manager</strong></dt>
+            <dd>The manager is given the summary report. A manager can request to run any report at any time during the week.</dd>
+        <dt><strong>Member</strong></dt>
+            <dd>Members pay member fees to ChocAn each month. Each member has a card containing member data. Members can recieve consultations, treatments, and other services from providers. </dd>
+        <dt><strong>Member Data</strong></dt>
+            <dd>The data for a member includes their city, name, member number, state, street address, and zip code.</dd>	
+        <dt><strong>Member Reinstatement</strong></dt>
+            <dd>Suspended members who pay overdue fees are reinstated.</dd>	
+        <dt><strong>Member Report</strong></dt>
+            <dd>Report that contains member data as well as the date of service, provider name, and service name for each service provided in a certain week.</dd>
+        <dt><strong>Membership Fees</strong></dt>
+            <dd>Monthly fee that members pay to ChocAn.</dd>
+        <dt><strong>Operator</strong></dt>
+            <dd>Operators have the job of adding, removing, and updating members/member data.</dd>
+        <dt><strong>Overdue Fees</strong></dt>
+            <dd>Members with overdue fees are suspended.</dd>
+        <dt><strong>Provider</strong></dt>
+            <dd>Providers or Healthcare Professionals supply consultations, treatments, and other tasks to members.</dd>
+        <dt><strong>Provider Data</strong></dt>
+            <dd>The data for a provider includes their city, name, provider number, state, street address, and zip code.</dd>
+        <dt><strong>Provider Directory</strong></dt>
+            <dd>Alphabetically ordered list of service names, service codes, and fees.</dd>
+        <dt><strong>Provider Report</strong></dt>
+            <dd>Report sent to providers who have billed ChocAn during a certain week. It contains provider data as well as the date of each service, date and time data were received by the computer, member name and number, service code, number of consultations, fee to be paid, and total fee for the week.</dd>
+        <dt><strong>Service</strong></dt>
+            <dd>Includes consultations, treatments, and other tasks that providers supply to members.</dd>
+        <dt><strong>Service Data</strong></dt>
+            <dd>The data for a service includes its date, name, fees, and code. The code is six digits.</dd>
+        <dt><strong>Software Product</strong></dt>
+            <dd>The software product displays the service name when a code is provided and asks the provider to confirm that the displayed service is correct. If the code does not exist it prints an error message. The product writes a record to disk including the current date and time, date the service was provided, provider number, member number, service code, and any comments. It then looks up the service fee and displays it. The software product also includes a provider directory that may be requested.</dd>
+        <dt><strong>Summary Report</strong></dt>
+            <dd>The report that lists all providers to be paid for the week, as well as each provider's the number of consultations and total fee for the week.</dd>
+        <dt><strong>Timer</strong></dt>
+            <dd>The timer is responsible for running the main accounting procedure, which includes member, provider, summary, and EFT reports.</dd>
+    </dl>
+
+    <h1>Case Diagram</h1>
+    <img src="./src/case_diagram.png" />
+
+    <h1>Use Cases</h1>
+    <ul>
+        <li>Request Report
+            <ul>
+                <li>Context: Manager wishes to request a report from the ChocAn System</li>
+                <li>Actors: Manager</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Manager accesses Manager Terminal</li>
+                        <li>Manager selects to request a report</li>
+                        <li>Manager selects to request a summary report</li>
+                        <li>A report containing information for accounts payable is generate</li>
+                        <li>The system prints the report</li>
+                        <li>The system exits the request report menu</li>
+                    </ol>
+                </li>
+                <li>Extensions:
+                    <ul>
+                        <li>3a. Manager requests an EFT report
+                            <ul>
+                                <li>3a.1 Manager selects to request an EFT report</li>
+                                <li>3a.2 A report containing the electronic funds transfer is created</li>
+                                <li>3a.3 Continue to step 5</li>
+                            </ul>
+                        </li>
+                        <li>3b. Manager requests an Provider report
+                            <ul>
+                                <li>3b.1 Manager selects to request an Provider report</li>
+                                <li>3b.2 Manager selects which provider they wish to generate a report for</li>
+                                <li>3b.3 A report containing the list of services provided by provider is generated</li>
+                                <li>3b.4 Continue to step 5</li>
+                            </ul>
+                        </li>
+                        <li>3c. Manager requests an Member report
+                            <ul>
+                                <li>3c.1 Manager selects to request an Member report</li>
+                                <li>3c.2 Manager selects member to generate a report for</li>
+                                <li>3c.3 A report containing the list of services provided in order of date is generated</li>
+                                <li>3c.4 Continue to step 5</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Run Main Accounting Procedure
+            <ul>
+                <li>Context: System generates weekly list of reports</li>
+                <li>Actors: Timer</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Timer goes off on Friday at midnight to begin procedure</li>
+                        <li>ChocAn system reads files of services provided in the last week</li>
+                        <li>System generates all Member, Provider, Summary, and EFT reports from the last week</li>
+                        <li>System sends all members their respective reports</li>
+                        <li>System sends all providers their respective reports</li>
+                        <li>System sends Summary report to manager</li>
+                        <li>System prints total number of providers who provided services, the total
+                            number of consultations, and the overall fee total are printed</li>
+                        <li>System exits main accounting procedure</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Manage Member
+            <ul>
+                <li>Context: The operator wants to update, add, or remove a member</li>
+                <li>Actors: Operator</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Operator accesses the terminal</li>
+                        <li>They navigate to the edit menu</li>
+                        <li>Operator opts to add a member to the directory</li>
+                        <li>Operator enters new meber's information</li>
+                        <li>System adds new member to database</li>
+                    </ol>
+                        <li>Exit Condition: </li>
+                        <li>Member has been added</li>
+                </li>
+                <li>Extensions:
+                    <ul>
+                        <li>3a. Operator opts to remove a member
+                            <ul>
+                                <li>3a.1 Operator opts to remove a member</li>
+                                <li>3a.2 Operator enters name of member to remove</li>
+                                <li>3a.3 System removes member from database</li>
+                                <li>Exit Contiton:</li>
+                                <li>Member has been removed</li>
+                            </ul>
+                        </li>
+                        <li>3a. Operator opts to update a member
+                            <ul>
+                                <li>3a.1 Operator opts to update a member</li>
+                                <li>3a.2 Operator enters name of member to update</li>
+                                <li>3a.3 Operator makes the chnages to the member's profile</li>
+                                <li>3a.4 System updates member in database</li>
+                                <li>Exit Contiton:</li>
+                                <li>Member has been updated</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Manage Provider
+            <ul>
+                <li>Context: The operator wants to update, add, or remove a provider</li>
+                <li>Actors: Operator</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Operator accesses the terminal</li>
+                        <li>They navigate to the edit menu</li>
+                        <li>Operator opts to add a provider</li>
+                        <li>Operator enters the name of the provider to be added</li>
+                        <li>System adds provider to the database</li>
+                    </ol>
+                        <li>Exit Condition: </li>
+                        <li>Provider has been added</li>
+                </li>
+                <li>Extensions:
+                    <ul>
+                        <li>3a. Operator opts to remove a provider
+                            <ul>
+                                <li>3a.1 Operator opts to remove a provider</li>
+                                <li>3a.2 Operator enters name of provider to remove</li>
+                                <li>3a.3 System removes provider from database</li>
+                                <li>Exit Contiton:</li>
+                                <li>Provider has been removed</li>
+                            </ul>
+                        </li>
+                        <li>3a. Operator opts to update a provider
+                            <ul>
+                                <li>3a.1 Operator opts to update a provider</li>
+                                <li>3a.2 Operator enters name of provider to update</li>
+                                <li>3a.3 Operator makes the chnages to the provider's profile</li>
+                                <li>3a.4 System updates provider in database</li>
+                                <li>Exit Contiton:</li>
+                                <li>Provider has been updated</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Validate Member
+            <ul>
+                <li>Context: Provider swipes the member's card to determine validity</li>
+                <li>Actors: Provider</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Provider recieves card from the member</li>
+                        <li>Provider swipes the card through the card reader on the terminal</li>
+                        <li>Terminal verifies the member number by searching for it in the member list</li>
+                        <li>Provider returns card to member</li>
+                    </ol>
+                        <li>Exit Condition: </li>
+                        <li>Terminal returns member is valid</li>
+                    <li>Extensions:
+                        <ul>
+                            <li>2a. Member is invalid
+                                <ul>
+                                    <li>2a.1 Terminal displays "Member Invalid"</li>
+                                    <li>2a.2 Return to step 1</li>
+                                </ul>
+                            </li>
+                            <li>2b. Member is suspended</li>
+                                <li>2b.1 Terminal displays "Member Suspended"</li>
+                                <li>2b.2 Provider shows member the fees that are owed</li>
+                                <li>2b.3 Member pays fees, return to step 1</li>
+                            </li>
+                        </ul>
+                    </li>
+                </li>
+            </ul>
+        </li>
+        <li>Bill ChocAn Member
+            <ul>
+                <li>Context: Provider needs to charge a member for the service</li>
+                <li>Actors: Provider</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Provider verifies members card</li>
+                        <li>Provider enters the date the service was performed</li>
+                        <li>Provider accesses the provider directory to find the six-digit service code that corresponds with the service</li>
+                        <li>Provider enters service code</li>
+                        <li>Software displays service name for provider to verify</li>
+                        <li>Provider verifies service</li>
+                        <li>Software writes a record of the service</li>
+                        <li>Software looks up and displays fee for service</li>
+                        <li>Provider fills out form with service and member information</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Access Provider Directory
+            <ul>
+                <li>Context: Software allows lookup of a service's corresponding 6-digit service code</li>
+                <li>Actors: Provider</li>
+                <li>Main Success Scenario:
+                    <ol>
+                        <li>Software prompts provider to search for a specific service</li>
+                        <li>Provider enters service name</li>
+                        <li>The software find the corresponding service code</li>
+                        <li>Software outputs 6-digit service code to the screen</li>
+                    </ol>
+                </li>
+                <li>Extensions:
+                    <ul>
+                        <li>2a. Provider enters invalid service name
+                            <ul>
+                                <li>2a.1 Provider enters invalid name</li>
+                                <li>2a.2 System prints an error message, return to step 1</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</html>
