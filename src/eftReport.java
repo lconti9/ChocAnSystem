@@ -10,7 +10,7 @@ public class EFTReport {
     private String eftReportData;
 
     //initialize the variables to null
-    public eftReport(){
+    public EFTReport(){
         eftReportData = null;
     }
 
