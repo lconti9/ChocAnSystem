@@ -48,11 +48,4 @@ public class Service {
         this.serviceName = serviceName;
     }
 
-    //method to display data for a service
-    public void printService(){
-    System.out.println("Service Name: " + serviceName);
-    System.out.println("Service Code: " + serviceCode);
-    System.out.println("Service Fee: " + serviceFee);
-    }
-
 }
