@@ -12,7 +12,7 @@ public class Member {
     private String memberStatus;
     private String memberAddressStreet;
     private String memberAddressCity;
-    private String memberAddressZipCode;
+    private int memberAddressZipCode;
     private String memberAddressState;
 
     //initialize the variables to null
@@ -22,12 +22,12 @@ public class Member {
         memberStatus = null;
         memberAddressStreet = null;
         memberAddressCity = null;
-        memberAddressZipCode = null;
+        memberAddressZipCode = 0;
         memberAddressState = null;
     }
 
     //method to get name
-    public int getMemberName(){
+    public String getMemberName(){
         return memberName;
     }
 
@@ -37,17 +37,17 @@ public class Member {
     }    
 
     //method to get status
-    public int getMemberStatus(){
+    public String getMemberStatus(){
         return memberStatus;
     } 
     
     //method to get street address
-    public int getMemberAddressStreet(){
+    public String getMemberAddressStreet(){
         return memberAddressStreet;
     }  
 
     //method to get city address
-    public int getMemberAddressCity(){
+    public String getMemberAddressCity(){
         return memberAddressCity;
     } 
 
@@ -57,12 +57,12 @@ public class Member {
     }
 
     //method to get state address
-    public int getMemberAddressState(){
+    public String getMemberAddressState(){
         return memberAddressState;
     }
 
     //method to set name
-    public void setMemberName(int memberName){
+    public void setMemberName(String memberName){
         this.memberName = memberName;
     }
 
@@ -72,17 +72,17 @@ public class Member {
     }    
 
     //method to set status
-    public void setMemberStatus(int memberStatus){
+    public void setMemberStatus(String memberStatus){
         this.memberStatus = memberStatus;
     }  
     
     //method to set street address
-    public void setMemberAddressStreet(int memberAddressStreet){
+    public void setMemberAddressStreet(String memberAddressStreet){
         this.memberAddressStreet = memberAddressStreet;
     }        
 
     //method to set city address
-    public void setMemberAddressCity(int memberAddressCity){
+    public void setMemberAddressCity(String memberAddressCity){
         this.memberAddressCity = memberAddressCity;
     } 
     
@@ -92,7 +92,7 @@ public class Member {
     }  
     
     //method to set state address
-    public void setMemberAddressState(int memberAddressState){
+    public void setMemberAddressState(String memberAddressState){
         this.memberAddressState = memberAddressState;
     }        
 }
