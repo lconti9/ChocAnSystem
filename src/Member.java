@@ -94,5 +94,6 @@ public class Member {
     //method to set state address
     public void setMemberAddressState(String memberAddressState){
         this.memberAddressState = memberAddressState;
-    }        
+    }     
+       
 }

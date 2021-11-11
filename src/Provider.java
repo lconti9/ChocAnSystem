@@ -82,5 +82,6 @@ public class Provider {
     //method to set state address
     public void setProviderAddressState(String providerAddressState){
         this.providerAddressState = providerAddressState;
-    }        
+    }  
+          
 }
