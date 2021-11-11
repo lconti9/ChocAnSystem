@@ -1,10 +1,10 @@
 /*
 Group Member: Shanissee Lee
-Class: eftReport.java
+Class: EFTReport.java
 Description: Holds attributes for EFT Report
 */
 
-public class eftReport {
+public class EFTReport {
 
     //private variables to hold EFT report data
     private String eftReportData;
