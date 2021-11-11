@@ -1,5 +1,5 @@
 /*
-Member: Caroline Johnson
+Group Member: Caroline Johnson
 Class: Service.java
 Description: Holds attributes and methods for Service
 */
