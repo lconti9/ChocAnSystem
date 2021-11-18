@@ -6,7 +6,7 @@ Description: Holds attributes for Provider Report
 
 public class ProviderReport {
 
-    //private variables to hold provider report data
+    // private variables to hold provider report data
     private String providerReportDate;
     private String providerReportDateComp;
     private String providerReportMemberName;
@@ -16,8 +16,8 @@ public class ProviderReport {
     private int providerReportConsultationsNum;
     private double providerReportTotalFee;
 
-    //initialize the variables to null
-    public providerReport(){
+    // initialize the variables to null
+    public void providerReport() {
         providerReportDate = null;
         providerReportDateComp = null;
         providerReportMemberName = null;
@@ -27,5 +27,5 @@ public class ProviderReport {
         providerReportConsultationsNum = 0;
         providerReportTotalFee = 0;
     }
-    
+
 }

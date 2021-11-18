@@ -1,12 +1,7 @@
-/*
-Group Member: Caroline Johnson
-Class: Provider.java
-Description: Holds attributes and methods for Provider
-*/
 
 public class Provider {
 
-    //private variables to hold provider data
+    // private variables to hold provider data
     private String providerName;
     private int providerNumber;
     private String providerAddressStreet;
@@ -14,8 +9,8 @@ public class Provider {
     private int providerAddressZipCode;
     private String providerAddressState;
 
-    //initialize the variables to null
-    public Provider(){
+    // initialize the variables to null
+    public Provider() {
         providerName = null;
         providerNumber = 0;
         providerAddressStreet = null;
@@ -24,64 +19,64 @@ public class Provider {
         providerAddressState = null;
     }
 
-    //method to get name
-    public String getProviderName(){
+    // method to get name
+    public String getProviderName() {
         return providerName;
     }
 
-    //method to get number
-    public int getProviderNumber(){
+    // method to get number
+    public int getProviderNumber() {
         return providerNumber;
-    }    
-    
-    //method to get street address
-    public String getProviderAddressStreet(){
+    }
+
+    // method to get street address
+    public String getProviderAddressStreet() {
         return providerAddressStreet;
-    }  
+    }
 
-    //method to get city address
-    public String getProviderAddressCity(){
+    // method to get city address
+    public String getProviderAddressCity() {
         return providerAddressCity;
-    } 
+    }
 
-    //method to get zip code address
-    public int getProviderAddressZipCode(){
+    // method to get zip code address
+    public int getProviderAddressZipCode() {
         return providerAddressZipCode;
     }
 
-    //method to get state address
-    public String getProviderAddressState(){
+    // method to get state address
+    public String getProviderAddressState() {
         return providerAddressState;
     }
 
-    //method to set name
-    public void setProviderName(String providerName){
+    // method to set name
+    public void setProviderName(String providerName) {
         this.providerName = providerName;
     }
 
-    //method to set number
-    public void setProviderNumber(int providerNumber){
+    // method to set number
+    public void setProviderNumber(int providerNumber) {
         this.providerNumber = providerNumber;
-    }    
-    
-    //method to set street address
-    public void setProviderAddressStreet(String providerAddressStreet){
-        this.providerAddressStreet = providerAddressStreet;
-    }        
+    }
 
-    //method to set city address
-    public void setProviderAddressCity(String providerAddressCity){
+    // method to set street address
+    public void setProviderAddressStreet(String providerAddressStreet) {
+        this.providerAddressStreet = providerAddressStreet;
+    }
+
+    // method to set city address
+    public void setProviderAddressCity(String providerAddressCity) {
         this.providerAddressCity = providerAddressCity;
-    } 
-    
-    //method to set zip code address
-    public void setProviderAddressZipCode(int providerAddressZipCode){
+    }
+
+    // method to set zip code address
+    public void setProviderAddressZipCode(int providerAddressZipCode) {
         this.providerAddressZipCode = providerAddressZipCode;
-    }  
-    
-    //method to set state address
-    public void setProviderAddressState(String providerAddressState){
+    }
+
+    // method to set state address
+    public void setProviderAddressState(String providerAddressState) {
         this.providerAddressState = providerAddressState;
-    }  
-          
+    }
+
 }

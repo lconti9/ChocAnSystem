@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ChocAn {
+
     public static void main(String args[]) {
         selectUser();
     }
@@ -26,11 +27,14 @@ public class ChocAn {
         System.out.println("\n----------------------------------------------------------\n");
 
         if (userType.equals("Provider")) {
-            ProviderPrompt.providerTerminal();
+            ProviderMenu.prompt();
+            selectUser();
         } else if (userType.equals("Manager")) {
             System.out.println("Do stuff");
+            selectUser();
         } else if (userType.equals("Operator")) {
             System.out.println("Do stuff");
+            selectUser();
         }
 
     }
