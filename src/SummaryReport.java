@@ -1,7 +1,8 @@
 /*
-Group Member: Will Jefferson
+Group Member: TJ Trueblood
 Class: SummaryReport.java
-Description: Holds attributes for Summary Report
+Description: Holds attributes and methods for Summary Report
+Status: Incomplete
 */
 
 public class SummaryReport {

@@ -1,13 +1,22 @@
+/*
+Group Member: Luca Conti
+Class: ChocAn.java
+Description: Main class for the ChocAn System
+Status: Incomplete
+*/
+
+//import statements
 import java.io.Console;
 import java.util.Arrays;
 import java.util.List;
 
+//method for main functionality
 public class ChocAn {
-
-    public static void main(String args[]) {
+        public static void main(String args[]) {
         selectUser();
     }
 
+    //method to determine which type of user is accessing the software
     public static void selectUser() {
         String[] userArray = { "Provider", "Manager", "Operator", "Exit" };
         List<String> userList = Arrays.asList(userArray);

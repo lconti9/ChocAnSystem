@@ -1,7 +1,8 @@
 /*
 Group Member: Shanissee Lee
 Class: MemberReport.java
-Description: Holds attributes for Member Report
+Description: Holds attributes and methods for Member Report
+Status: Incomplete
 */
 
 public class MemberReport {

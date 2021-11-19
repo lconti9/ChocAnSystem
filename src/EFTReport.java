@@ -1,7 +1,8 @@
 /*
 Group Member: Shanissee Lee
 Class: EFTReport.java
-Description: Holds attributes for EFT Report
+Description: Holds attributes and methods for EFT Report
+Status: Incomplete
 */
 
 public class EFTReport {

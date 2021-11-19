@@ -1,8 +1,19 @@
+/*
+Group Member: William Jefferson
+Class: ProviderMenu.java
+Description: Display terminal prompts for Provider
+Status:
+*/
+
+//import statements
 import java.io.Console;
 import java.util.Arrays;
 import java.util.List;
 
+//method for main functionality
 public class ProviderMenu {
+
+    //method to display prompts to terminal
     public static void prompt() {
         String selection = "";
         while (!selection.equals("4")) {
@@ -20,6 +31,7 @@ public class ProviderMenu {
         }
     }
 
+    //method to select options from the terminal
     public static String selectOption(String prompt) {
 
         Console console = System.console();

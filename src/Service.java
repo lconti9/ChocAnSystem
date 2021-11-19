@@ -1,3 +1,8 @@
+/*
+Group Member: Caroline Johnson
+Class: Service.java
+Description: Holds attributes and get/set methods for Service
+*/
 
 public class Service {
 

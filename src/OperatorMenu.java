@@ -1,8 +1,19 @@
+/*
+Group Member: Jacob Aid
+Class: OperatorMenu.java
+Description: Display terminal prompts for Operator
+Status:
+*/
+
+//import statements
 import java.io.Console;
 import java.util.Arrays;
 import java.util.List;
 
+//method for main functionality
 public class OperatorMenu {
+
+    //method to display prompts to terminal
     public static void prompt() {
         String selection = "";
         while (!selection.equals("4")) {
@@ -21,6 +32,7 @@ public class OperatorMenu {
         }
     }
 
+    //method to select options from the terminal
     public static String selectOption(String prompt) {
 
         Console console = System.console();
@@ -32,6 +44,7 @@ public class OperatorMenu {
         return selection;
     }
 
+    //method to show error statement
     private static void displayError() {
         System.out.println("!!Invalid Input!!\n");
     }
