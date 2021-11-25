@@ -1,3 +1,9 @@
+/*
+Group Member: Caroline Johnson
+Class: Member.java
+Description: Holds attributes and get/set methods for Member
+Status: Complete
+*/
 
 public class Member {
 

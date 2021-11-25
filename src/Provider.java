@@ -1,4 +1,9 @@
-
+/*
+Group Member: Caroline Johnson
+Class: Provider.java
+Description: Holds attributes and get/set methods for Provider
+Status: Complete
+*/
 public class Provider {
 
     // private variables to hold provider data
