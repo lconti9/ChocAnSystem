@@ -1,6 +1,4 @@
 import java.io.Console;
-import java.util.Arrays;
-import java.util.List;
 
 public class OperatorMenu {
     public static void prompt() {
