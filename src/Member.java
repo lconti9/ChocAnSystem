@@ -1,3 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 /*
 Group Member: Caroline Johnson
 Class: Member.java
@@ -25,6 +31,74 @@ public class Member {
         memberAddressCity = null;
         memberAddressZipCode = 0;
         memberAddressState = null;
+    }
+
+    public void saveToFile() throws IOException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
+                + Integer.toString(this.memberNumber) + ".txt";
+        try {
+            File myObj = new File(filename);
+            myObj.createNewFile();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        FileWriter fWriter = new FileWriter(filename);
+        String fileString = this.memberName + "," + Integer.toString(this.memberNumber) + "," + this.memberStatus + ","
+                + this.memberAddressStreet + "," + this.memberAddressCity + ","
+                + Integer.toString(this.memberAddressZipCode) + "," + this.memberAddressState;
+        fWriter.write(fileString);
+        fWriter.close();
+    }
+
+    public void openFromFile() throws FileNotFoundException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
+                + Integer.toString(this.memberNumber) + ".txt";
+        if (checkMemberExistence()) {
+            File myObj = new File(filename);
+            Scanner myReader = new Scanner(myObj);
+            String data = myReader.nextLine();
+            myReader.close();
+            String[] info = data.split(",");
+            this.setMemberName(info[0]);
+            this.setMemberNumber(Integer.parseInt(info[1]));
+            this.setMemberStatus(info[2]);
+            this.setMemberAddressStreet(info[3]);
+            this.setMemberAddressCity(info[4]);
+            this.setMemberAddressZipCode(Integer.parseInt(info[5]));
+            this.setMemberAddressState(info[6]);
+
+        }
+        return;
+    }
+
+    public void deleteMemberFile() {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
+                + Integer.toString(this.memberNumber) + ".txt";
+        if (checkMemberExistence()) {
+            File providerFile = new File(filename);
+            providerFile.delete();
+        }
+        return;
+    }
+
+    public boolean checkMemberExistence() {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
+                + Integer.toString(this.memberNumber) + ".txt";
+        try {
+            File myObj = new File(filename);
+            if (myObj.createNewFile()) {
+                myObj.delete();
+                return false;
+            } else {
+                return true;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return false;
+        }
     }
 
     // method to get name

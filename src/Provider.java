@@ -1,3 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 /*
 Group Member: Caroline Johnson
 Class: Provider.java
@@ -15,13 +21,80 @@ public class Provider {
     private String providerAddressState;
 
     // initialize the variables to null
-    public Provider() {
+    public Provider(int number) {
         providerName = null;
-        providerNumber = 0;
+        providerNumber = number;
         providerAddressStreet = null;
         providerAddressCity = null;
         providerAddressZipCode = 0;
         providerAddressState = null;
+    }
+
+    public void saveToFile() throws IOException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
+                + Integer.toString(this.providerNumber) + ".txt";
+        try {
+            File myObj = new File(filename);
+            myObj.createNewFile();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        FileWriter fWriter = new FileWriter(filename);
+        String fileString = this.providerName + "," + Integer.toString(this.providerNumber) + ","
+                + this.providerAddressStreet + "," + this.providerAddressCity + ","
+                + Integer.toString(this.providerAddressZipCode) + "," + this.providerAddressState;
+        fWriter.write(fileString);
+        fWriter.close();
+    }
+
+    public void openFromFile() throws FileNotFoundException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
+                + Integer.toString(this.providerNumber) + ".txt";
+        if (checkProviderExistence()) {
+            File myObj = new File(filename);
+            Scanner myReader = new Scanner(myObj);
+            String data = myReader.nextLine();
+            myReader.close();
+            String[] info = data.split(",");
+            this.setProviderName(info[0]);
+            this.setProviderNumber(Integer.parseInt(info[1]));
+            this.setProviderAddressStreet(info[2]);
+            this.setProviderAddressCity(info[3]);
+            this.setProviderAddressZipCode(Integer.parseInt(info[4]));
+            this.setProviderAddressState(info[5]);
+
+        }
+        return;
+    }
+
+    public void deleteProviderFile() {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
+                + Integer.toString(this.providerNumber) + ".txt";
+        if (checkProviderExistence()) {
+            File providerFile = new File(filename);
+            providerFile.delete();
+        }
+        return;
+    }
+
+    public boolean checkProviderExistence() {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
+                + Integer.toString(this.providerNumber) + ".txt";
+        try {
+            File myObj = new File(filename);
+            if (myObj.createNewFile()) {
+                myObj.delete();
+                return false;
+            } else {
+                return true;
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return false;
+        }
     }
 
     // method to get name
