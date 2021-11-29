@@ -19,21 +19,21 @@ public class ChocAn {
             System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");
             userType = console.readLine();
             switch (userType) {
-            case "1":
-                System.out.println("----------------------------------------------------------\n");
-                ProviderMenu.prompt();
-                break;
-            case "2":
-                System.out.println("----------------------------------------------------------\n");
-                // ManagerMenu.prompt();
-            case "3":
-                System.out.println("----------------------------------------------------------\n");
-                OperatorMenu.prompt();
-                break;
-            case "4":
-                break;
-            default:
-                System.out.println("\n!!Invalid Input!!\n");
+                case "1":
+                    System.out.println("----------------------------------------------------------\n");
+                    ProviderMenu.prompt();
+                    break;
+                case "2":
+                    System.out.println("----------------------------------------------------------\n");
+                    // ManagerMenu.prompt();
+                case "3":
+                    System.out.println("----------------------------------------------------------\n");
+                    OperatorMenu.prompt();
+                    break;
+                case "4":
+                    break;
+                default:
+                    System.out.println("\n!!Invalid Input!!\n");
             }
             System.out.println("----------------------------------------------------------\n");
         }

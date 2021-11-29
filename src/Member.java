@@ -34,33 +34,52 @@ public class Member {
     }
 
     public void saveToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
-                + Integer.toString(this.memberNumber) + ".txt";
-        try {
-            File myObj = new File(filename);
-            myObj.createNewFile();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+        String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String filestring = "";
+        if (checkMemberExistence()) {
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                if (line.split(",")[1].equals(Integer.toString(this.memberNumber))) {
+                    filestring = filestring.concat(this.memberName + "," + Integer.toString(this.memberNumber) + ","
+                            + this.memberStatus + ","
+                            + this.memberAddressStreet + "," + this.memberAddressCity + ","
+                            + Integer.toString(this.memberAddressZipCode) + "," + this.memberAddressState + "\n");
+                } else {
+                    filestring = filestring.concat(line + "\n");
+                }
+            }
 
-        FileWriter fWriter = new FileWriter(filename);
-        String fileString = this.memberName + "," + Integer.toString(this.memberNumber) + "," + this.memberStatus + ","
-                + this.memberAddressStreet + "," + this.memberAddressCity + ","
-                + Integer.toString(this.memberAddressZipCode) + "," + this.memberAddressState;
-        fWriter.write(fileString);
-        fWriter.close();
+        } else {
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                filestring = filestring.concat(line + "\n");
+
+            }
+            filestring = filestring
+                    .concat(this.memberName + "," + Integer.toString(this.memberNumber) + "," + this.memberStatus + ","
+                            + this.memberAddressStreet + "," + this.memberAddressCity + "," +
+                            Integer.toString(this.memberAddressZipCode) + "," + this.memberAddressState);
+        }
+        FileWriter writer = new FileWriter(filename);
+        writer.write(filestring);
+        writer.close();
+        reader.close();
+        return;
     }
 
     public void openFromFile() throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
-                + Integer.toString(this.memberNumber) + ".txt";
+        String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
         if (checkMemberExistence()) {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
-            String data = myReader.nextLine();
+            String line = myReader.nextLine();
+            while (!line.split(",")[1].equals(Integer.toString(this.memberNumber))) {
+                line = myReader.nextLine();
+            }
             myReader.close();
-            String[] info = data.split(",");
+            String[] info = line.split(",");
             this.setMemberName(info[0]);
             this.setMemberNumber(Integer.parseInt(info[1]));
             this.setMemberStatus(info[2]);
@@ -68,37 +87,45 @@ public class Member {
             this.setMemberAddressCity(info[4]);
             this.setMemberAddressZipCode(Integer.parseInt(info[5]));
             this.setMemberAddressState(info[6]);
-
         }
         return;
     }
 
-    public void deleteMemberFile() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
-                + Integer.toString(this.memberNumber) + ".txt";
+    public void deleteMemberFile() throws IOException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String filestring = "";
         if (checkMemberExistence()) {
-            File providerFile = new File(filename);
-            providerFile.delete();
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                if (line.split(",")[1].equals(Integer.toString(this.memberNumber))) {
+                    continue;
+                } else {
+                    filestring = filestring.concat(line + "\n");
+                }
+            }
         }
+        FileWriter writer = new FileWriter(filename);
+        writer.write(filestring);
+        reader.close();
+        writer.close();
         return;
     }
 
-    public boolean checkMemberExistence() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Member"
-                + Integer.toString(this.memberNumber) + ".txt";
-        try {
-            File myObj = new File(filename);
-            if (myObj.createNewFile()) {
-                myObj.delete();
-                return false;
-            } else {
+    public boolean checkMemberExistence() throws FileNotFoundException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
+        File memberlist = new File(filename);
+        Scanner reader = new Scanner(memberlist);
+        while (reader.hasNextLine()) {
+            String member = reader.nextLine();
+            if (member.split(",")[1].equals(Integer.toString(this.memberNumber))) {
+                reader.close();
                 return true;
             }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            return false;
         }
+        reader.close();
+        return false;
     }
 
     // method to get name

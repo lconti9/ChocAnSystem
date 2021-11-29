@@ -75,7 +75,7 @@ public class OperatorController {
     }
 
     // method to remove member
-    public static void removeMember() {
+    public static void removeMember() throws FileNotFoundException, IOException {
         System.out.println("Enter Member Number (must be 9 digits long):");
         Console console = System.console();
 
@@ -127,53 +127,54 @@ public class OperatorController {
                     "Please select what you wish to update:\n1. Change Member Name\n2. Change Member Status\n3. Change Member Street\n4. Change Member City\n5. Change Member Zip\n6. Change Member State\n7. Save and Exit");
             option = console.readLine();
             switch (option) {
-            case "1":
-                System.out.println("Enter new Member Name (Old: " + member.getMemberName() + "):");
-                member.setMemberName(console.readLine());
-                break;
-            case "2":
-                System.out.println(
-                        "Enter new Member Status (Old: " + member.getMemberStatus() + "):\n1. Active\n2. Suspended");
-                String status = console.readLine();
-                while (!status.equals("1") && !status.equals("2")) {
-                    System.out.println("!!Invalid Input!!\nEnter Member Status:\n1. Active\n2. Suspended");
-                    status = console.readLine();
-                }
-                member.setMemberStatus(status);
-                break;
-            case "3":
-                System.out.println("Enter new Member Street (Old: " + member.getMemberAddressStreet() + "):");
-                member.setMemberAddressStreet(console.readLine());
-                break;
-            case "4":
-                System.out.println("Enter new Member City (Old: " + member.getMemberAddressCity() + "):");
-                member.setMemberAddressCity(console.readLine());
-                break;
-            case "5":
-                System.out.println(
-                        "Enter new Member Zip (Old: " + Integer.toString(member.getMemberAddressZipCode()) + "):");
-                String memberZip = console.readLine();
-                while (memberZip.length() != 5 || !isNumeric(memberZip)) {
-                    System.out.println("!!Invalid Input!!\nEnter Member Zip Code:");
-                    memberZip = console.readLine();
-                }
-                member.setMemberAddressZipCode(Integer.parseInt(memberZip));
-                break;
-            case "6":
-                System.out.println("Enter new Member State (Old: " + member.getMemberAddressState() + "):");
-                member.setMemberAddressState(console.readLine());
-                break;
-            case "7":
-                break;
-            default:
-                System.out.println("\n!!Invalid Input!!\n");
+                case "1":
+                    System.out.println("Enter new Member Name (Old: " + member.getMemberName() + "):");
+                    member.setMemberName(console.readLine());
+                    break;
+                case "2":
+                    System.out.println(
+                            "Enter new Member Status (Old: " + member.getMemberStatus()
+                                    + "):\n1. Active\n2. Suspended");
+                    String status = console.readLine();
+                    while (!status.equals("1") && !status.equals("2")) {
+                        System.out.println("!!Invalid Input!!\nEnter Member Status:\n1. Active\n2. Suspended");
+                        status = console.readLine();
+                    }
+                    member.setMemberStatus(status);
+                    break;
+                case "3":
+                    System.out.println("Enter new Member Street (Old: " + member.getMemberAddressStreet() + "):");
+                    member.setMemberAddressStreet(console.readLine());
+                    break;
+                case "4":
+                    System.out.println("Enter new Member City (Old: " + member.getMemberAddressCity() + "):");
+                    member.setMemberAddressCity(console.readLine());
+                    break;
+                case "5":
+                    System.out.println(
+                            "Enter new Member Zip (Old: " + Integer.toString(member.getMemberAddressZipCode()) + "):");
+                    String memberZip = console.readLine();
+                    while (memberZip.length() != 5 || !isNumeric(memberZip)) {
+                        System.out.println("!!Invalid Input!!\nEnter Member Zip Code:");
+                        memberZip = console.readLine();
+                    }
+                    member.setMemberAddressZipCode(Integer.parseInt(memberZip));
+                    break;
+                case "6":
+                    System.out.println("Enter new Member State (Old: " + member.getMemberAddressState() + "):");
+                    member.setMemberAddressState(console.readLine());
+                    break;
+                case "7":
+                    break;
+                default:
+                    System.out.println("\n!!Invalid Input!!\n");
             }
         }
         member.saveToFile();
     }
 
     // method to check if member exists
-    public static void checkMemberExists() {
+    public static void checkMemberExists() throws FileNotFoundException {
         System.out.println("Enter Member Number (must be 9 digits long):");
         Console console = System.console();
 
@@ -189,8 +190,10 @@ public class OperatorController {
         Member member = new Member(memberNumber);
 
         if (member.checkMemberExistence()) {
+            member.openFromFile();
+            String memberStatus = member.getMemberStatus().equals("1") ? "Active" : "Suspended";
             System.out
-                    .println("Member does exist: " + member.getMemberName() + " (" + member.getMemberStatus() + ")\n");
+                    .println("Member does exist: " + member.getMemberName() + " (" + memberStatus + ")\n");
         } else {
             System.out.println("Member does not exist\n");
         }
@@ -244,7 +247,7 @@ public class OperatorController {
     }
 
     // method to remove provider
-    public static void removeProvider() {
+    public static void removeProvider() throws FileNotFoundException, IOException {
         System.out.println("Enter Provider Number (must be 9 digits long):");
         Console console = System.console();
 
@@ -296,35 +299,35 @@ public class OperatorController {
                     "Please select what you wish to update:\n1. Change Provider Name\n2. Change Provider Street\n3. Change Provider City\n4. Change Provider Zip\n5. Change Provider State\n6. Save and Exit");
             option = console.readLine();
             switch (option) {
-            case "1":
-                System.out.println("Enter new Provider Name (Old: " + provider.getProviderName() + "):");
-                provider.setProviderName(console.readLine());
-                break;
-            case "2":
-                System.out.println("Enter new Provider Street (Old: " + provider.getProviderAddressStreet() + "):");
-                provider.setProviderAddressStreet(console.readLine());
-                break;
-            case "3":
-                System.out.println("Enter new Provider City (Old: " + provider.getProviderAddressCity() + "):");
-                provider.setProviderAddressCity(console.readLine());
-                break;
-            case "4":
-                System.out.println("Enter new Provider Zip (Old: " + provider.getProviderAddressZipCode() + "):");
-                String providerZip = console.readLine();
-                while (providerZip.length() != 5 || !isNumeric(providerZip)) {
-                    System.out.println("!!Invalid Input!!\nEnter Provider Zip Code:");
-                    providerZip = console.readLine();
-                }
-                provider.setProviderAddressZipCode(Integer.parseInt(providerZip));
-                break;
-            case "5":
-                System.out.println("Enter new Provider State (Old: " + provider.getProviderAddressState() + "):");
-                provider.setProviderAddressState(console.readLine());
-                break;
-            case "6":
-                break;
-            default:
-                System.out.println("\n!!Invalid Input!!\n");
+                case "1":
+                    System.out.println("Enter new Provider Name (Old: " + provider.getProviderName() + "):");
+                    provider.setProviderName(console.readLine());
+                    break;
+                case "2":
+                    System.out.println("Enter new Provider Street (Old: " + provider.getProviderAddressStreet() + "):");
+                    provider.setProviderAddressStreet(console.readLine());
+                    break;
+                case "3":
+                    System.out.println("Enter new Provider City (Old: " + provider.getProviderAddressCity() + "):");
+                    provider.setProviderAddressCity(console.readLine());
+                    break;
+                case "4":
+                    System.out.println("Enter new Provider Zip (Old: " + provider.getProviderAddressZipCode() + "):");
+                    String providerZip = console.readLine();
+                    while (providerZip.length() != 5 || !isNumeric(providerZip)) {
+                        System.out.println("!!Invalid Input!!\nEnter Provider Zip Code:");
+                        providerZip = console.readLine();
+                    }
+                    provider.setProviderAddressZipCode(Integer.parseInt(providerZip));
+                    break;
+                case "5":
+                    System.out.println("Enter new Provider State (Old: " + provider.getProviderAddressState() + "):");
+                    provider.setProviderAddressState(console.readLine());
+                    break;
+                case "6":
+                    break;
+                default:
+                    System.out.println("\n!!Invalid Input!!\n");
             }
         }
         provider.saveToFile();

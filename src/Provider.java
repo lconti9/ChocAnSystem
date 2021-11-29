@@ -31,70 +31,96 @@ public class Provider {
     }
 
     public void saveToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
-                + Integer.toString(this.providerNumber) + ".txt";
-        try {
-            File myObj = new File(filename);
-            myObj.createNewFile();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String filestring = "";
+        if (checkProviderExistence()) {
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                if (line.split(",")[1].equals(Integer.toString(this.providerNumber))) {
+                    filestring = filestring.concat(this.providerName + "," + Integer.toString(this.providerNumber) + ","
+                            + this.providerAddressStreet + "," + this.providerAddressCity + ","
+                            + Integer.toString(this.providerAddressZipCode) + "," + this.providerAddressState + "\n");
+                } else {
+                    filestring = filestring.concat(line + "\n");
+                }
+            }
 
-        FileWriter fWriter = new FileWriter(filename);
-        String fileString = this.providerName + "," + Integer.toString(this.providerNumber) + ","
-                + this.providerAddressStreet + "," + this.providerAddressCity + ","
-                + Integer.toString(this.providerAddressZipCode) + "," + this.providerAddressState;
-        fWriter.write(fileString);
-        fWriter.close();
+        } else {
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                filestring = filestring.concat(line + "\n");
+
+            }
+            filestring = filestring.concat(this.providerName + "," + Integer.toString(this.providerNumber) + ","
+                    + this.providerAddressStreet + "," + this.providerAddressCity + "," +
+                    Integer.toString(this.providerAddressZipCode) + "," + this.providerAddressState);
+        }
+        FileWriter writer = new FileWriter(filename);
+        writer.write(filestring);
+        writer.close();
+        reader.close();
+        return;
     }
 
     public void openFromFile() throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
-                + Integer.toString(this.providerNumber) + ".txt";
+        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
         if (checkProviderExistence()) {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
-            String data = myReader.nextLine();
+            String line = myReader.nextLine();
+            while (!line.split(",")[1].equals(Integer.toString(this.providerNumber))) {
+                line = myReader.nextLine();
+            }
             myReader.close();
-            String[] info = data.split(",");
+            String[] info = line.split(",");
             this.setProviderName(info[0]);
             this.setProviderNumber(Integer.parseInt(info[1]));
             this.setProviderAddressStreet(info[2]);
             this.setProviderAddressCity(info[3]);
             this.setProviderAddressZipCode(Integer.parseInt(info[4]));
             this.setProviderAddressState(info[5]);
-
         }
         return;
     }
 
-    public void deleteProviderFile() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
-                + Integer.toString(this.providerNumber) + ".txt";
+    public void deleteProviderFile() throws IOException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String filestring = "";
         if (checkProviderExistence()) {
-            File providerFile = new File(filename);
-            providerFile.delete();
+            while (reader.hasNextLine()) {
+                String line = reader.nextLine();
+                if (line.split(",")[1].equals(Integer.toString(this.providerNumber))) {
+                    continue;
+                } else {
+                    filestring = filestring.concat(line + "\n");
+                }
+            }
         }
+        FileWriter writer = new FileWriter(filename);
+        writer.write(filestring);
+        reader.close();
+        writer.close();
         return;
     }
 
-    public boolean checkProviderExistence() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "Provider"
-                + Integer.toString(this.providerNumber) + ".txt";
-        try {
-            File myObj = new File(filename);
-            if (myObj.createNewFile()) {
-                myObj.delete();
-                return false;
-            } else {
+    public boolean checkProviderExistence() throws FileNotFoundException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        File providerlist = new File(filename);
+        Scanner reader = new Scanner(providerlist);
+        while (reader.hasNextLine()) {
+            String provider = reader.nextLine();
+            if (provider.split(",")[1].equals(Integer.toString(this.providerNumber))) {
+                reader.close();
                 return true;
             }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            return false;
         }
+        reader.close();
+        return false;
+
     }
 
     // method to get name

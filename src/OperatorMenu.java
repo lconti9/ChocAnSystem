@@ -19,33 +19,34 @@ public class OperatorMenu {
             selection = selectOption(
                     "Please select the number of the option you wish to select:\n1. Add Member\n2. Remove Member\n3. Update Member\n4. Check Member Exists\n5. Add Provider\n6. Remove Provider\n7. Update Provider\n8. Check Provder Exists\n9. Exit");
             switch (selection) {
-            case "1":
-                OperatorController.addMember();
-                break;
-            case "2":
-                OperatorController.removeMember();
-                break;
-            case "3":
-                OperatorController.updateMember();
-                break;
-            case "4":
-                OperatorController.checkMemberExists();
-                break;
-            case "5":
-                OperatorController.addProvider();
-                break;
-            case "6":
-                OperatorController.removeProvider();
-                break;
-            case "7":
-                OperatorController.updateProvider();
-                break;
-            case "8":
-                OperatorController.checkProviderExists();
-                break;
-
-            default:
-                displayError();
+                case "1":
+                    OperatorController.addMember();
+                    break;
+                case "2":
+                    OperatorController.removeMember();
+                    break;
+                case "3":
+                    OperatorController.updateMember();
+                    break;
+                case "4":
+                    OperatorController.checkMemberExists();
+                    break;
+                case "5":
+                    OperatorController.addProvider();
+                    break;
+                case "6":
+                    OperatorController.removeProvider();
+                    break;
+                case "7":
+                    OperatorController.updateProvider();
+                    break;
+                case "8":
+                    OperatorController.checkProviderExists();
+                    break;
+                case "9":
+                    break;
+                default:
+                    displayError();
             }
         }
     }

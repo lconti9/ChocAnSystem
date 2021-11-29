@@ -27,7 +27,8 @@ public class ServiceRecord {
 
     public void saveToFile() throws IOException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + ".txt";
+                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + "_"
+                + this.serviceDate + ".txt";
         try {
             File myObj = new File(filename);
             myObj.createNewFile();
@@ -46,8 +47,8 @@ public class ServiceRecord {
 
     public void openFromFile() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + ".txt";
-        if (checkProviderExistence()) {
+                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
+        if (checkServiceRecordExistence()) {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
             String data = myReader.nextLine();
@@ -65,19 +66,19 @@ public class ServiceRecord {
         return;
     }
 
-    public void deleteProviderFile() {
+    public void deleteServiceRecordFile() {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + ".txt";
-        if (checkProviderExistence()) {
-            File providerFile = new File(filename);
-            providerFile.delete();
+                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
+        if (checkServiceRecordExistence()) {
+            File serviceRecordFile = new File(filename);
+            serviceRecordFile.delete();
         }
         return;
     }
 
-    public boolean checkProviderExistence() {
+    public boolean checkServiceRecordExistence() {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + ".txt";
+                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
         try {
             File myObj = new File(filename);
             if (myObj.createNewFile()) {
