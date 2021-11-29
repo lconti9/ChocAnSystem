@@ -2,7 +2,6 @@
 Group Member: William Jefferson
 Class: ProviderMenu.java
 Description: Display terminal prompts for Provider
-Status:
 */
 
 //import statements
@@ -70,6 +69,7 @@ public class ProviderMenu {
         return selection;
     }
 
+    //method to prompt card swipe and read member number
     public static void swipeCard() throws NumberFormatException, FileNotFoundException {
         System.out.println("Swipe member card now: ");
         Console console = System.console();
@@ -81,22 +81,27 @@ public class ProviderMenu {
         ProviderController.recieveCardID(Integer.parseInt(memberNumString));
     }
 
+    //method to display member is valid
     public static void displayValid() {
         System.out.println("\nValid Member\n");
     }
 
+    //method to display member is invalid
     public static void displayInvalid() {
         System.out.println("\nInalid Member\n");
     }
 
+    //method to display member is suspended
     public static void displaySuspended() {
         System.out.println("\nSuspended Member\n");
     }
 
+    //method to display fee
     public static void displayFee(double fee) {
         System.out.println("Fee: $" + fee);
     }
 
+    //method to check if provider exists
     public static boolean promptForVerification(String providerNumberString) throws FileNotFoundException {
         int providerNumber = Integer.parseInt(providerNumberString);
 
@@ -111,6 +116,7 @@ public class ProviderMenu {
         }
     }
 
+    //method to acquire date of service
     public static String keyInDate() {
         Console console = System.console();
         Pattern pattern = Pattern.compile("^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$");

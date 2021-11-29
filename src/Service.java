@@ -4,6 +4,7 @@ Class: Service.java
 Description: Holds attributes and get/set methods for Service
 */
 
+//method for main functionality
 public class Service {
 
     // private variables to hold service data

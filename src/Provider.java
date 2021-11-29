@@ -1,15 +1,18 @@
+/*
+Group Member: Caroline Johnson
+Class: Provider.java
+Description: Holds attributes and save, open, 
+delete, get, set methods for Provider
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-/*
-Group Member: Caroline Johnson
-Class: Provider.java
-Description: Holds attributes and get/set methods for Provider
-Status: Complete
-*/
+//method for main functionality
 public class Provider {
 
     // private variables to hold provider data
@@ -30,6 +33,7 @@ public class Provider {
         providerAddressState = null;
     }
 
+    //method to save provider data to file
     public void saveToFile() throws IOException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
         File file = new File(filename);
@@ -64,6 +68,7 @@ public class Provider {
         return;
     }
 
+    //method to open provider data from file
     public void openFromFile() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
         if (checkProviderExistence()) {
@@ -85,6 +90,7 @@ public class Provider {
         return;
     }
 
+    //method to delete provider data from file
     public void deleteProviderFile() throws IOException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
         File file = new File(filename);

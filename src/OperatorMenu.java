@@ -2,7 +2,6 @@
 Group Member: Jacob Aid
 Class: OperatorMenu.java
 Description: Display terminal prompts for Operator
-Status:
 */
 
 //import statements

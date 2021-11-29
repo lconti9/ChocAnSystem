@@ -1,16 +1,17 @@
+/*
+Group Member: Caroline Johnson
+Class: Member.java
+Description: Holds attributes and get/set methods for Member
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-/*
-Group Member: Caroline Johnson
-Class: Member.java
-Description: Holds attributes and get/set methods for Member
-Status: Complete
-*/
-
+//method for main functionality
 public class Member {
 
     // private variables to hold member data
@@ -33,6 +34,7 @@ public class Member {
         memberAddressState = null;
     }
 
+    //method to save member data to file
     public void saveToFile() throws IOException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
         File file = new File(filename);
@@ -69,6 +71,7 @@ public class Member {
         return;
     }
 
+    //method to open member data from file
     public void openFromFile() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
         if (checkMemberExistence()) {
@@ -91,6 +94,7 @@ public class Member {
         return;
     }
 
+    //method to delete member data from file
     public void deleteMemberFile() throws IOException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
         File file = new File(filename);
@@ -113,6 +117,7 @@ public class Member {
         return;
     }
 
+    //method to check if member exists
     public boolean checkMemberExistence() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "memberlist.txt";
         File memberlist = new File(filename);

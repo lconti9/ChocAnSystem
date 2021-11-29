@@ -1,14 +1,15 @@
-import java.io.Console;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 /*
 Group Member: Jacob Aid
 Class: OperatorController.java
 Description: Holds methods for Operator
-Status: Incomplete
 */
 
+//import statements
+import java.io.Console;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+//method for main functionality
 public class OperatorController {
 
     private static boolean isNumeric(String string) {

@@ -1,10 +1,19 @@
+/*
+Group Member: TJ Trueblood
+Class: ServiceRecord.java
+Description: Holds data and methods relating to service record
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+//method for main functionality
 public class ServiceRecord {
+
     // private variables to hold member data
     private String currentDate;
     private String currentTime;
@@ -25,6 +34,7 @@ public class ServiceRecord {
         comments = null;
     }
 
+    //method to save service record to file
     public void saveToFile() throws IOException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + "_"
@@ -45,6 +55,7 @@ public class ServiceRecord {
         fWriter.close();
     }
 
+    //method to open service record from file
     public void openFromFile() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
@@ -66,6 +77,7 @@ public class ServiceRecord {
         return;
     }
 
+    //method to delete service record from file
     public void deleteServiceRecordFile() {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
@@ -76,6 +88,7 @@ public class ServiceRecord {
         return;
     }
 
+    //method to check if service record exists
     public boolean checkServiceRecordExistence() {
         String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
