@@ -36,7 +36,12 @@ public class SummaryReport {
     public void writeToFile() throws IOException {
     	String filename = ".\\src" + File.separator + "reports" + File.separator + "summary_report.txt";
     	String filestring = "";
-    	filestring = filestring.concat
+    	for (Provider provider : providerList) {
+    		filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + 
+    		"Number of Consultations: " + provider.getConsultations() + "\n" + 
+    		"Total Fee: " + provider.getProviderSumFees(this.getProviderNumber()));
+    	}
+    	
     }
     
     public int sumGrandTotal() {
