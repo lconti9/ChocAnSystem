@@ -1,15 +1,19 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
 
 /*
 Group Member: Jacob Aid
 Class: OperatorController.java
 Description: Holds methods for Operator
-Status: Incomplete
 */
 
+//import statements
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
+//method for main functionality
 public class OperatorController {
+
+    Scanner in = new Scanner(System.in);
 
     private static boolean isNumeric(String string) {
         try {
@@ -376,4 +380,5 @@ public class OperatorController {
 
         return;
     }
+
 }

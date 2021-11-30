@@ -1,3 +1,10 @@
+/*
+Group Member: William Jefferson
+Class: ProviderController.java
+Description: Holds methods for provider
+*/
+
+//import statements
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -5,7 +12,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+//method for main functionality
 public class ProviderController {
+
+    // method to validate member
     public static boolean validateMember(int memberNumber) throws FileNotFoundException {
         Member member = new Member(memberNumber);
         if (member.checkMemberExistence()) {
@@ -22,6 +32,7 @@ public class ProviderController {
         return false;
     }
 
+    // method to bill chocan member
     public static void billChocAn(int providerNumber) throws IOException {
         System.out.println("\nSwipe member card now: ");
         Scanner console = new Scanner(System.in); // Create a Scanner object
@@ -78,14 +89,17 @@ public class ProviderController {
         }
     }
 
+    // method to request provider directory
     public static void requestProviderDirectory() throws FileNotFoundException {
         requestProviderEmail();
     }
 
+    // method to receive member card ID
     public static void recieveCardID(int memberNumber) throws FileNotFoundException {
         validateMember(memberNumber);
     }
 
+    // method to request provider email
     public static void requestProviderEmail() {
         Scanner console = new Scanner(System.in); // Create a Scanner object
         System.out.println("\nEnter Provider Email: ");

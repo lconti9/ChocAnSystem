@@ -1,8 +1,7 @@
 /*
 Group Member: TJ Trueblood
 Class: ProviderDirectory.java
-Description: 
-Status:
+Description: Holds methods relating to provider directory
 */
 
 //import statements
@@ -46,8 +45,9 @@ public class ProviderDirectory {
         return -1;
     }
 
+    //method to get provider directory
     public void getProviderDirectory() throws FileNotFoundException, IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "providerdirectory.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "providerdirectory.txt";
         File providerDirectory = new File(filename);
         providerDirectory.createNewFile();
         Scanner myReader = new Scanner(providerDirectory);

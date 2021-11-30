@@ -1,3 +1,10 @@
+/*
+Group Member: TJ Trueblood
+Class: ServiceRecord.java
+Description: Holds data and methods relating to service record
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -5,7 +12,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//method for main functionality
 public class ServiceRecord {
+
     // private variables to hold member data
     private String currentDate;
     private String currentTime;
@@ -65,6 +74,7 @@ public class ServiceRecord {
 
             }
         }
+        reader.close();
         return;
     }
 

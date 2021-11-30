@@ -2,7 +2,6 @@
 Group Member: Luca Conti
 Class: ChocAn.java
 Description: Main class for the ChocAn System
-Status: Incomplete
 */
 
 //import statements
