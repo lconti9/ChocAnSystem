@@ -8,7 +8,6 @@ import java.util.ArrayList;
 Group Provider: Shanissee Lee
 Class: ProviderReport.java
 Description: Holds attributes and methods for Provider Report
-Status: Incomplete
 */
 
 public class ProviderReport {
