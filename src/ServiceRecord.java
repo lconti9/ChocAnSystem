@@ -109,7 +109,7 @@ public class ServiceRecord {
         return srl;
     }
 
-    private static boolean weekApart(String serviceDate) {
+    public static boolean weekApart(String serviceDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         LocalDate serviceD = LocalDate.parse(serviceDate, formatter);
         LocalDate currD = LocalDate.now();
