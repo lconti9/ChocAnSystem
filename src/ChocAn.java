@@ -6,18 +6,17 @@ Status: Incomplete
 */
 
 //import statements
-import java.io.Console;
 import java.io.IOException;
+import java.util.Scanner;
 
 //method for main functionality
 public class ChocAn {
     public static void main(String args[]) throws IOException {
-        Console console = System.console();
-
+        Scanner console = new Scanner(System.in); // Create a Scanner object
         String userType = "";
         while (!userType.equals("4")) {
             System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");
-            userType = console.readLine();
+            userType = console.nextLine();
             switch (userType) {
                 case "1":
                     System.out.println("----------------------------------------------------------\n");
@@ -25,7 +24,8 @@ public class ChocAn {
                     break;
                 case "2":
                     System.out.println("----------------------------------------------------------\n");
-                    // ManagerMenu.prompt();
+                    ManagerMenu.prompt();
+                    break;
                 case "3":
                     System.out.println("----------------------------------------------------------\n");
                     OperatorMenu.prompt();
@@ -37,5 +37,6 @@ public class ChocAn {
             }
             System.out.println("----------------------------------------------------------\n");
         }
+        console.close();
     }
 }

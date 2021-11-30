@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ServiceRecord {
@@ -25,73 +26,46 @@ public class ServiceRecord {
         comments = null;
     }
 
-    public void saveToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + "_"
-                + this.serviceDate + ".txt";
-        try {
-            File myObj = new File(filename);
-            myObj.createNewFile();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+    public void writeServiceToFile() throws IOException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "serviceprovidedlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String filestring = "";
+        while (reader.hasNextLine()) {
+            String line = reader.nextLine();
+            filestring = filestring.concat(line + "\n");
         }
-
-        FileWriter fWriter = new FileWriter(filename);
-        String fileString = this.currentDate + "," + this.currentTime + "," + this.serviceDate + ","
-                + Integer.toString(this.providerNumber) + "," + Integer.toString(this.memberNumber) + ","
-                + Integer.toString(this.serviceCode) + "," + this.comments;
-        fWriter.write(fileString);
-        fWriter.close();
-    }
-
-    public void openFromFile() throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
-        if (checkServiceRecordExistence()) {
-            File myObj = new File(filename);
-            Scanner myReader = new Scanner(myObj);
-            String data = myReader.nextLine();
-            myReader.close();
-            String[] info = data.split(",");
-            this.setCurrentDate(info[0]);
-            this.setCurrentTime(info[1]);
-            this.setServiceDate(info[2]);
-            this.setProviderNumber(Integer.parseInt(info[3]));
-            this.setMemberNumber(Integer.parseInt(info[4]));
-            this.setServiceCode(Integer.parseInt(info[5]));
-            this.setComments(info[6]);
-
-        }
+        filestring = filestring
+                .concat(this.currentDate + "," + this.currentTime + "," + this.serviceDate + ","
+                        + Integer.toString(this.providerNumber) + "," + Integer.toString(this.memberNumber) + "," +
+                        Integer.toString(this.serviceCode) + "," + this.comments);
+        FileWriter writer = new FileWriter(filename);
+        writer.write(filestring);
+        writer.close();
+        reader.close();
         return;
+
     }
 
-    public void deleteServiceRecordFile() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
-        if (checkServiceRecordExistence()) {
-            File serviceRecordFile = new File(filename);
-            serviceRecordFile.delete();
-        }
-        return;
-    }
+    public static void searchMemberService(int memberNumber, ArrayList<ServiceRecord> serviceRecords)
+            throws FileNotFoundException {
+        String filename = ".\\src" + File.separator + "database" + File.separator + "serviceprovidedlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String line;
+        while (reader.hasNextLine()) {
+            line = reader.nextLine();
+            if (line.split(",")[4].equals(Integer.toString(memberNumber))) {
+                String[] data = line.split(",");
+                ServiceRecord sr = new ServiceRecord();
+                sr.setServiceDate(data[2]);
+                sr.setProviderNumber(Integer.parseInt(data[3]));
+                sr.setServiceCode(Integer.parseInt(data[5]));
+                serviceRecords.add(sr);
 
-    public boolean checkServiceRecordExistence() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
-                + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
-        try {
-            File myObj = new File(filename);
-            if (myObj.createNewFile()) {
-                myObj.delete();
-                return false;
-            } else {
-                return true;
             }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            return false;
         }
+        return;
     }
 
     // method to get name

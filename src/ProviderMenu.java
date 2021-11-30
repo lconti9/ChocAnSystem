@@ -6,9 +6,9 @@ Status:
 */
 
 //import statements
-import java.io.Console;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 //method for main functionality
@@ -25,13 +25,13 @@ public class ProviderMenu {
 
     // method to display prompts to terminal
     public static void prompt() throws NumberFormatException, IOException {
-        Console console = System.console();
+        Scanner console = new Scanner(System.in); // Create a Scanner object
         System.out.println("Enter Provider Number:");
-        String providerNumberString = console.readLine();
+        String providerNumberString = console.nextLine();
 
         while (providerNumberString.length() != 9 || !isNumeric(providerNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter Provider Number (must be 9 digits long):");
-            providerNumberString = console.readLine();
+            providerNumberString = console.nextLine();
         }
 
         if (promptForVerification(providerNumberString)) {
@@ -56,29 +56,33 @@ public class ProviderMenu {
                 }
             }
         }
+        console.close();
     }
 
     // method to select options from the terminal
     public static String selectOption(String prompt) {
 
-        Console console = System.console();
+        Scanner console = new Scanner(System.in); // Create a Scanner object
 
         System.out.println(prompt);
 
-        String selection = console.readLine();
+        String selection = console.nextLine();
+
+        console.close();
 
         return selection;
     }
 
     public static void swipeCard() throws NumberFormatException, FileNotFoundException {
         System.out.println("Swipe member card now: ");
-        Console console = System.console();
-        String memberNumString = console.readLine();
+        Scanner console = new Scanner(System.in); // Create a Scanner object
+        String memberNumString = console.nextLine();
         while (!isNumeric(memberNumString)) {
             System.out.println("!!invalid Input!!\nSwipe member card now: ");
-            memberNumString = console.readLine();
+            memberNumString = console.nextLine();
         }
         ProviderController.recieveCardID(Integer.parseInt(memberNumString));
+        console.close();
     }
 
     public static void displayValid() {
@@ -112,14 +116,15 @@ public class ProviderMenu {
     }
 
     public static String keyInDate() {
-        Console console = System.console();
+        Scanner console = new Scanner(System.in); // Create a Scanner object
         Pattern pattern = Pattern.compile("^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$");
         System.out.println("Enter Date of Service (MM-DD-YYYY): ");
-        String serviceDate = console.readLine();
+        String serviceDate = console.nextLine();
         while (!pattern.matcher(serviceDate).matches()) {
             System.out.println("!!Invalid Input!!\nEnter Date of Service (MM-DD-YYYY): ");
-            serviceDate = console.readLine();
+            serviceDate = console.nextLine();
         }
+        console.close();
         return serviceDate;
     }
 }

@@ -6,8 +6,8 @@ Status:
 */
 
 //import statements
-import java.io.Console;
 import java.io.IOException;
+import java.util.Scanner;
 
 //method for main functionality
 public class OperatorMenu {
@@ -54,11 +54,13 @@ public class OperatorMenu {
     // method to select options from the terminal
     public static String selectOption(String prompt) {
 
-        Console console = System.console();
+        Scanner console = new Scanner(System.in); // Create a Scanner object
 
         System.out.println(prompt);
 
-        String selection = console.readLine();
+        String selection = console.nextLine();
+
+        console.close();
 
         return selection;
     }
