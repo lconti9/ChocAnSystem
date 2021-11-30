@@ -36,7 +36,7 @@ public class ServiceRecord {
 
     //method to save service record to file
     public void saveToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
+        String filename = ".\\src" + File.separator + "data" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + "_"
                 + this.serviceDate + ".txt";
         try {
@@ -57,7 +57,7 @@ public class ServiceRecord {
 
     //method to open service record from file
     public void openFromFile() throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
+        String filename = ".\\src" + File.separator + "data" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
         if (checkServiceRecordExistence()) {
             File myObj = new File(filename);
@@ -79,7 +79,7 @@ public class ServiceRecord {
 
     //method to delete service record from file
     public void deleteServiceRecordFile() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
+        String filename = ".\\src" + File.separator + "data" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
         if (checkServiceRecordExistence()) {
             File serviceRecordFile = new File(filename);
@@ -90,7 +90,7 @@ public class ServiceRecord {
 
     //method to check if service record exists
     public boolean checkServiceRecordExistence() {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "ServiceRecord"
+        String filename = ".\\src" + File.separator + "data" + File.separator + "ServiceRecord"
                 + Integer.toString(this.memberNumber) + "_" + Integer.toString(this.providerNumber) + ".txt";
         try {
             File myObj = new File(filename);

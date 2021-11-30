@@ -35,7 +35,7 @@ public class Provider {
 
     //method to save provider data to file
     public void saveToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         File file = new File(filename);
         Scanner reader = new Scanner(file);
         String filestring = "";
@@ -70,7 +70,7 @@ public class Provider {
 
     //method to open provider data from file
     public void openFromFile() throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         if (checkProviderExistence()) {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
@@ -92,7 +92,7 @@ public class Provider {
 
     //method to delete provider data from file
     public void deleteProviderFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         File file = new File(filename);
         Scanner reader = new Scanner(file);
         String filestring = "";
@@ -114,7 +114,7 @@ public class Provider {
     }
 
     public boolean checkProviderExistence() throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "providerlist.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         File providerlist = new File(filename);
         Scanner reader = new Scanner(providerlist);
         while (reader.hasNextLine()) {

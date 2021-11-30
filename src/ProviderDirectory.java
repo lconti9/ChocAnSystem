@@ -47,7 +47,7 @@ public class ProviderDirectory {
 
     //method to get provider directory
     public void getProviderDirectory() throws FileNotFoundException, IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "providerdirectory.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "providerdirectory.txt";
         File providerDirectory = new File(filename);
         providerDirectory.createNewFile();
         Scanner myReader = new Scanner(providerDirectory);
