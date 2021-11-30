@@ -8,9 +8,12 @@ Description: Holds methods for Operator
 import java.io.Console;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Scanner;
 
 //method for main functionality
 public class OperatorController {
+	
+	Scanner in = new Scanner(System.in);
 
     private static boolean isNumeric(String string) {
         try {
@@ -24,13 +27,12 @@ public class OperatorController {
     // method to add member
     public static void addMember() throws IOException {
         System.out.println("Enter new Member Number (must be 9 digits long):");
-        Console console = System.console();
 
-        String memberNumberString = console.readLine();
+        String memberNumberString = in.nextLine();
 
         while (memberNumberString.length() != 9 || !isNumeric(memberNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter new Member Number (must be 9 digits long):");
-            memberNumberString = console.readLine();
+            memberNumberString = in.nextLine();
         }
 
         int memberNumber = Integer.parseInt(memberNumberString);
@@ -42,32 +44,32 @@ public class OperatorController {
         }
 
         System.out.println("Enter Member Name:");
-        newMember.setMemberName(console.readLine());
+        newMember.setMemberName(in.nextLine());
 
         System.out.println("Enter Member Status:\n1. Active\n2. Suspended");
-        String status = console.readLine();
+        String status = in.nextLine();
         while (!status.equals("1") && !status.equals("2")) {
             System.out.println("!!Invalid Input!!\nEnter Member Status:\n1. Active\n2. Suspended");
-            status = console.readLine();
+            status = in.nextLine();
         }
         newMember.setMemberStatus(status);
 
         System.out.println("Enter Member Street Address:");
-        newMember.setMemberAddressStreet(console.readLine());
+        newMember.setMemberAddressStreet(in.nextLine());
 
         System.out.println("Enter Member City:");
-        newMember.setMemberAddressCity(console.readLine());
+        newMember.setMemberAddressCity(in.nextLine());
 
         System.out.println("Enter Member Zip:");
-        String memberZip = console.readLine();
+        String memberZip = in.nextLine();
         while (memberZip.length() != 5 || !isNumeric(memberZip)) {
             System.out.println("!!Invalid Input!!\nEnter Member Zip Code:");
-            memberZip = console.readLine();
+            memberZip = in.nextLine();
         }
         newMember.setMemberAddressZipCode(Integer.parseInt(memberZip));
 
         System.out.println("Enter Member State:");
-        newMember.setMemberAddressState(console.readLine());
+        newMember.setMemberAddressState(in.nextLine());
 
         newMember.saveToFile();
 
@@ -78,13 +80,12 @@ public class OperatorController {
     // method to remove member
     public static void removeMember() throws FileNotFoundException, IOException {
         System.out.println("Enter Member Number (must be 9 digits long):");
-        Console console = System.console();
 
-        String memberNumberString = console.readLine();
+        String memberNumberString = in.nextLine();
 
         while (memberNumberString.length() != 9 || !isNumeric(memberNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter new Member Number (must be 9 digits long):");
-            memberNumberString = console.readLine();
+            memberNumberString = in.nextLine();
         }
 
         int memberNumber = Integer.parseInt(memberNumberString);
@@ -102,13 +103,12 @@ public class OperatorController {
     // method to update member data
     public static void updateMember() throws IOException {
         System.out.println("Enter Member Number (must be 9 digits long):");
-        Console console = System.console();
 
-        String memberNumberString = console.readLine();
+        String memberNumberString = in.nextLine();
 
         while (memberNumberString.length() != 9 || !isNumeric(memberNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter Member Number (must be 9 digits long):");
-            memberNumberString = console.readLine();
+            memberNumberString = in.nextLine();
         }
 
         int memberNumber = Integer.parseInt(memberNumberString);
@@ -126,44 +126,44 @@ public class OperatorController {
         while (!option.equals("7")) {
             System.out.println(
                     "Please select what you wish to update:\n1. Change Member Name\n2. Change Member Status\n3. Change Member Street\n4. Change Member City\n5. Change Member Zip\n6. Change Member State\n7. Save and Exit");
-            option = console.readLine();
+            option = in.nextLine();
             switch (option) {
                 case "1":
                     System.out.println("Enter new Member Name (Old: " + member.getMemberName() + "):");
-                    member.setMemberName(console.readLine());
+                    member.setMemberName(in.nextLine());
                     break;
                 case "2":
                     System.out.println(
                             "Enter new Member Status (Old: " + member.getMemberStatus()
                                     + "):\n1. Active\n2. Suspended");
-                    String status = console.readLine();
+                    String status = in.nextLine();
                     while (!status.equals("1") && !status.equals("2")) {
                         System.out.println("!!Invalid Input!!\nEnter Member Status:\n1. Active\n2. Suspended");
-                        status = console.readLine();
+                        status = in.nextLine();
                     }
                     member.setMemberStatus(status);
                     break;
                 case "3":
                     System.out.println("Enter new Member Street (Old: " + member.getMemberAddressStreet() + "):");
-                    member.setMemberAddressStreet(console.readLine());
+                    member.setMemberAddressStreet(in.nextLine());
                     break;
                 case "4":
                     System.out.println("Enter new Member City (Old: " + member.getMemberAddressCity() + "):");
-                    member.setMemberAddressCity(console.readLine());
+                    member.setMemberAddressCity(in.nextLine());
                     break;
                 case "5":
                     System.out.println(
                             "Enter new Member Zip (Old: " + Integer.toString(member.getMemberAddressZipCode()) + "):");
-                    String memberZip = console.readLine();
+                    String memberZip = in.nextLine();
                     while (memberZip.length() != 5 || !isNumeric(memberZip)) {
                         System.out.println("!!Invalid Input!!\nEnter Member Zip Code:");
-                        memberZip = console.readLine();
+                        memberZip = in.nextLine();
                     }
                     member.setMemberAddressZipCode(Integer.parseInt(memberZip));
                     break;
                 case "6":
                     System.out.println("Enter new Member State (Old: " + member.getMemberAddressState() + "):");
-                    member.setMemberAddressState(console.readLine());
+                    member.setMemberAddressState(in.nextLine());
                     break;
                 case "7":
                     break;
@@ -179,11 +179,11 @@ public class OperatorController {
         System.out.println("Enter Member Number (must be 9 digits long):");
         Console console = System.console();
 
-        String memberNumberString = console.readLine();
+        String memberNumberString = in.nextLine();
 
         while (memberNumberString.length() != 9 || !isNumeric(memberNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter new Member Number (must be 9 digits long):");
-            memberNumberString = console.readLine();
+            memberNumberString = in.nextLine();
         }
 
         int memberNumber = Integer.parseInt(memberNumberString);
@@ -206,11 +206,11 @@ public class OperatorController {
         System.out.println("Enter new Provider Number (must be 9 digits long):");
         Console console = System.console();
 
-        String providerNumberString = console.readLine();
+        String providerNumberString = in.nextLine();
 
         while (providerNumberString.length() != 9 || !isNumeric(providerNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter new Provider Number (must be 9 digits long):");
-            providerNumberString = console.readLine();
+            providerNumberString = in.nextLine();
         }
 
         int providerNumber = Integer.parseInt(providerNumberString);
@@ -223,24 +223,24 @@ public class OperatorController {
         }
 
         System.out.println("Enter Provider Name:");
-        newProvider.setProviderName(console.readLine());
+        newProvider.setProviderName(in.nextLine());
 
         System.out.println("Enter Provider Street Address:");
-        newProvider.setProviderAddressStreet(console.readLine());
+        newProvider.setProviderAddressStreet(in.nextLine());
 
         System.out.println("Enter Provider City:");
-        newProvider.setProviderAddressCity(console.readLine());
+        newProvider.setProviderAddressCity(in.nextLine());
 
         System.out.println("Enter Provider Zip:");
-        String providerZip = console.readLine();
+        String providerZip = in.nextLine();
         while (providerZip.length() != 5 || !isNumeric(providerZip)) {
             System.out.println("!!Invalid Input!!\nEnter Provider Zip Code:");
-            providerZip = console.readLine();
+            providerZip = in.nextLine();
         }
         newProvider.setProviderAddressZipCode(Integer.parseInt(providerZip));
 
         System.out.println("Enter Provider State:");
-        newProvider.setProviderAddressState(console.readLine());
+        newProvider.setProviderAddressState(in.nextLine());
 
         newProvider.saveToFile();
 
@@ -252,11 +252,11 @@ public class OperatorController {
         System.out.println("Enter Provider Number (must be 9 digits long):");
         Console console = System.console();
 
-        String providerNumberString = console.readLine();
+        String providerNumberString = in.nextLine();
 
         while (providerNumberString.length() != 9 || !isNumeric(providerNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter new Provider Number (must be 9 digits long):");
-            providerNumberString = console.readLine();
+            providerNumberString = in.nextLine();
         }
 
         int providerNumber = Integer.parseInt(providerNumberString);
@@ -276,11 +276,11 @@ public class OperatorController {
         System.out.println("Enter Provider Number (must be 9 digits long):");
         Console console = System.console();
 
-        String providerNumberString = console.readLine();
+        String providerNumberString = in.nextLine();
 
         while (providerNumberString.length() != 9 || !isNumeric(providerNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter Provider Number (must be 9 digits long):");
-            providerNumberString = console.readLine();
+            providerNumberString = in.nextLine();
         }
 
         int providerNumber = Integer.parseInt(providerNumberString);
@@ -298,32 +298,32 @@ public class OperatorController {
         while (!option.equals("6")) {
             System.out.println(
                     "Please select what you wish to update:\n1. Change Provider Name\n2. Change Provider Street\n3. Change Provider City\n4. Change Provider Zip\n5. Change Provider State\n6. Save and Exit");
-            option = console.readLine();
+            option = in.nextLine();
             switch (option) {
                 case "1":
                     System.out.println("Enter new Provider Name (Old: " + provider.getProviderName() + "):");
-                    provider.setProviderName(console.readLine());
+                    provider.setProviderName(in.nextLine());
                     break;
                 case "2":
                     System.out.println("Enter new Provider Street (Old: " + provider.getProviderAddressStreet() + "):");
-                    provider.setProviderAddressStreet(console.readLine());
+                    provider.setProviderAddressStreet(in.nextLine());
                     break;
                 case "3":
                     System.out.println("Enter new Provider City (Old: " + provider.getProviderAddressCity() + "):");
-                    provider.setProviderAddressCity(console.readLine());
+                    provider.setProviderAddressCity(in.nextLine());
                     break;
                 case "4":
                     System.out.println("Enter new Provider Zip (Old: " + provider.getProviderAddressZipCode() + "):");
-                    String providerZip = console.readLine();
+                    String providerZip = in.nextLine();
                     while (providerZip.length() != 5 || !isNumeric(providerZip)) {
                         System.out.println("!!Invalid Input!!\nEnter Provider Zip Code:");
-                        providerZip = console.readLine();
+                        providerZip = in.nextLine();
                     }
                     provider.setProviderAddressZipCode(Integer.parseInt(providerZip));
                     break;
                 case "5":
                     System.out.println("Enter new Provider State (Old: " + provider.getProviderAddressState() + "):");
-                    provider.setProviderAddressState(console.readLine());
+                    provider.setProviderAddressState(in.nextLine());
                     break;
                 case "6":
                     break;
@@ -339,11 +339,11 @@ public class OperatorController {
         System.out.println("Enter Provider Number (must be 9 digits long):");
         Console console = System.console();
 
-        String providerNumberString = console.readLine();
+        String providerNumberString = in.nextLine();
 
         while (providerNumberString.length() != 9 || !isNumeric(providerNumberString)) {
             System.out.println("!!Invalid Input!!\nEnter new Provider Number (must be 9 digits long):");
-            providerNumberString = console.readLine();
+            providerNumberString = in.nextLine();
         }
 
         int providerNumber = Integer.parseInt(providerNumberString);
@@ -358,4 +358,7 @@ public class OperatorController {
         }
         return;
     }
+    
+    in.close();
 }
+
