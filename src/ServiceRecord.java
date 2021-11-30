@@ -9,6 +9,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,7 +39,7 @@ public class ServiceRecord {
     }
 
     public void writeServiceToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "serviceprovidedlist.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File file = new File(filename);
         Scanner reader = new Scanner(file);
         String filestring = "";
@@ -58,24 +61,63 @@ public class ServiceRecord {
 
     public static void searchMemberService(int memberNumber, ArrayList<ServiceRecord> serviceRecords)
             throws FileNotFoundException {
-        String filename = ".\\src" + File.separator + "database" + File.separator + "serviceprovidedlist.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File file = new File(filename);
         Scanner reader = new Scanner(file);
         String line;
         while (reader.hasNextLine()) {
             line = reader.nextLine();
             if (line.split(",")[4].equals(Integer.toString(memberNumber))) {
-                String[] data = line.split(",");
-                ServiceRecord sr = new ServiceRecord();
-                sr.setServiceDate(data[2]);
-                sr.setProviderNumber(Integer.parseInt(data[3]));
-                sr.setServiceCode(Integer.parseInt(data[5]));
-                serviceRecords.add(sr);
-
+                if (weekApart(line.split(",")[2])) {
+                    String[] data = line.split(",");
+                    ServiceRecord sr = new ServiceRecord();
+                    sr.setServiceDate(data[2]);
+                    sr.setProviderNumber(Integer.parseInt(data[3]));
+                    sr.setServiceCode(Integer.parseInt(data[5]));
+                    serviceRecords.add(sr);
+                }
             }
         }
         reader.close();
         return;
+    }
+
+    public static ArrayList<ServiceRecord> searchProviderServices(int providerNumber)
+            throws FileNotFoundException {
+        String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
+        File file = new File(filename);
+        Scanner reader = new Scanner(file);
+        String line;
+        ArrayList<ServiceRecord> srl = new ArrayList<ServiceRecord>();
+        while (reader.hasNextLine()) {
+            line = reader.nextLine();
+            if (line.split(",")[3].equals(Integer.toString(providerNumber))) {
+                if (weekApart(line.split(",")[2])) {
+                    String[] data = line.split(",");
+                    ServiceRecord sr = new ServiceRecord();
+                    sr.setCurrentDate(data[0]);
+                    sr.setCurrentTime(data[1]);
+                    sr.setServiceDate(data[2]);
+                    sr.setMemberNumber(Integer.parseInt(data[4]));
+                    sr.setServiceCode(Integer.parseInt(data[5]));
+                    srl.add(sr);
+                }
+
+            }
+        }
+        reader.close();
+        return srl;
+    }
+
+    private static boolean weekApart(String serviceDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDate serviceD = LocalDate.parse(serviceDate, formatter);
+        LocalDate currD = LocalDate.now();
+        long daysBetween = ChronoUnit.DAYS.between(serviceD, currD);
+        if (daysBetween < 7 && daysBetween > 0) {
+            return true;
+        }
+        return false;
     }
 
     // method to get name

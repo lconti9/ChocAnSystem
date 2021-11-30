@@ -34,13 +34,15 @@ public class ProviderController {
 
     // method to bill chocan member
     public static void billChocAn(int providerNumber) throws IOException {
+        Scanner console = new Scanner(System.in);
         System.out.println("\nSwipe member card now: ");
-        Scanner console = new Scanner(System.in); // Create a Scanner object
         String memberNumString = console.nextLine();
-        while (!ProviderMenu.isNumeric(memberNumString)) {
+
+        while (!ProviderMenu.isNumeric(memberNumString) && memberNumString.length() != 9) {
             System.out.println("\n!!invalid Input!!\nSwipe member card now: ");
             memberNumString = console.nextLine();
         }
+
         if (validateMember(Integer.parseInt(memberNumString))) {
             String serviceDate = ProviderMenu.keyInDate();
 
@@ -54,13 +56,16 @@ public class ProviderController {
 
             String correctService = "";
             String serviceCodeString = "";
+
             while (!correctService.equals("y")) {
                 System.out.println("\nEnter Service Number (6-digits): ");
                 serviceCodeString = console.nextLine();
+
                 while (!ProviderMenu.isNumeric(serviceCodeString) || serviceCodeString.length() != 6) {
                     System.out.println("!!Invalid Input!!\nEnter Service Number (6-digits): ");
                     serviceCodeString = console.nextLine();
                 }
+
                 if (!providerDirectory.checkServiceExists(Integer.parseInt(serviceCodeString))) {
                     System.out.println("\nService code does not exist\n");
                     console.close();
@@ -69,7 +74,7 @@ public class ProviderController {
                     System.out.println("\nIs " + providerDirectory.getServiceName(Integer.parseInt(serviceCodeString))
                             + " the correct service? (y/n)");
                     correctService = console.nextLine();
-                    console.close();
+
                 }
             }
 
@@ -86,6 +91,7 @@ public class ProviderController {
             sr.setComments(comments);
 
             sr.writeServiceToFile();
+            console.close();
         }
     }
 
@@ -101,7 +107,8 @@ public class ProviderController {
 
     // method to request provider email
     public static void requestProviderEmail() {
-        Scanner console = new Scanner(System.in); // Create a Scanner object
+        Scanner console = new Scanner(System.in);
+
         System.out.println("\nEnter Provider Email: ");
         String email = console.nextLine();
         Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -110,6 +117,8 @@ public class ProviderController {
             email = console.nextLine();
         }
         System.out.println("\nProvider Directory email sent to " + email + "\n");
+
         console.close();
+
     }
 }

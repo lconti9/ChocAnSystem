@@ -56,13 +56,11 @@ public class SummaryReport {
     	
     }
     
-    public int getProviderSumFees(int number) {
-    	int sumFees = 0;
+    public void getProviderSumFees(int number) {
     	for (Provider provider : providerList) {
     		if (provider.getProviderNumber() == number) {
-    			sumFees += getProviderFees(number);
+    			this.totalProviderFees += getProviderFees(number);
     		}
     	}
-    	return sumFees;
     }
 }
