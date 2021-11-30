@@ -38,6 +38,9 @@ public class ManagerMenu {
                     }
                     ReportController.sendEFTReport(Integer.parseInt(providerNumString2));
                     break;
+                case "4":
+                    ReportController.sendSummaryReport();
+                    break;
                 case "5":
                     break;
                 default:

@@ -80,4 +80,22 @@ public class ReportController {
         console.close();
 
     }
+
+    public static void sendSummaryReport() throws IOException {
+        SummaryReport sr = new SummaryReport();
+
+        sr.getProviders();
+        sr.writeToFile();
+
+        Scanner console = new Scanner(System.in);
+        System.out.println("\nEnter Email: ");
+        String email = console.nextLine();
+        Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+        while (!ptr.matcher(email).matches()) {
+            System.out.println("\n!!Invalid Input!!\nEnter Email: ");
+            email = console.nextLine();
+        }
+        System.out.println("\nSummary Report email sent to " + email);
+        console.close();
+    }
 }
