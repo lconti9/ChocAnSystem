@@ -1,3 +1,5 @@
+package P4Package;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -41,11 +43,21 @@ public class SummaryReport {
     	
     }
     
+    public void getProviders() {
+    	
+    }
+    
     public void getReports(int number) {
     	
     }
     
-    public void getProviderSumFees(int number) {
-    	
+    public int getProviderSumFees(int number) {
+    	int sumFees = 0;
+    	for (Provider provider : providerList) {
+    		if (provider.getProviderNumber() == number) {
+    			sumFees += getProviderFees(number);
+    		}
+    	}
+    	return sumFees;
     }
 }
