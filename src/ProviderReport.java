@@ -1,3 +1,10 @@
+/*
+Group Provider: Shanissee Lee
+Class: ProviderReport.java
+Description: Holds attributes and methods for Provider Report
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -5,12 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.xml.stream.events.ProcessingInstruction;
-
-/*
-Group Provider: Shanissee Lee
-Class: ProviderReport.java
-Description: Holds attributes and methods for Provider Report
-*/
 
 public class ProviderReport {
 
@@ -28,6 +29,7 @@ public class ProviderReport {
         totalFees = 0;
     }
 
+    //method to get provider and check existence
     public boolean getProvider(int providerNumber) throws FileNotFoundException {
         provider = new Provider(providerNumber);
         if (provider.checkProviderExistence()) {
@@ -39,10 +41,12 @@ public class ProviderReport {
         }
     }
 
+    //method to collect reports
     public void collectReports() throws FileNotFoundException {
         this.servicesProvided = ServiceRecord.searchProviderServices(this.provider.getProviderNumber());
     }
 
+    //method to write to file
     public void writeToFile() throws IOException {
         String filename = ".\\src" + File.separator + "reports" + File.separator + provider.getProviderNumber()
                 + "provider_report.txt";

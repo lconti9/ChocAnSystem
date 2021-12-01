@@ -1,16 +1,17 @@
+/*
+Group Member: Shanissee Lee
+Class: MemberReport.java
+Description: Holds attributes and methods for Member Report
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/*
-Group Member: Shanissee Lee
-Class: MemberReport.java
-Description: Holds attributes and methods for Member Report
-Status: Needs testing
-*/
-
+//method for main functionality
 public class MemberReport {
 
     // private variables to hold member report data
@@ -23,8 +24,7 @@ public class MemberReport {
         serviceRecords = new ArrayList<ServiceRecord>();
     }
 
-    // initializing member as the member associated with the member number passed as
-    // a parameter
+    // initializing member as the member associated with the member number passed as a parameter
     public boolean getMember(int memberNumber) throws FileNotFoundException {
         member = new Member(memberNumber);
         if (member.checkMemberExistence()) {
@@ -36,7 +36,7 @@ public class MemberReport {
         }
     }
 
-    // Pulling information from service records associated with member
+    // pulling information from service records associated with member
     public void collectReports() throws FileNotFoundException {
         ServiceRecord.searchMemberService(this.member.getMemberNumber(), serviceRecords);
     }

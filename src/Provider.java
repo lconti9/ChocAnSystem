@@ -113,6 +113,7 @@ public class Provider {
         return;
     }
 
+    //method to check if provider exists
     public boolean checkProviderExistence() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         File providerlist = new File(filename);

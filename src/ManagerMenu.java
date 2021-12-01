@@ -1,7 +1,15 @@
+/*
+Group Member: William Jefferson
+Class: ManagerMenu.java
+Description: Display terminal prompts for Manager
+*/
+
+//import statements
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;;
 
+//method for main functionality
 public class ManagerMenu {
 
     // function to prompt user of their desired function

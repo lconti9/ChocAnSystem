@@ -1,16 +1,17 @@
+/*
+Group Member: Shanissee Lee
+Class: EFTReport.java
+Description: Holds attributes and methods for EFT Report
+*/
+
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/*
-Group Member: Shanissee Lee
-Class: EFTReport.java
-Description: Holds attributes and methods for EFT Report
-Status: Incomplete
-*/
-
+//method for main functionality
 public class EFTReport {
 
     // private variables to hold EFT report data
@@ -27,6 +28,7 @@ public class EFTReport {
         servicesProvided = new ArrayList<ServiceRecord>();
     }
 
+    //method to get provider and check existence
     public boolean getProvider(int providerNumber) throws FileNotFoundException {
         this.provider = new Provider(providerNumber);
         if (provider.checkProviderExistence()) {
@@ -39,10 +41,12 @@ public class EFTReport {
         }
     }
 
+    //method to collect reports
     public void collectReports() throws FileNotFoundException {
         this.servicesProvided = ServiceRecord.searchProviderServices(this.provider.getProviderNumber());
     }
 
+    //method to write to file
     public void writeToFile() throws IOException {
         String filename = ".\\src" + File.separator + "reports" + File.separator + provider.getProviderNumber()
                 + "EFT_report.txt";

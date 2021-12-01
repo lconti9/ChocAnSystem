@@ -38,6 +38,7 @@ public class ServiceRecord {
         comments = null;
     }
 
+    //method to write to file
     public void writeServiceToFile() throws IOException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File file = new File(filename);
@@ -59,6 +60,7 @@ public class ServiceRecord {
 
     }
 
+    //method to search member service
     public static void searchMemberService(int memberNumber, ArrayList<ServiceRecord> serviceRecords)
             throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
@@ -82,6 +84,7 @@ public class ServiceRecord {
         return;
     }
 
+    //method to search provider services 
     public static ArrayList<ServiceRecord> searchProviderServices(int providerNumber)
             throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
@@ -109,6 +112,7 @@ public class ServiceRecord {
         return srl;
     }
 
+    //method to ensure data is pulled from the current week
     public static boolean weekApart(String serviceDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         LocalDate serviceD = LocalDate.parse(serviceDate, formatter);

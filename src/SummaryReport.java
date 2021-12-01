@@ -1,4 +1,10 @@
+/*
+Group Member: TJ Trueblood
+Class: SummaryReport.java
+Description: Holds attributes and methods for Summary Report
+*/
 
+//import statements
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -7,13 +13,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-/*
-Group Member: TJ Trueblood
-Class: SummaryReport.java
-Description: Holds attributes and methods for Summary Report
-Status: Incomplete
-*/
 
 public class SummaryReport {
 
@@ -33,6 +32,7 @@ public class SummaryReport {
         totalProviderFees = null;
     }
 
+    //method to write to file
     public void writeToFile() throws IOException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         LocalDateTime now = LocalDateTime.now();
@@ -57,6 +57,7 @@ public class SummaryReport {
         writer.close();
     }
 
+    //method to sum grand total
     public void sumGrandTotal() {
         double total = 0;
         for (double fee : this.totalProviderFees) {
@@ -66,6 +67,7 @@ public class SummaryReport {
         return;
     }
 
+    //method to get providers
     public void getProviders() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         File providerList = new File(filename);
@@ -82,6 +84,7 @@ public class SummaryReport {
         reader.close();
     }
 
+    //method to get reports
     public int getReports(int number) throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File servicesProvided = new File(filename);
@@ -100,6 +103,7 @@ public class SummaryReport {
         return numReports;
     }
 
+    //method to get provider sum fees
     public double getProviderSumFees(int number) throws FileNotFoundException, IOException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File servicesProvided = new File(filename);

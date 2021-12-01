@@ -1,4 +1,3 @@
-
 /*
 Group Member: Jacob Aid
 Class: OperatorController.java
