@@ -26,7 +26,7 @@ class ReportControllerTest {
 		System.setIn(bais);
 
 		//Set expected output
-		String expected = "\nMember Report email sent to luca@gmail.com";
+		String expected = "\n Member Report email sent to luca@gmail.com";
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream printStream = new PrintStream(baos);
 		System.setOut(printStream);

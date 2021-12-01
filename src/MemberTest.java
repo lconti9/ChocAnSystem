@@ -12,30 +12,31 @@ import org.junit.jupiter.api.Test;
 
 public class MemberTest {
 
+	Member mem;
     String memberName = "John Doe";
     int memberNumber = 222333444;
     String memberStatus = "Valid";
 
     @BeforeEach
     void setUp() throws Exception {
-
+    	mem = new Member(memberNumber);
     }
 
     @Test
     void testSetMemberName() {
-        this.setMemberName(memberName);
-        this.getMemberName();
+        mem.setMemberName(memberName);
+        assertEquals(memberName, mem.getMemberName());
     }
 
     @Test 
     void testSetMemberNumber() {
-        this.setMemberNumber(memberNumber);
-        this.getMemberNumber();
+        mem.setMemberNumber(memberNumber);
+        assertEquals(memberNumber, mem.getMemberNumber());
     }
 
     @Test
     void testSetMemberStatus(){
-        this.setMemberStatus(memberStatus);
-        this.getMemberStatus();
+        mem.setMemberStatus(memberStatus);
+        assertEquals(memberStatus, mem.getMemberStatus());
     }
 }

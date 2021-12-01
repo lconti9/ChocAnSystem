@@ -13,7 +13,7 @@ import java.io.InputStreamReader;;
 //method for main functionality
 public class OperatorController {
 
-    private static boolean isNumeric(String string) {
+    public static boolean isNumeric(String string) {
         try {
             Integer.parseInt(string);
             return true;

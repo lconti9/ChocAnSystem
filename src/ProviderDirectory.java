@@ -52,6 +52,7 @@ public class ProviderDirectory {
         providerDirectory.createNewFile();
         Scanner myReader = new Scanner(providerDirectory);
         while (myReader.hasNextLine()) {
+        	
             String data = myReader.nextLine();
             String[] info = data.split(",");
             Service newService = new Service(info[0], Double.parseDouble(info[1]), Integer.parseInt(info[2]));

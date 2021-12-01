@@ -1,4 +1,3 @@
-package P4JUnit;
 
 /*
  * Group Member: TJ Trueblood
@@ -23,18 +22,19 @@ class ProviderDirectoryTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		pd = new ProviderDirectory();
+		pd.getProviderDirectory();
 	}
 	
 	//Working Test
 	@Test
 	void testGetServiceName() throws Exception {
-		pd.getServiceName(123123);
+		assertEquals(pd.getServiceName(100001), "Therapy");
 	}
 	
 	//Failing Test
 	@Test
-	void testGetGetServiceNameFail() throws Exception {
-		pd.getServiceName(000001);
+	void testGetServiceNameFail() throws Exception {
+		assertEquals(pd.getServiceName(999999), "\nService does not exist\n");
 	}
 
 }

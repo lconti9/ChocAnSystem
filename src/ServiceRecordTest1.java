@@ -12,30 +12,31 @@ import org.junit.jupiter.api.Test;
 
 public class ServiceRecordTest1 {
 
+	ServiceRecord sr;
     int memberNumber = 123123123;
     int providerNumber = 321321321;
     String comments = "Hello World";
 
     @BeforeEach
     void setUp() throws Exception {
-
+    	sr = new ServiceRecord();
     }
 
     @Test
     void testSetMemberNumber() {
-        this.setMemberNumber(memberNumber);
-        this.getMemberNumber();
+        sr.setMemberNumber(memberNumber);
+        assertEquals(memberNumber, sr.getMemberNumber());
     }
 
     @Test 
     void testSetProviderNumber() {
-        this.setProviderNumber(providerNumber);
-        this.getProviderNumber();
+        sr.setProviderNumber(providerNumber);
+        assertEquals(providerNumber, sr.getProviderNumber());
     }
 
     @Test
     void testSetComments(){
-        this.setComments(comments);
-        this.getComments();
+        sr.setComments(comments);
+        assertEquals(comments, sr.getComments());
     }
 }

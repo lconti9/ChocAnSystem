@@ -12,30 +12,31 @@ import org.junit.jupiter.api.Test;
 
 public class ProviderTest {
 
+	Provider pr;
     String providerName = "Jane Doe";
     int providerNumber = 321321321;
     int providerZip = 12345;
 
     @BeforeEach
     void setUp() throws Exception {
-
+    	pr = new Provider(providerNumber);
     }
 
     @Test
     void testSetProviderName() {
-        this.setProviderName(providerName);
-        this.getProviderName();
+        pr.setProviderName(providerName);
+        assertEquals(providerName, pr.getProviderName());
     }
 
     @Test 
     void testSetProviderNumber() {
-        this.setProviderNumber(providerNumber);
-        this.getProviderNumber();
+        pr.setProviderNumber(providerNumber);
+        assertEquals(providerNumber, pr.getProviderNumber());
     }
 
     @Test
     void testSetProviderZip(){
-        this.setProviderAddressZipCode(providerZip);
-        this.getProviderAddressZipCode();
+        pr.setProviderAddressZipCode(providerZip);
+        assertEquals(providerZip, pr.getProviderAddressZipCode());
     }
 }

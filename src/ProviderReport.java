@@ -11,8 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.xml.stream.events.ProcessingInstruction;
-
 public class ProviderReport {
 
     // private variables to hold provider report data
