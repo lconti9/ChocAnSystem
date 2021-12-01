@@ -1,0 +1,6 @@
+Member Name: Luca
+Member Number: 123456789
+Member Street: 234
+Member City: Mem
+Member Zip Code: 38117
+

@@ -49,7 +49,7 @@ public class ReportController {
         }
 
         // "Sends" email of report
-        System.out.println("\nMember Report email sent to " + email);
+        System.out.println("\nReport email sent to " + email);
 
         // Exits function @return null
 

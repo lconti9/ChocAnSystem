@@ -1,0 +1,8 @@
+Provider Name: Max Hawkins
+Provider Number: 123123123
+Provider Street: 120 15th St E
+Provider City: Tuscaloosa
+Provider Zip Code: 35401
+
+Total Consultations: 0
+Total Fee: $0.00
