@@ -8,7 +8,7 @@ import java.util.ArrayList;
 Group Member: Shanissee Lee
 Class: MemberReport.java
 Description: Holds attributes and methods for Member Report
-Status: Incomplete
+Status: Needs testing
 */
 
 public class MemberReport {
@@ -22,7 +22,7 @@ public class MemberReport {
         member = null;
         serviceRecords = new ArrayList<ServiceRecord>();
     }
-
+    //initializing member as the member associated with the member number passed as  a parameter
     public boolean getMember(int memberNumber) throws FileNotFoundException {
         member = new Member(memberNumber);
         if (member.checkMemberExistence()) {
@@ -33,14 +33,13 @@ public class MemberReport {
             return false;
         }
     }
-
+    //Pulling information from service records associated with member
     public void collectReports() throws FileNotFoundException {
         ServiceRecord.searchMemberService(this.member.getMemberNumber(), serviceRecords);
     }
 
     public void writeToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "reports" + File.separator + member.getMemberNumber()
-                + "member_report.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator+ "member_report.txt";
         String filestring = "";
         filestring = filestring.concat("Member Name: " + member.getMemberName() + "\n" + "Member Number: "
                 + Integer.toString(member.getMemberNumber()) + "\n"
