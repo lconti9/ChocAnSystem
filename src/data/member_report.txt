@@ -1,6 +1,6 @@
-Member Name: Luca
-Member Number: 123456789
-Member Street: 234
-Member City: Mem
-Member Zip Code: 38117
+Member Name: Ashlyn
+Member Number: 320320320
+Member Street: 1214 8th Ave
+Member City: Tuscaloosa
+Member Zip Code: 35401
 
