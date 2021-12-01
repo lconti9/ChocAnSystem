@@ -38,7 +38,7 @@ public class SummaryReport {
         LocalDateTime now = LocalDateTime.now();
         String currentDate = dtf.format(now);
 
-        String filename = ".\\src" + File.separator + "reports" + File.separator + currentDate + "summary_report.txt";
+        String filename = ".\\src" + File.separator + "data"+File.separator+"summary_report.txt";
         String filestring = "Summary Report";
         int i = 0;
         for (Provider pr : providerList) {

@@ -48,8 +48,7 @@ public class EFTReport {
 
     //method to write to file
     public void writeToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "reports" + File.separator + provider.getProviderNumber()
-                + "EFT_report.txt";
+        String filename = ".\\src" + File.separator + "data" + File.separator + "EFT_report.txt";
         String filestring = "";
         float totalFees = 0;
         filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + "Provider Number: "

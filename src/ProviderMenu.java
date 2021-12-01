@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 //method for main functionality
 public class ProviderMenu {
+	
 
     public static boolean isNumeric(String string) {
         try {
@@ -124,9 +125,11 @@ public class ProviderMenu {
         Pattern pattern = Pattern.compile("^(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])-[0-9]{4}$");
         System.out.println("Enter Date of Service (MM-DD-YYYY): ");
         String serviceDate = console.readLine();
+        
         while (!pattern.matcher(serviceDate).matches()) {
             System.out.println("!!Invalid Input!!\nEnter Date of Service (MM-DD-YYYY): ");
             serviceDate = console.readLine();
+            
         }
         return serviceDate;
     }

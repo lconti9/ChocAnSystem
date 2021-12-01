@@ -40,17 +40,31 @@ public class MemberReport {
     public void collectReports() throws FileNotFoundException {
         ServiceRecord.searchMemberService(this.member.getMemberNumber(), serviceRecords);
     }
+    
+    public ArrayList<ServiceRecord> collect() throws FileNotFoundException{
+    	ArrayList<ServiceRecord>  mem = ServiceRecord.searchMemberService(this.member.getMemberNumber(), serviceRecords);
+    	return mem;
+    }
+
 
     public void writeToFile() throws IOException {
         String filename = ".\\src" + File.separator + "reports" + File.separator + member.getMemberNumber()
                 + "member_report.txt";
         String filestring = "";
+        ServiceRecord curRecord = new ServiceRecord() ;
         filestring = filestring.concat("Member Name: " + member.getMemberName() + "\n" + "Member Number: "
                 + Integer.toString(member.getMemberNumber()) + "\n"
                 + "Member Street: " + member.getMemberAddressStreet() + "\n" + "Member City: "
                 + member.getMemberAddressCity() + "\n"
-                + "Member Zip Code: " + Integer.toString(member.getMemberAddressZipCode()) + "\n\n");
-        for (ServiceRecord sr : serviceRecords) {
+                + "Member Zip Code: " + Integer.toString(member.getMemberAddressZipCode())+"\n\n");
+        
+        	ServiceRecord sr;
+        //   	System.out.println("here ");
+           	ArrayList<ServiceRecord> servicesProvided = collect();
+
+           	for (int i=0;i<servicesProvided.size();i++) {
+           	sr=servicesProvided.get(i);
+     //   for (ServiceRecord sr : serviceRecords) {
             Provider provider = new Provider(sr.getProviderNumber());
             ProviderDirectory pr = new ProviderDirectory();
             pr.getProviderDirectory();
@@ -60,7 +74,8 @@ public class MemberReport {
                         + provider.getProviderName() + "\n" + "Service Name: "
                         + pr.getServiceName(sr.getServiceCode()) + "\n\n");
             }
-        }
+           	}
+       // }
         FileWriter writer = new FileWriter(filename);
         writer.write(filestring);
         writer.close();

@@ -39,6 +39,7 @@ public class ProviderController {
         System.out.println("\nSwipe member card now: ");
         String memberNumString = console.readLine();
 
+
         while (!ProviderMenu.isNumeric(memberNumString) && memberNumString.length() != 9) {
             System.out.println("\n!!invalid Input!!\nSwipe member card now: ");
             memberNumString = console.readLine();
