@@ -8,7 +8,6 @@ Description: Backend for interfacing manager menu or main accounting procedure w
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -46,6 +45,7 @@ public class ReportController {
         //Opens provider file
         File providerFile = new File(providerFilename);
         //Opens file reader
+        reader.close();
         reader = new Scanner(providerFile);
         line = "";
         
@@ -86,6 +86,8 @@ public class ReportController {
         sr.getProviders();
         // Compiles list of all services provided by each provider in a file
         sr.writeToFile();
+        
+        reader.close();
         
 	}
 
