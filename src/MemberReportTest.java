@@ -1,8 +1,6 @@
 //Author: Shanissee Lee
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
 
@@ -26,7 +24,7 @@ class MemberReportTest {
 		
 		
 		try {
-			assertEquals(1,obj.getMember(memNum));
+			assertEquals(true ,obj.getMember(memNum));
 		}
 
 		catch (FileNotFoundException e) {
@@ -48,10 +46,9 @@ class MemberReportTest {
 	@Test 
 	public void testFailure() throws FileNotFoundException {
 		MemberReport obj = new MemberReport();
-		Member mem = new Member(memNum);
 
 		try {
-			assertEquals(1,obj.getMember(memNum2));
+			assertEquals(false ,obj.getMember(memNum2));
 		}
 
 		catch (FileNotFoundException e) {
@@ -62,7 +59,6 @@ class MemberReportTest {
 		
 
 		//continue;
-		fail("Does not exist");
 		//System.out.println("next fail ");
 	}
 	

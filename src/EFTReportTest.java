@@ -1,8 +1,7 @@
 //Author: Shanissee Lee
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.io.FileNotFoundException;
 
@@ -26,7 +25,7 @@ class EFTReportTest {
 		
 		
 		try {
-			assertEquals(1,obj.getProvider(providerNum));
+			assertEquals(true, obj.getProvider(providerNum));
 		}
 
 		catch (FileNotFoundException e) {
@@ -47,10 +46,9 @@ class EFTReportTest {
 	@Test 
 	public void testFailure() throws FileNotFoundException {
 		EFTReport obj = new EFTReport();
-		Provider prov = new Provider(providerNum);
 
 		try {
-			assertEquals(1,obj.getProvider(providerNum2));
+			assertEquals(false, obj.getProvider(providerNum2));
 		}
 
 		catch (FileNotFoundException e) {
@@ -59,9 +57,6 @@ class EFTReportTest {
 			//e.printStackTrace();
 		}
 		
-
-		//continue;
-		fail("Does not exist");
 		//System.out.println("next fail ");
 	}
 	

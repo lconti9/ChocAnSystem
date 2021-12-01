@@ -1,5 +1,4 @@
 //Author: Jacob Aid
-package src;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,28 +12,19 @@ import org.junit.jupiter.api.Test;
 
 class OperatorMenuTest {
 	
-	Member member;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		member = new Member(123456789);
-		member.setMemberName("Jacob");
-		member.setMemberStatus("Active");
 	}
 
 	@Test  //passing test
-	void testPromptCheckMemberExistsPass() throws IOException {
-		String userInput = "8";
+	void testPrompt() throws IOException {
+		
+		String userInput = "9";
 		ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
 		System.setIn(bais);
 		
-		userInput = "123456789";
-		ByteArrayInputStream bais2 = new ByteArrayInputStream(userInput.getBytes());
-		System.setIn(bais2);
-		
-		
-		
-		String expected = "Member does exist: Jacob (Active)\n";
+		String expected = "Please select the number of the option you wish to select:\n1. Add Member\n2. Remove Member\n3. Update Member\n4. Check Member Exists\n5. Add Provider\n6. Remove Provider\n7. Update Provider\n8. Check Provder Exists\n9. Exit";
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream printStream = new PrintStream(baos);
 		System.setOut(printStream);
@@ -43,15 +33,14 @@ class OperatorMenuTest {
 		
 		String[] lines = baos.toString().split(System.lineSeparator());
 		String actual = lines[lines.length - 1];
-		System.out.println(lines);
 		
 		assertEquals(expected, actual);
 	}
 	
 	@Test  //passing test
-	void testPromptCheckMemberExistsFail() throws IOException {
+	void testPromptFail() throws IOException {
 		
-		String userInput = "0";
+		String userInput = String.format("9", System.lineSeparator());
 		ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
 		System.setIn(bais);
 		

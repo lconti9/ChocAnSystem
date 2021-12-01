@@ -3,7 +3,7 @@
 	<target name="makejar">
 	    <jar destfile="release/ChocAn.jar" basedir="bin" >
 	    	<manifest>
-	    	        <attribute name="Main-Class" value="main" />
+	    	        <attribute name="Main-Class" value="ChocAn" />
 	    			<attribute name="Class-Path" value="ChocAn.jar"/>
 	    	    </manifest>
 	    	</jar>

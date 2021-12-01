@@ -1,5 +1,4 @@
 //Author: Jacob Aid
-package src;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,8 +20,8 @@ class ProviderReportTest {
 
 	@Test
 	void testGetProviderPass() throws FileNotFoundException {
-		boolean actual = providerReport.getProvider(100000000);
-		boolean  expected = false;
+		boolean actual = providerReport.getProvider(123456789);
+		boolean  expected = true;
 		
 		assertEquals(actual, expected);
 		
@@ -31,7 +30,7 @@ class ProviderReportTest {
 	@Test
 	void testGetProviderFail() throws FileNotFoundException {
 		boolean actual = providerReport.getProvider(100000000);
-		boolean  expected = true;
+		boolean  expected = false;
 		
 		assertEquals(actual, expected);
 		

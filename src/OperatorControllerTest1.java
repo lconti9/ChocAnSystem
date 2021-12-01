@@ -1,5 +1,4 @@
 //Author: Jacob Aid
-package src;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,14 +11,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class OperatorControllerTest1 {
-	
-	Member member;
+
 
 	@BeforeEach
 	void setUp() throws Exception {
-		member = new Member(123456789);
-		member.setMemberName("Jacob");
-		member.setMemberStatus("Active");
 	}
 
 	@Test  //passing test
@@ -28,7 +23,7 @@ class OperatorControllerTest1 {
 		ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
 		System.setIn(bais);
 		
-		String expected = "Member does exist: Jacob (Active)";
+		String expected = "Member does exist: Luca (Active)\n";
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream printStream = new PrintStream(baos);
 		System.setOut(printStream);
@@ -44,6 +39,10 @@ class OperatorControllerTest1 {
 	
 	@Test  //failing test
 	void testCheckMemberExistsFail() throws IOException {
+		String userInput = "111111111";
+		ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
+		System.setIn(bais);
+		
 		String expected = "Member does not exist\n";
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream printStream = new PrintStream(baos);
@@ -53,7 +52,6 @@ class OperatorControllerTest1 {
 		
 		String[] lines = baos.toString().split(System.lineSeparator());
 		String actual = lines[lines.length - 1];
-		System.out.println(lines);
 		
 		assertEquals(expected, actual);
 		

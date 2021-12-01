@@ -3,8 +3,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.io.FileNotFoundException;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +20,7 @@ public class ServiceTest {
 		Service obj = new Service();
 		obj.setServiceCode(serviceCode);
 		
-		assertEquals(obj.getServiceCode(),100001);
+		assertEquals(obj.getServiceCode(), 100001);
 		
 	}
 	
