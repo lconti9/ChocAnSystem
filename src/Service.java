@@ -18,7 +18,11 @@ public class Service {
         serviceFee = fee;
         serviceName = name;
     }
-
+    //adding constructor needed for Junit Test -Shanissee
+    public Service(){
+    
+    }
+    
     // method to get code
     public int getServiceCode() {
         return serviceCode;
