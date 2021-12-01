@@ -6,7 +6,8 @@ Description: Display terminal prompts for Operator
 
 //import statements
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;;
 
 //method for main functionality
 public class OperatorMenu {
@@ -51,15 +52,13 @@ public class OperatorMenu {
     }
 
     // method to select options from the terminal
-    public static String selectOption(String prompt) {
+    public static String selectOption(String prompt) throws IOException {
 
-        Scanner console = new Scanner(System.in); // Create a Scanner object
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println(prompt);
 
-        String selection = console.nextLine();
-
-        console.close();
+        String selection = console.readLine();
 
         return selection;
     }

@@ -1,5 +1,6 @@
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 
 /*
@@ -31,12 +32,12 @@ public class ReportController {
         }
 
         // Creates scanner for inputs
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         // Prompts user for email address to send report to
         System.out.println("\nEnter Email: ");
         // Reads email from user input
-        String email = console.nextLine();
+        String email = console.readLine();
         // Created regex pattern for email addresses
         Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         // Loops until user input matches regex pattern
@@ -44,14 +45,12 @@ public class ReportController {
             // Notifys user email does not match pattern
             System.out.println("\n!!Invalid Input!!\nEnter Email: ");
             // Reads next user input
-            email = console.nextLine();
+            email = console.readLine();
         }
 
         // "Sends" email of report
         System.out.println("\nMember Report email sent to " + email);
 
-        // Closes Scanner
-        console.close();
         // Exits function @return null
 
     }
@@ -76,12 +75,12 @@ public class ReportController {
         }
 
         // Creates scanner for inputs
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         // Prompts user for email address to send report to
         System.out.println("\nEnter Email: ");
         // Reads email from user input
-        String email = console.nextLine();
+        String email = console.readLine();
         // Created regex pattern for email addresses
         Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         // Loops until user input matches regex pattern
@@ -89,14 +88,11 @@ public class ReportController {
             // Notifys user email does not match pattern
             System.out.println("\n!!Invalid Input!!\nEnter Email: ");
             // Reads next user input
-            email = console.nextLine();
+            email = console.readLine();
         }
 
         // "Sends" email of report
         System.out.println("\nMember Report email sent to " + email);
-
-        // Closes Scanner
-        console.close();
 
         // Exits function @return null
     }
@@ -121,12 +117,12 @@ public class ReportController {
         }
 
         // Creates scanner for inputs
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         // Prompts user for email address to send report to
         System.out.println("\nEnter Email: ");
         // Reads email from user input
-        String email = console.nextLine();
+        String email = console.readLine();
         // Created regex pattern for email addresses
         Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         // Loops until user input matches regex pattern
@@ -134,14 +130,11 @@ public class ReportController {
             // Notifys user email does not match pattern
             System.out.println("\n!!Invalid Input!!\nEnter Email: ");
             // Reads next user input
-            email = console.nextLine();
+            email = console.readLine();
         }
 
         // "Sends" email of report
         System.out.println("\nMember Report email sent to " + email);
-
-        // Closes Scanner
-        console.close();
 
         // Exits function @return null
     }
@@ -158,12 +151,12 @@ public class ReportController {
         sr.writeToFile();
 
         // Creates scanner for inputs
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         // Prompts user for email address to send report to
         System.out.println("\nEnter Email: ");
         // Reads email from user input
-        String email = console.nextLine();
+        String email = console.readLine();
         // Created regex pattern for email addresses
         Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         // Loops until user input matches regex pattern
@@ -171,14 +164,12 @@ public class ReportController {
             // Notifys user email does not match pattern
             System.out.println("\n!!Invalid Input!!\nEnter Email: ");
             // Reads next user input
-            email = console.nextLine();
+            email = console.readLine();
         }
 
         // "Sends" email of report
         System.out.println("\nMember Report email sent to " + email);
 
-        // Closes Scanner
-        console.close();
         // Exits function @return null
     }
 }

@@ -6,7 +6,8 @@ Description: Main class for the ChocAn System
 
 //import statements
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;;
 
 //method for main functionality
 public class ChocAn {
@@ -14,7 +15,7 @@ public class ChocAn {
     // Main function of choch an system @param command line arguments
     public static void main(String args[]) throws IOException {
         // Create a Scanner object for readin user input
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         // Sets string used for user input selection
         String userType = "";
@@ -26,7 +27,7 @@ public class ChocAn {
             System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");
 
             // Reads input from terminal
-            userType = console.nextLine();
+            userType = console.readLine();
 
             // Switch case based off of user input
             switch (userType) {
@@ -63,9 +64,6 @@ public class ChocAn {
             }
             System.out.println("----------------------------------------------------------\n");
         }
-
-        // Closes scanner
-        console.close();
 
         // @Return void
     }

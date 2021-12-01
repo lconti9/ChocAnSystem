@@ -1,11 +1,12 @@
 import java.io.IOException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;;
 
 public class ManagerMenu {
 
     // function to prompt user of their desired function
     public static void prompt() throws IOException {
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
         String selection = "";
         while (!selection.equals("5")) {
             selection = selectOption(
@@ -13,28 +14,28 @@ public class ManagerMenu {
             switch (selection) {
                 case "1":
                     System.out.println("\nEnter Member Number:");
-                    String memberNumString = console.nextLine();
+                    String memberNumString = console.readLine();
                     while (!ProviderMenu.isNumeric(memberNumString) && memberNumString.length() == 9) {
                         System.out.println("\n!!invalid Input!!\nEnter Member Number:");
-                        memberNumString = console.nextLine();
+                        memberNumString = console.readLine();
                     }
                     ReportController.sendMemberReport(Integer.parseInt(memberNumString));
                     break;
                 case "2":
                     System.out.println("\nEnter Provider Number:");
-                    String providerNumString = console.nextLine();
+                    String providerNumString = console.readLine();
                     while (!ProviderMenu.isNumeric(providerNumString) && providerNumString.length() == 9) {
                         System.out.println("\n!!invalid Input!!\nEnter Provider Number:");
-                        providerNumString = console.nextLine();
+                        providerNumString = console.readLine();
                     }
                     ReportController.sendProviderReport(Integer.parseInt(providerNumString));
                     break;
                 case "3":
                     System.out.println("\nEnter Provider Number:");
-                    String providerNumString2 = console.nextLine();
+                    String providerNumString2 = console.readLine();
                     while (!ProviderMenu.isNumeric(providerNumString2) && providerNumString2.length() == 9) {
                         System.out.println("\n!!invalid Input!!\nEnter Provider Number:");
-                        providerNumString = console.nextLine();
+                        providerNumString = console.readLine();
                     }
                     ReportController.sendEFTReport(Integer.parseInt(providerNumString2));
                     break;
@@ -47,21 +48,17 @@ public class ManagerMenu {
                     System.out.println("Invalid Input");
             }
 
-            console.close();
-
         }
     }
 
     // method to select options from the terminal
-    public static String selectOption(String prompt) {
+    public static String selectOption(String prompt) throws IOException {
 
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println(prompt);
 
-        String selection = console.nextLine();
-
-        console.close();
+        String selection = console.readLine();
 
         return selection;
     }

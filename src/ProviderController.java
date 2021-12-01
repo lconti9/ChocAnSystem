@@ -9,7 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 
 //method for main functionality
@@ -34,13 +35,13 @@ public class ProviderController {
 
     // method to bill chocan member
     public static void billChocAn(int providerNumber) throws IOException {
-        Scanner console = new Scanner(System.in);
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("\nSwipe member card now: ");
-        String memberNumString = console.nextLine();
+        String memberNumString = console.readLine();
 
         while (!ProviderMenu.isNumeric(memberNumString) && memberNumString.length() != 9) {
             System.out.println("\n!!invalid Input!!\nSwipe member card now: ");
-            memberNumString = console.nextLine();
+            memberNumString = console.readLine();
         }
 
         if (validateMember(Integer.parseInt(memberNumString))) {
@@ -59,27 +60,27 @@ public class ProviderController {
 
             while (!correctService.equals("y")) {
                 System.out.println("\nEnter Service Number (6-digits): ");
-                serviceCodeString = console.nextLine();
+                serviceCodeString = console.readLine();
 
                 while (!ProviderMenu.isNumeric(serviceCodeString) || serviceCodeString.length() != 6) {
                     System.out.println("!!Invalid Input!!\nEnter Service Number (6-digits): ");
-                    serviceCodeString = console.nextLine();
+                    serviceCodeString = console.readLine();
                 }
 
                 if (!providerDirectory.checkServiceExists(Integer.parseInt(serviceCodeString))) {
                     System.out.println("\nService code does not exist\n");
-                    console.close();
+
                     return;
                 } else {
                     System.out.println("\nIs " + providerDirectory.getServiceName(Integer.parseInt(serviceCodeString))
                             + " the correct service? (y/n)");
-                    correctService = console.nextLine();
+                    correctService = console.readLine();
 
                 }
             }
 
             System.out.println("\nEnter any comments: ");
-            String comments = console.nextLine();
+            String comments = console.readLine();
 
             ServiceRecord sr = new ServiceRecord();
             sr.setCurrentDate(currentDate);
@@ -91,12 +92,12 @@ public class ProviderController {
             sr.setComments(comments);
 
             sr.writeServiceToFile();
-            console.close();
+
         }
     }
 
     // method to request provider directory
-    public static void requestProviderDirectory() throws FileNotFoundException {
+    public static void requestProviderDirectory() throws IOException {
         requestProviderEmail();
     }
 
@@ -106,19 +107,17 @@ public class ProviderController {
     }
 
     // method to request provider email
-    public static void requestProviderEmail() {
-        Scanner console = new Scanner(System.in);
+    public static void requestProviderEmail() throws IOException {
+        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("\nEnter Provider Email: ");
-        String email = console.nextLine();
+        String email = console.readLine();
         Pattern ptr = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
         while (!ptr.matcher(email).matches()) {
             System.out.println("\n!!Invalid Input!!\nEnter Provider Email: ");
-            email = console.nextLine();
+            email = console.readLine();
         }
         System.out.println("\nProvider Directory email sent to " + email + "\n");
-
-        console.close();
 
     }
 }
