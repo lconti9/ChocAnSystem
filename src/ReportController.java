@@ -1,16 +1,93 @@
 /*
 Group Member: @author Luca Conti
 Class: ReportController.java
-Description: Backend for interfacting manager menu or main accounting procedure with producing reports
+Description: Backend for interfacing manager menu or main accounting procedure with producing reports
 */
 
 //import statements
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class ReportController {
+	
+	public static void runMainAccountingProcedure() throws IOException {
+		//Member file name
+		String memberFilename = ".\\src" + File.separator + "data" + File.separator + "memberlist.txt";
+        
+		//Opens Member file
+		File memberFile = new File(memberFilename);
+		
+		//Opens File Reader
+        Scanner reader = new Scanner(memberFile);
+        String line = "";
+        //Loops for every member in file
+        while(reader.hasNextLine()) {
+        	line = reader.nextLine();
+        	
+        	//Creates new member report
+        	MemberReport mr = new MemberReport();
+        	
+        	//Checks that member exists
+        	if (mr.getMember(Integer.parseInt(line.split(",")[1]))) {
+                // Generates list of member service records
+                mr.collectReports();
+                // Writes report to a file
+                mr.writeToFile();
+            }
+        }
+        
+        //Provider Filename
+        String providerFilename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
+        //Opens provider file
+        File providerFile = new File(providerFilename);
+        //Opens file reader
+        reader = new Scanner(providerFile);
+        line = "";
+        
+        //Loops for every provider in file
+        while(reader.hasNextLine()) {
+        	line = reader.nextLine();
+        	
+        	//Gets provider num from file
+        	int providerNum = Integer.parseInt(line.split(",")[1]);
+        	
+        	//Generates Provider Report
+            ProviderReport pr = new ProviderReport();
+            
+            // checks provider number exists
+            if (pr.getProvider(providerNum)) {
+                // Finds all provider service records
+                pr.collectReports();
+                // Creates reports from records
+                pr.writeToFile();
+            
+            }
+            
+            // Generates EFT report class
+            EFTReport eft = new EFTReport();
+            
+            // Checks provider number exists
+            if (eft.getProvider(providerNum)) {
+                // Finds all of the provider's service records
+                eft.collectReports();
+                // Writes record in file
+                eft.writeToFile();
+            }
+        }
+      
+        SummaryReport sr = new SummaryReport();
+
+        // Generates a list of all providers
+        sr.getProviders();
+        // Compiles list of all services provided by each provider in a file
+        sr.writeToFile();
+        
+	}
 
     // Generates and Sends Member Report @param member number
     public static void sendMemberReport(int memberNumber) throws IOException {

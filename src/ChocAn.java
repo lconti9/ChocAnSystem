@@ -22,7 +22,8 @@ public class ChocAn {
 
         // While loop that waits until user choses 4 (Exit)
         while (!userType.equals("4")) {
-
+        	Timer.runMainAccountingProcedure();
+        	
             // Prompts user of their option of terminals
             System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");
 
