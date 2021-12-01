@@ -1,0 +1,20 @@
+Summary Report
+
+Provider Name: Luca Conti
+Provider Number: 123456789
+Total Consultations: 0
+Total Fees: $0.00
+
+Provider Name: Max Hawkins
+Provider Number: 123123123
+Total Consultations: 0
+Total Fees: $0.00
+
+Provider Name: Jack
+Provider Number: 121212123
+Total Consultations: 0
+Total Fees: $0.00
+
+Total Number of Providers: 3
+Total Number of Consultations: 0
+Total Fees Owed: $0.0
