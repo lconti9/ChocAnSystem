@@ -129,7 +129,10 @@ public class Provider {
         return false;
 
     }
-
+    //adding constructor
+    public Provider(){
+    
+    }
     // method to get name
     public String getProviderName() {
         return providerName;
