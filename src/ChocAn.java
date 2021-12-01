@@ -12,30 +12,31 @@ import java.util.Scanner;
 public class ChocAn {
     public static void main(String args[]) throws IOException {
         Scanner console = new Scanner(System.in); // Create a Scanner object
-        String userType = "";
-        while (!userType.equals("4")) {
-            System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");
-            userType = console.nextLine();
-            switch (userType) {
+        String userType = ""; // Sets string used for user input selection
+        while (!userType.equals("4")) { // Loops until user choses 4 (Exit)
+            System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");// Promps user
+                                                                                                          // of inputs
+            userType = console.nextLine(); // Reads input
+            switch (userType) { // Selects based off of user input
                 case "1":
                     System.out.println("----------------------------------------------------------\n");
-                    ProviderMenu.prompt();
+                    ProviderMenu.prompt();// Sends user to provider menut
                     break;
                 case "2":
                     System.out.println("----------------------------------------------------------\n");
-                    ManagerMenu.prompt();
+                    ManagerMenu.prompt();// Sends user to manager menu
                     break;
                 case "3":
                     System.out.println("----------------------------------------------------------\n");
-                    OperatorMenu.prompt();
+                    OperatorMenu.prompt();// Sends user to operator menu
                     break;
                 case "4":
                     break;
                 default:
-                    System.out.println("\n!!Invalid Input!!\n");
+                    System.out.println("\n!!Invalid Input!!\n");// Input was not a valid option
             }
             System.out.println("----------------------------------------------------------\n");
         }
-        console.close();
+        console.close(); // Closes scanner
     }
 }
