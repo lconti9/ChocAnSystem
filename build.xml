@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ChocAn" default="makejar" basedir=".">
+	<target name="makejar">
+	    <jar destfile="release/ChocAn.jar" basedir="bin" >
+	    	<manifest>
+	    	        <attribute name="Main-Class" value="main" />
+	    			<attribute name="Class-Path" value="ChocAn.jar"/>
+	    	    </manifest>
+	    	</jar>
+	  </target> 
+</project>

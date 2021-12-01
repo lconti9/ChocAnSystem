@@ -38,7 +38,7 @@ public class ServiceRecord {
         comments = null;
     }
 
-    //method to write to file
+    // method to write to file
     public void writeServiceToFile() throws IOException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File file = new File(filename);
@@ -60,36 +60,31 @@ public class ServiceRecord {
 
     }
 
-<<<<<<< HEAD
-    public static ArrayList<ServiceRecord> searchMemberService(int memberNumber, ArrayList<ServiceRecord> serviceRecords)
-=======
-    //method to search member service
+    // method to search member service
     public static void searchMemberService(int memberNumber, ArrayList<ServiceRecord> serviceRecords)
->>>>>>> branch 'master' of https://shanissee@bitbucket.org/tklocklear/fall2021team7.git
             throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File file = new File(filename);
         Scanner reader = new Scanner(file);
         String line;
-        ArrayList<ServiceRecord> srl = new ArrayList<ServiceRecord>();
         while (reader.hasNextLine()) {
             line = reader.nextLine();
             if (line.split(",")[4].equals(Integer.toString(memberNumber))) {
-               // if (weekApart(line.split(",")[2])) {
+                if (weekApart(line.split(",")[2])) {
                     String[] data = line.split(",");
                     ServiceRecord sr = new ServiceRecord();
                     sr.setServiceDate(data[2]);
                     sr.setProviderNumber(Integer.parseInt(data[3]));
                     sr.setServiceCode(Integer.parseInt(data[5]));
-                    srl.add(sr);;
-              //  }
+                    serviceRecords.add(sr);
+                    ;
+                }
             }
         }
         reader.close();
-        return srl;
     }
 
-    //method to search provider services 
+    // method to search provider services
     public static ArrayList<ServiceRecord> searchProviderServices(int providerNumber)
             throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
@@ -100,7 +95,7 @@ public class ServiceRecord {
         while (reader.hasNextLine()) {
             line = reader.nextLine();
             if (line.split(",")[3].equals(Integer.toString(providerNumber))) {
-               // if (weekApart(line.split(",")[2])) {
+                if (weekApart(line.split(",")[2])) {
                     String[] data = line.split(",");
                     ServiceRecord sr = new ServiceRecord();
                     sr.setCurrentDate(data[0]);
@@ -109,19 +104,19 @@ public class ServiceRecord {
                     sr.setMemberNumber(Integer.parseInt(data[4]));
                     sr.setServiceCode(Integer.parseInt(data[5]));
                     srl.add(sr);
-                //}
+                }
 
             }
         }
         reader.close();
-//        System.out.println(srl.size());
-//        for (int i=0;i<srl.size();i++) {
-//    		System.out.println(srl.get(i));
-//    	}
+        // System.out.println(srl.size());
+        // for (int i=0;i<srl.size();i++) {
+        // System.out.println(srl.get(i));
+        // }
         return srl;
     }
 
-    //method to ensure data is pulled from the current week
+    // method to ensure data is pulled from the current week
     public static boolean weekApart(String serviceDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         LocalDate serviceD = LocalDate.parse(serviceDate, formatter);

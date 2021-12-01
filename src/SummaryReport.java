@@ -32,13 +32,14 @@ public class SummaryReport {
         totalProviderFees = null;
     }
 
-    //method to write to file
+    // method to write to file
     public void writeToFile() throws IOException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
         LocalDateTime now = LocalDateTime.now();
         String currentDate = dtf.format(now);
 
-        String filename = ".\\src" + File.separator + "data"+File.separator+"summary_report.txt";
+        String filename = ".\\src" + File.separator + "reports" + File.separator + "Summary_Report" + currentDate
+                + ".txt";
         String filestring = "Summary Report";
         int i = 0;
         for (Provider pr : providerList) {
@@ -49,6 +50,7 @@ public class SummaryReport {
                     + "\nTotal Fees: $" + String.format("%.2f", getProviderSumFees(pr.getProviderNumber())));
             i++;
         }
+        sumGrandTotal();
         filestring = filestring.concat(
                 "\n\nTotal Number of Providers: " + this.totalNumberProviders + "\nTotal Number of Consultations: "
                         + this.totalNumberConsultations + "\nTotal Fees Owed: $" + this.totalFeesOwed);
@@ -57,7 +59,7 @@ public class SummaryReport {
         writer.close();
     }
 
-    //method to sum grand total
+    // method to sum grand total
     public void sumGrandTotal() {
         double total = 0;
         for (double fee : this.totalProviderFees) {
@@ -67,7 +69,7 @@ public class SummaryReport {
         return;
     }
 
-    //method to get providers
+    // method to get providers
     public void getProviders() throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "providerlist.txt";
         File providerList = new File(filename);
@@ -84,7 +86,7 @@ public class SummaryReport {
         reader.close();
     }
 
-    //method to get reports
+    // method to get reports
     public int getReports(int number) throws FileNotFoundException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File servicesProvided = new File(filename);
@@ -103,7 +105,7 @@ public class SummaryReport {
         return numReports;
     }
 
-    //method to get provider sum fees
+    // method to get provider sum fees
     public double getProviderSumFees(int number) throws FileNotFoundException, IOException {
         String filename = ".\\src" + File.separator + "data" + File.separator + "serviceprovidedlist.txt";
         File servicesProvided = new File(filename);
