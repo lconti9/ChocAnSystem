@@ -12,9 +12,9 @@ import java.io.InputStreamReader;;
 //method for main functionality
 public class ChocAn {
 
-    // Main function of choch an system @param command line arguments
+    // Main function of choc an system @param command line arguments
     public static void main(String args[]) throws IOException {
-        // Create a Scanner object for readin user input
+        // Create a Scanner object for reading user input
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
         // Sets string used for user input selection
@@ -59,7 +59,7 @@ public class ChocAn {
 
                 // No valid input selected
                 default:
-                    // Promps user that input was not a valid option
+                    // Prompts user that input was not a valid option
                     System.out.println("\n!!Invalid Input!!\n");
             }
             System.out.println("----------------------------------------------------------\n");
