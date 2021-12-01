@@ -8,7 +8,7 @@ import java.util.ArrayList;
 Group Member: Shanissee Lee
 Class: MemberReport.java
 Description: Holds attributes and methods for Member Report
-Status: Incomplete
+Status: Needs testing
 */
 
 public class MemberReport {
@@ -23,6 +23,8 @@ public class MemberReport {
         serviceRecords = new ArrayList<ServiceRecord>();
     }
 
+    // initializing member as the member associated with the member number passed as
+    // a parameter
     public boolean getMember(int memberNumber) throws FileNotFoundException {
         member = new Member(memberNumber);
         if (member.checkMemberExistence()) {
@@ -34,6 +36,7 @@ public class MemberReport {
         }
     }
 
+    // Pulling information from service records associated with member
     public void collectReports() throws FileNotFoundException {
         ServiceRecord.searchMemberService(this.member.getMemberNumber(), serviceRecords);
     }

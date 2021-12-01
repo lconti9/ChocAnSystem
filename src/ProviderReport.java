@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.xml.stream.events.ProcessingInstruction;
+
 /*
 Group Provider: Shanissee Lee
 Class: ProviderReport.java
