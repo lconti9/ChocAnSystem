@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ProviderReport {
@@ -48,8 +50,12 @@ public class ProviderReport {
 
     // method to write to file
     public void writeToFile() throws IOException {
+    	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDateTime now = LocalDateTime.now();
+        String currentDate = dtf.format(now);
+        
         String filename = ".\\src" + File.separator + "reports" + File.separator +
-                "Provider_Report" + provider.getProviderNumber() + ".txt";
+                provider.getProviderNumber() + currentDate + "provider_report.txt";
         String filestring = "";
         filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + "Provider Number: "
                 + Integer.toString(provider.getProviderNumber()) + "\n"

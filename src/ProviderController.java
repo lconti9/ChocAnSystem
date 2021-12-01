@@ -64,14 +64,13 @@ public class ProviderController {
                 serviceCodeString = console.readLine();
 
                 while (!ProviderMenu.isNumeric(serviceCodeString) || serviceCodeString.length() != 6) {
-                    System.out.println("!!Invalid Input!!\nEnter Service Number (6-digits): ");
+                    System.out.println("\n!!Invalid Input!!\nEnter Service Number (6-digits): ");
                     serviceCodeString = console.readLine();
                 }
 
                 if (!providerDirectory.checkServiceExists(Integer.parseInt(serviceCodeString))) {
                     System.out.println("\nService code does not exist\n");
 
-                    return;
                 } else {
                     System.out.println("\nIs " + providerDirectory.getServiceName(Integer.parseInt(serviceCodeString))
                             + " the correct service? (y/n)");
@@ -93,6 +92,8 @@ public class ProviderController {
             sr.setComments(comments);
 
             sr.writeServiceToFile();
+            
+            System.out.println("\nFee to be paid: $" + providerDirectory.getServiceFee(Integer.parseInt(serviceCodeString)) + "\n");
 
         }
     }

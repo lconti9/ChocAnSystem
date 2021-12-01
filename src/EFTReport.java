@@ -59,7 +59,7 @@ public class EFTReport {
             pr.getProviderDirectory();
             totalFees += pr.getServiceFee(sr.getServiceCode());
         }
-        this.transferAmount = totalFees / 2;
+        this.transferAmount = totalFees;
         filestring = filestring
                 .concat("\n\nTotal Fees: $" + String.format("%.2f", totalFees) + "\nTotal Funds to Transfer: $"
                         + String.format("%.2f", this.transferAmount));

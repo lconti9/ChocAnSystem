@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 //method for main functionality
@@ -43,9 +45,13 @@ public class MemberReport {
     }
 
     public void writeToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "reports" + File.separator + "Member_Report"
-                + member.getMemberNumber()
-                + ".txt";
+    	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDateTime now = LocalDateTime.now();
+        String currentDate = dtf.format(now);
+        
+        String filename = ".\\src" + File.separator + "reports" + File.separator 
+                + member.getMemberNumber() + currentDate
+                + "member_report.txt";
         String filestring = "";
         filestring = filestring.concat("Member Name: " + member.getMemberName() + "\n" + "Member Number: "
                 + Integer.toString(member.getMemberNumber()) + "\n"
