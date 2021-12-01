@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.xml.stream.events.ProcessingInstruction;
 
@@ -43,10 +44,20 @@ public class ProviderReport {
 
     //method to collect reports
     public void collectReports() throws FileNotFoundException {
+    	//System.out.println("prov "+this.provider.getProviderNumber());
+    	//System.out.println("size here "+this.servicesProvided.size());
         this.servicesProvided = ServiceRecord.searchProviderServices(this.provider.getProviderNumber());
     }
 
+<<<<<<< HEAD
+    public ArrayList<ServiceRecord> collect() throws FileNotFoundException{
+    	ArrayList<ServiceRecord>  Provided = ServiceRecord.searchProviderServices(provider.getProviderNumber());
+    	return Provided;
+    }
+   
+=======
     //method to write to file
+>>>>>>> branch 'master' of https://shanissee@bitbucket.org/tklocklear/fall2021team7.git
     public void writeToFile() throws IOException {
         String filename = ".\\src" + File.separator + "reports" + File.separator + provider.getProviderNumber()
                 + "provider_report.txt";
@@ -56,10 +67,19 @@ public class ProviderReport {
                 + "Provider Street: " + provider.getProviderAddressStreet() + "\n" + "Provider City: "
                 + provider.getProviderAddressCity() + "\n"
                 + "Provider Zip Code: " + Integer.toString(provider.getProviderAddressZipCode()) + "\n\n");
-        for (ServiceRecord sr : servicesProvided) {
+        	
+        	//Iterator it = servicesProvided.iterator();
+        	//for (ServiceRecord sr : servicesProvided) {
+        	ServiceRecord sr;
+     //   	System.out.println("here ");
+        	ArrayList<ServiceRecord> servicesProvided = collect();
+
+        	for (int i=0;i<servicesProvided.size();i++) {
+        	sr=servicesProvided.get(i);	
             Member member = new Member(sr.getMemberNumber());
             ProviderDirectory pr = new ProviderDirectory();
             pr.getProviderDirectory();
+        //    System.out.println("Mem = "+ sr.getMemberNumber());
             if (member.checkMemberExistence()) {
                 member.openFromFile();
                 filestring = filestring.concat("Service Date: " + sr.getServiceDate() + "\n" + "Computer Input Date: "
