@@ -49,7 +49,7 @@ public class ReportController {
         }
 
         // "Sends" email of report
-        System.out.println("\nReport email sent to " + email);
+        System.out.println("\n Member Report email sent to " + email);
 
         // Exits function @return null
 
@@ -92,7 +92,7 @@ public class ReportController {
         }
 
         // "Sends" email of report
-        System.out.println("\nMember Report email sent to " + email);
+        System.out.println("\n Provider Report email sent to " + email);
 
         // Exits function @return null
     }
@@ -134,7 +134,7 @@ public class ReportController {
         }
 
         // "Sends" email of report
-        System.out.println("\nMember Report email sent to " + email);
+        System.out.println("\n EFT Report email sent to " + email);
 
         // Exits function @return null
     }
@@ -168,7 +168,7 @@ public class ReportController {
         }
 
         // "Sends" email of report
-        System.out.println("\nMember Report email sent to " + email);
+        System.out.println("\n Summary Report email sent to " + email);
 
         // Exits function @return null
     }
