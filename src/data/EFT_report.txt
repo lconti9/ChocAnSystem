@@ -1,5 +1,0 @@
-Provider Name: Max Hawkins
-Provider Number: 123123123
-
-Total Fees: $0.00
-Total Funds to Transfer: $0.00

@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.xml.stream.events.ProcessingInstruction;
+
 /*
 Group Provider: Shanissee Lee
 Class: ProviderReport.java
@@ -42,7 +44,8 @@ public class ProviderReport {
     }
 
     public void writeToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "data" + File.separator + "provider_report.txt";
+        String filename = ".\\src" + File.separator + "reports" + File.separator + provider.getProviderNumber()
+                + "provider_report.txt";
         String filestring = "";
         filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + "Provider Number: "
                 + Integer.toString(provider.getProviderNumber()) + "\n"
