@@ -1,5 +1,5 @@
 /*
-Group Member: Luca Conti
+Group Member: @author Luca Conti
 Class: ChocAn.java
 Description: Main class for the ChocAn System
 */
@@ -10,33 +10,63 @@ import java.util.Scanner;
 
 //method for main functionality
 public class ChocAn {
+
+    // Main function of choch an system @param command line arguments
     public static void main(String args[]) throws IOException {
-        Scanner console = new Scanner(System.in); // Create a Scanner object
-        String userType = ""; // Sets string used for user input selection
-        while (!userType.equals("4")) { // Loops until user choses 4 (Exit)
-            System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");// Promps user
-                                                                                                          // of inputs
-            userType = console.nextLine(); // Reads input
-            switch (userType) { // Selects based off of user input
+        // Create a Scanner object for readin user input
+        Scanner console = new Scanner(System.in);
+
+        // Sets string used for user input selection
+        String userType = "";
+
+        // While loop that waits until user choses 4 (Exit)
+        while (!userType.equals("4")) {
+
+            // Prompts user of their option of terminals
+            System.out.println("Please select user type:\n1. Provider\n2. Manager\n3. Operator\n4. Exit");
+
+            // Reads input from terminal
+            userType = console.nextLine();
+
+            // Switch case based off of user input
+            switch (userType) {
+
+                // Provider Terminal Selected
                 case "1":
                     System.out.println("----------------------------------------------------------\n");
-                    ProviderMenu.prompt();// Sends user to provider menut
+                    // Sends user to provider menu
+                    ProviderMenu.prompt();
                     break;
+
+                // Manager Terminal Selected
                 case "2":
                     System.out.println("----------------------------------------------------------\n");
-                    ManagerMenu.prompt();// Sends user to manager menu
+                    // Sends user to manager menu
+                    ManagerMenu.prompt();
                     break;
+
+                // Operator Terminal Selected
                 case "3":
                     System.out.println("----------------------------------------------------------\n");
-                    OperatorMenu.prompt();// Sends user to operator menu
+                    ;// Sends user to operator menu
+                    OperatorMenu.prompt();
                     break;
+
+                // Exit is selected
                 case "4":
                     break;
+
+                // No valid input selected
                 default:
-                    System.out.println("\n!!Invalid Input!!\n");// Input was not a valid option
+                    // Promps user that input was not a valid option
+                    System.out.println("\n!!Invalid Input!!\n");
             }
             System.out.println("----------------------------------------------------------\n");
         }
-        console.close(); // Closes scanner
+
+        // Closes scanner
+        console.close();
+
+        // @Return void
     }
 }
