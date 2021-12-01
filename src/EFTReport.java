@@ -28,7 +28,7 @@ public class EFTReport {
         servicesProvided = new ArrayList<ServiceRecord>();
     }
 
-    //method to get provider and check existence
+    // method to get provider and check existence
     public boolean getProvider(int providerNumber) throws FileNotFoundException {
         this.provider = new Provider(providerNumber);
         if (provider.checkProviderExistence()) {
@@ -41,14 +41,15 @@ public class EFTReport {
         }
     }
 
-    //method to collect reports
+    // method to collect reports
     public void collectReports() throws FileNotFoundException {
         this.servicesProvided = ServiceRecord.searchProviderServices(this.provider.getProviderNumber());
     }
 
-    //method to write to file
+    // method to write to file
     public void writeToFile() throws IOException {
-        String filename = ".\\src" + File.separator + "data" + File.separator + "EFT_report.txt";
+        String filename = ".\\src" + File.separator + "reports" + File.separator + "EFT_Report" + this.providerNumber
+                + ".txt";
         String filestring = "";
         float totalFees = 0;
         filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + "Provider Number: "
