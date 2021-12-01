@@ -132,7 +132,11 @@ public class Member {
         reader.close();
         return false;
     }
-
+    //adding constructor
+    public Member(){
+    
+    }
+    
     // method to get name
     public String getMemberName() {
         return memberName;
