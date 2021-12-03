@@ -1,11 +1,305 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="ChocAn" default="makejar" basedir=".">
-	<target name="makejar">
-	    <jar destfile="release/ChocAn.jar" basedir="bin" >
-	    	<manifest>
-	    	        <attribute name="Main-Class" value="ChocAn" />
-	    			<attribute name="Class-Path" value="ChocAn.jar"/>
-	    	    </manifest>
-	    	</jar>
-	  </target> 
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="fall2021team7">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="16"/>
+    <property name="source" value="16"/>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.api_5.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.engine_5.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.jupiter.params_5.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.commons_1.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.engine_1.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.launcher_1.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.runner_1.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.platform.suite.api_1.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit.vintage.engine_5.7.1.v20210222-1948.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.opentest4j_1.2.0.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.apiguardian_1.1.0.v20190826-0900.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="fall2021team7.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ChocAn.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ChocAnTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.EFTReportTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.MemberReportTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.MemberTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.OperatorControllerTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.OperatorControllerTest1.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.OperatorMenuTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ProviderControllerTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ProviderDirectoryTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ProviderMenuTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ProviderReportTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ProviderTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ReportControllerTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ServiceRecordTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ServiceRecordTest1.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ServiceTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.SummaryReportTest.classpath">
+        <path refid="fall2021team7.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="fall2021team7.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="ChocAn">
+        <java classname="ChocAn" failonerror="true" fork="yes">
+            <classpath refid="run.ChocAn.classpath"/>
+        </java>
+    </target>
+    <target name="ChocAnTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ChocAnTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ChocAnTest.classpath"/>
+        </junit>
+    </target>
+    <target name="EFTReportTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="EFTReportTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.EFTReportTest.classpath"/>
+        </junit>
+    </target>
+    <target name="MemberReportTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="MemberReportTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.MemberReportTest.classpath"/>
+        </junit>
+    </target>
+    <target name="MemberTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="MemberTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.MemberTest.classpath"/>
+        </junit>
+    </target>
+    <target name="OperatorControllerTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="OperatorControllerTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.OperatorControllerTest.classpath"/>
+        </junit>
+    </target>
+    <target name="OperatorControllerTest1">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="OperatorControllerTest1" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.OperatorControllerTest1.classpath"/>
+        </junit>
+    </target>
+    <target name="OperatorMenuTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="OperatorMenuTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.OperatorMenuTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ProviderControllerTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ProviderControllerTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ProviderControllerTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ProviderDirectoryTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ProviderDirectoryTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ProviderDirectoryTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ProviderMenuTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ProviderMenuTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ProviderMenuTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ProviderReportTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ProviderReportTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ProviderReportTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ProviderTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ProviderTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ProviderTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ReportControllerTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ReportControllerTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ReportControllerTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ServiceRecordTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ServiceRecordTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ServiceRecordTest.classpath"/>
+        </junit>
+    </target>
+    <target name="ServiceRecordTest1">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ServiceRecordTest1" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ServiceRecordTest1.classpath"/>
+        </junit>
+    </target>
+    <target name="ServiceTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="ServiceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ServiceTest.classpath"/>
+        </junit>
+    </target>
+    <target name="SummaryReportTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="SummaryReportTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.SummaryReportTest.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
 </project>

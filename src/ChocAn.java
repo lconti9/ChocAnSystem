@@ -22,6 +22,7 @@ public class ChocAn {
 
         // While loop that waits until user choses 4 (Exit)
         while (!userType.equals("4")) {
+        	//Checks timer to run main accounting procedure
         	Timer.runMainAccountingProcedure();
         	
             // Prompts user of their option of terminals

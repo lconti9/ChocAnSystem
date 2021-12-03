@@ -8,6 +8,7 @@ Description: Backend for interfacing manager menu or main accounting procedure w
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -16,6 +17,9 @@ public class ReportController {
 	
 	public static void runMainAccountingProcedure() throws IOException {
 		//Member file name
+		String filename = ".\\src" + File.separator + "reports" + File.separator + "mainaccountingprocedure.txt";
+		String filestring = "";
+		
 		String memberFilename = ".\\src" + File.separator + "data" + File.separator + "memberlist.txt";
         
 		//Opens Member file
@@ -36,7 +40,9 @@ public class ReportController {
                 // Generates list of member service records
                 mr.collectReports();
                 // Writes report to a file
-                mr.writeToFile();
+                filestring = filestring.concat(mr.returnFileString());
+                filestring = filestring.concat("\n\n");
+
             }
         }
         
@@ -64,7 +70,8 @@ public class ReportController {
                 // Finds all provider service records
                 pr.collectReports();
                 // Creates reports from records
-                pr.writeToFile();
+                filestring = filestring.concat(pr.returnFileString());
+                filestring = filestring.concat("\n\n");
             
             }
             
@@ -76,7 +83,9 @@ public class ReportController {
                 // Finds all of the provider's service records
                 eft.collectReports();
                 // Writes record in file
-                eft.writeToFile();
+                filestring = filestring.concat(eft.returnFileString());
+                filestring = filestring.concat("\n\n");
+
             }
         }
       
@@ -85,9 +94,13 @@ public class ReportController {
         // Generates a list of all providers
         sr.getProviders();
         // Compiles list of all services provided by each provider in a file
-        sr.writeToFile();
+        filestring = filestring.concat(sr.returnFileString());
         
         reader.close();
+        
+        FileWriter writer = new FileWriter(filename);
+        writer.write(filestring);
+        writer.close();
         
 	}
 

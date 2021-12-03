@@ -75,4 +75,27 @@ public class MemberReport {
         writer.write(filestring);
         writer.close();
     }
+    
+    public String returnFileString() throws IOException {
+        
+        String filestring = "";
+        filestring = filestring.concat("Member Name: " + member.getMemberName() + "\n" + "Member Number: "
+                + Integer.toString(member.getMemberNumber()) + "\n"
+                + "Member Street: " + member.getMemberAddressStreet() + "\n" + "Member City: "
+                + member.getMemberAddressCity() + "\n"
+                + "Member Zip Code: " + Integer.toString(member.getMemberAddressZipCode()) + "\n\n");
+
+        for (ServiceRecord sr : serviceRecords) {
+            Provider provider = new Provider(sr.getProviderNumber());
+            ProviderDirectory pr = new ProviderDirectory();
+            pr.getProviderDirectory();
+            if (provider.checkProviderExistence()) {
+                provider.openFromFile();
+                filestring = filestring.concat("Service Date: " + sr.getServiceDate() + "\n" + "Provider Name: "
+                        + provider.getProviderName() + "\n" + "Service Name: "
+                        + pr.getServiceName(sr.getServiceCode()) + "\n\n");
+            }
+        }
+        return filestring;
+    }
 }

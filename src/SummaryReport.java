@@ -58,6 +58,25 @@ public class SummaryReport {
         writer.write(filestring);
         writer.close();
     }
+    
+    public String returnFileString() throws IOException {
+
+        String filestring = "Summary Report";
+        int i = 0;
+        for (Provider pr : providerList) {
+            this.totalNumberConsultations += getReports(pr.getProviderNumber());
+            this.totalProviderFees[i] = getProviderSumFees(pr.getProviderNumber());
+            filestring = filestring.concat("\n\nProvider Name: " + pr.getProviderName() + "\nProvider Number: "
+                    + pr.getProviderNumber() + "\nTotal Consultations: " + getReports(pr.getProviderNumber())
+                    + "\nTotal Fees: $" + String.format("%.2f", getProviderSumFees(pr.getProviderNumber())));
+            i++;
+        }
+        sumGrandTotal();
+        filestring = filestring.concat(
+                "\n\nTotal Number of Providers: " + this.totalNumberProviders + "\nTotal Number of Consultations: "
+                        + this.totalNumberConsultations + "\nTotal Fees Owed: $" + this.totalFeesOwed);
+        return filestring;
+    }
 
     // method to sum grand total
     public void sumGrandTotal() {

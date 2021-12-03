@@ -10,8 +10,8 @@ public class Timer {
 		//Creates instance of Date and Time
 		Calendar cal = Calendar.getInstance();
 		//Checks if Date is a Friday and if Time is 0 (Midnight)
-		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && cal.getTimeInMillis() == 0) {
+		//if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY && cal.getTimeInMillis() == 0) {
 			ReportController.runMainAccountingProcedure();		
-		}
+		//}
 	}
 }

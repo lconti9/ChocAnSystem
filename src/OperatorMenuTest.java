@@ -44,7 +44,7 @@ class OperatorMenuTest {
 		ByteArrayInputStream bais = new ByteArrayInputStream(userInput.getBytes());
 		System.setIn(bais);
 		
-		String expected = "!!Invalid Input!!\\n";
+		String expected = "Please select the number of the option you wish to select:\n1. Add Member\n2. Remove Member\n3. Update Member\n4. Check Member Exists\n5. Add Provider\n6. Remove Provider\n7. Update Provider\n8. Check Provder Exists\n9. Exit";
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream printStream = new PrintStream(baos);
 		System.setOut(printStream);

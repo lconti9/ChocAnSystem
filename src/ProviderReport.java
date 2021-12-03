@@ -86,4 +86,35 @@ public class ProviderReport {
         writer.write(filestring);
         writer.close();
     }
+    public String returnFileString() throws IOException {
+    	
+        String filestring = "";
+        filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + "Provider Number: "
+                + Integer.toString(provider.getProviderNumber()) + "\n"
+                + "Provider Street: " + provider.getProviderAddressStreet() + "\n" + "Provider City: "
+                + provider.getProviderAddressCity() + "\n"
+                + "Provider Zip Code: " + Integer.toString(provider.getProviderAddressZipCode()) + "\n\n");
+
+        // Iterator it = servicesProvided.iterator();
+        for (ServiceRecord sr : servicesProvided) {
+            Member member = new Member(sr.getMemberNumber());
+            ProviderDirectory pr = new ProviderDirectory();
+            pr.getProviderDirectory();
+            // System.out.println("Mem = "+ sr.getMemberNumber());
+            if (member.checkMemberExistence()) {
+                member.openFromFile();
+                filestring = filestring.concat("Service Date: " + sr.getServiceDate() + "\n" + "Computer Input Date: "
+                        + sr.getCurrentDate() + " " + sr.getCurrentTime() + "\nMember Name: "
+                        + member.getMemberName() + "\nMember Number:" + member.getMemberNumber() + "\nService Code: "
+                        + sr.getServiceCode() + "\nFee: $" + pr.getServiceFee(sr.getServiceCode()) + "\n\n");
+                this.totalConsultations += 1;
+                this.totalFees += pr.getServiceFee(sr.getServiceCode());
+            }
+        }
+        filestring = filestring
+                .concat("Total Consultations: " + this.totalConsultations + "\nTotal Fee: $"
+                        + String.format("%.2f", this.totalFees));
+
+        return filestring;
+    }
 }

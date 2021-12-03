@@ -1,0 +1,108 @@
+Member Name: Luca
+Member Number: 123456789
+Member Street: 234
+Member City: Mem
+Member Zip Code: 38117
+
+Service Date: 11-29-2021
+Provider Name: Max Hawkins
+Service Name: Spa
+
+
+
+Member Name: Ashlyn
+Member Number: 320320320
+Member Street: 1214 8th Ave
+Member City: Tuscaloosa
+Member Zip Code: 35401
+
+
+
+Member Name: Max L
+Member Number: 465893684
+Member Street: 467 Main St
+Member City: Dallas
+Member Zip Code: 35557
+
+
+
+Member Name: John F
+Member Number: 343434343
+Member Street: 543 South Ave
+Member City: Raleigh
+Member Zip Code: 53412
+
+
+
+Provider Name: Luca Conti
+Provider Number: 123456789
+Provider Street: 4649 Barfield Rd
+Provider City: Memphis
+Provider Zip Code: 38117
+
+Total Consultations: 0
+Total Fee: $0.00
+
+Provider Name: Luca Conti
+Provider Number: 123456789
+
+Total Fees: $190.95
+Total Funds to Transfer: $190.95
+
+Provider Name: Max Hawkins
+Provider Number: 123123123
+Provider Street: 120 15th St E
+Provider City: Tuscaloosa
+Provider Zip Code: 35401
+
+Service Date: 11-29-2021
+Computer Input Date: 11-30-2021 23:46:59
+Member Name: Luca
+Member Number:123456789
+Service Code: 100002
+Fee: $390.95
+
+Total Consultations: 1
+Total Fee: $390.95
+
+Provider Name: Max Hawkins
+Provider Number: 123123123
+
+Total Fees: $390.95
+Total Funds to Transfer: $390.95
+
+Provider Name: Jack
+Provider Number: 121212123
+Provider Street: 123 St
+Provider City: Mem
+Provider Zip Code: 12345
+
+Total Consultations: 0
+Total Fee: $0.00
+
+Provider Name: Jack
+Provider Number: 121212123
+
+Total Fees: $0.00
+Total Funds to Transfer: $0.00
+
+Summary Report
+
+Provider Name: Luca Conti
+Provider Number: 123456789
+Total Consultations: 1
+Total Fees: $190.95
+
+Provider Name: Max Hawkins
+Provider Number: 123123123
+Total Consultations: 1
+Total Fees: $390.95
+
+Provider Name: Jack
+Provider Number: 121212123
+Total Consultations: 0
+Total Fees: $0.00
+
+Total Number of Providers: 3
+Total Number of Consultations: 2
+Total Fees Owed: $581.9

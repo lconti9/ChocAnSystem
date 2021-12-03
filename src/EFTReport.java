@@ -67,4 +67,21 @@ public class EFTReport {
         writer.write(filestring);
         writer.close();
     }
+    
+    public String returnFileString() throws IOException {
+        String filestring = "";
+        float totalFees = 0;
+        filestring = filestring.concat("Provider Name: " + provider.getProviderName() + "\n" + "Provider Number: "
+                + this.providerNumber);
+        for (ServiceRecord sr : servicesProvided) {
+            ProviderDirectory pr = new ProviderDirectory();
+            pr.getProviderDirectory();
+            totalFees += pr.getServiceFee(sr.getServiceCode());
+        }
+        this.transferAmount = totalFees;
+        filestring = filestring
+                .concat("\n\nTotal Fees: $" + String.format("%.2f", totalFees) + "\nTotal Funds to Transfer: $"
+                        + String.format("%.2f", this.transferAmount));
+        return filestring;
+    }
 }
